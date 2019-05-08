@@ -1,0 +1,2032 @@
+{
+  "flotilla": [
+    {
+      "hullType": "Carrier",
+      "Class": "Ton-Falk",
+      "Silhouette": 7,
+      "Speed": 2,
+      "Handling": -3,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 4,
+      "HT": 80,
+      "SS": 60,
+      "Manufacturer": "Kuat Drive Yards",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "4,000 officers, pilots, and enlisted crew",
+      "image": "tonfalk.jpg",
+      "dockingBay": "72 starfighters",
+      "encumbranceCapacity": "9,000",
+      "passengerCapacity": "800 troops",
+      "Consumables": "One year",
+      "Cost": "3,500,000",
+      "Restricted": "Y",
+      "Rarity": 7,
+      "HP": 3,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Laser Cannon (Light)",
+          "stats": {
+            "Name": "Laser Cannon (Light)",
+            "Skill": "Gunnery",
+            "Range": "Close",
+            "Dam": "5",
+            "Crit": "3",
+            "Price": "5,500",
+            "Restricted": "N",
+            "Rarity": 4,
+            "Size": "3-10",
+            "Qualities": "",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Laser Cannon (Light)",
+          "stats": {
+            "Name": "Laser Cannon (Light)",
+            "Skill": "Gunnery",
+            "Range": "Close",
+            "Dam": "5",
+            "Crit": "3",
+            "Price": "5,500",
+            "Restricted": "N",
+            "Rarity": 4,
+            "Size": "3-10",
+            "Qualities": "",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mod": {
+            "Qualities": {
+              "Guided": "4"
+            }
+          },
+          "mount": "forward",
+          "position": "forward",
+          "type": "Concussion Missile Launcher",
+          "stats": {
+            "Name": "Concussion Missile Launcher",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "3-10",
+            "Qualities": "Blast 4, Breach 4, Guided 4, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "hull",
+          "position": "hull",
+          "type": "Tractor Beam (Medium)",
+          "stats": {
+            "Name": "Tractor Beam (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Short ",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "8,000",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "5-10",
+            "Qualities": "Tractor 4",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWA25",
+      "curr_HT": 80,
+      "curr_SS": 60,
+      "crits": [],
+      "captain": "test",
+      "id": 0.27604691489338706,
+      "Name": "test"
+    },
+    {
+      "hullType": "Star Battlecruiser",
+      "Class": "Praetor II",
+      "Silhouette": 9,
+      "Speed": 2,
+      "Handling": -3,
+      "defFore": 3,
+      "defPort": 3,
+      "defStarboard": 3,
+      "defAft": 3,
+      "Armor": 11,
+      "HT": 185,
+      "SS": 95,
+      "image": "praetor.jpg",
+      "Manufacturer": "Kuat Drive Yards",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 16",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "109,000 officers, pilots, and enlisted crew",
+      "dockingBay": "120 starfighters",
+      "encumbranceCapacity": "78,000",
+      "passengerCapacity": "14000 troops",
+      "Consumables": "Three years",
+      "Cost": "700,000,000",
+      "Restricted": "Y",
+      "Rarity": 9,
+      "HP": 1,
+      "Weapons": [
+        {
+          "count": 30,
+          "linked": 3,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 30,
+          "linked": 3,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 20,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Medium)",
+          "stats": {
+            "Name": "Turbolaser (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "10",
+            "Crit": "3",
+            "Price": "15,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Breach 3, Slow Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 20,
+          "linked": 1,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Turbolaser (Medium)",
+          "stats": {
+            "Name": "Turbolaser (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "10",
+            "Crit": "3",
+            "Price": "15,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Breach 3, Slow Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mod": {
+            "Range": "Long"
+          },
+          "mount": "forward",
+          "position": "forward",
+          "type": "Ion Cannon (Battleship)",
+          "stats": {
+            "Name": "Ion Cannon (Battleship)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "9",
+            "Crit": "4",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 8,
+            "Size": "8-10",
+            "Qualities": "Breach 3, Ion, Slow-Firing 2",
+            "Source": "SWA/F02"
+          }
+        },
+        {
+          "count": 15,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Ion Cannon (Battleship)",
+          "stats": {
+            "Name": "Ion Cannon (Battleship)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "9",
+            "Crit": "4",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 8,
+            "Size": "8-10",
+            "Qualities": "Breach 3, Ion, Slow-Firing 2",
+            "Source": "SWA/F02"
+          }
+        },
+        {
+          "count": 15,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Ion Cannon (Battleship)",
+          "stats": {
+            "Name": "Ion Cannon (Battleship)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "9",
+            "Crit": "4",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 8,
+            "Size": "8-10",
+            "Qualities": "Breach 3, Ion, Slow-Firing 2",
+            "Source": "SWA/F02"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "hull",
+          "position": "hull",
+          "type": "Tractor Beam (Heavy)",
+          "stats": {
+            "Name": "Tractor Beam (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Tractor 6",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWA02",
+      "curr_HT": 185,
+      "curr_SS": 95,
+      "crits": [],
+      "captain": "test",
+      "id": 1.276046914893387,
+      "Name": "test"
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Keldabe",
+      "Silhouette": 7,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 8,
+      "HT": 100,
+      "SS": 60,
+      "Manufacturer": "MandalMotors / Zann Consortium",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 10",
+      "Navicomputer": "Yes",
+      "image": "keldabe.jpg",
+      "sensorRange": "Long",
+      "shipsComplement": "6,000 crew",
+      "dockingBay": "36 starfighters",
+      "encumbranceCapacity": "8,000",
+      "passengerCapacity": "1,000",
+      "Consumables": "Two years",
+      "Cost": "200,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "dorsal",
+          "position": "dorsal",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "COMMENT": "NEEDS UPDATE",
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Mass Drive Missile Launchers"
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)",
+          "stats": {
+            "Name": "Tractor Beam (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Tractor 6",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWE08",
+      "curr_HT": 100,
+      "curr_SS": 60,
+      "crits": [],
+      "captain": "test",
+      "id": 2.276046914893387,
+      "Name": "teste"
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Keldabe",
+      "Silhouette": 7,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 8,
+      "HT": 100,
+      "SS": 60,
+      "Manufacturer": "MandalMotors / Zann Consortium",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 10",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "keldabe.jpg",
+      "shipsComplement": "6,000 crew",
+      "dockingBay": "36 starfighters",
+      "encumbranceCapacity": "8,000",
+      "passengerCapacity": "1,000",
+      "Consumables": "Two years",
+      "Cost": "200,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "dorsal",
+          "position": "dorsal",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "COMMENT": "NEEDS UPDATE",
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Mass Drive Missile Launchers"
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)",
+          "stats": {
+            "Name": "Tractor Beam (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Tractor 6",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWE08",
+      "curr_HT": 100,
+      "curr_SS": 60,
+      "crits": [],
+      "captain": "test",
+      "id": 3.276046914893387,
+      "Name": "test"
+    }
+  ],
+  "shiplist": [
+    {
+      "hullType": "Star Battlecruiser",
+      "Class": "Praetor II",
+      "Silhouette": 9,
+      "Speed": 2,
+      "Handling": -3,
+      "defFore": 3,
+      "defPort": 3,
+      "defStarboard": 3,
+      "defAft": 3,
+      "Armor": 11,
+      "HT": 185,
+      "SS": 95,
+      "image": "praetor.jpg",
+      "Manufacturer": "Kuat Drive Yards",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 16",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "109,000 officers, pilots, and enlisted crew",
+      "dockingBay": "120 starfighters",
+      "encumbranceCapacity": "78,000",
+      "passengerCapacity": "14000 troops",
+      "Consumables": "Three years",
+      "Cost": "700,000,000",
+      "Restricted": "Y",
+      "Rarity": 9,
+      "HP": 1,
+      "Weapons": [
+        {
+          "count": 30,
+          "linked": 3,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 30,
+          "linked": 3,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 20,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 20,
+          "linked": 1,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mod": {
+            "Range": "Long"
+          },
+          "mount": "forward",
+          "position": "forward",
+          "type": "Ion Cannon (Battleship)"
+        },
+        {
+          "count": 15,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Ion Cannon (Battleship)"
+        },
+        {
+          "count": 15,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Ion Cannon (Battleship)"
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "hull",
+          "position": "hull",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWA02"
+    },
+    {
+      "hullType": "Battlecruiser",
+      "Class": "Maelstrom",
+      "Silhouette": 8,
+      "Speed": 1,
+      "Handling": -3,
+      "defFore": 3,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 3,
+      "Armor": 8,
+      "HT": 125,
+      "SS": 65,
+      "Manufacturer": "Kuat Drive Yards",
+      "Hyperdrive": "Primary: Class 3, Backup: Class 15",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "maelstrom.jpg",
+      "shipsComplement": "45,000 ofﬁcers, pilots, and enlisted crew.",
+      "dockingBay": "96 starfighters",
+      "encumbranceCapacity": "12,500",
+      "passengerCapacity": "15,000",
+      "Consumables": "Two Years",
+      "Cost": "158,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Ion Cannon (Battleship)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Proton Torpedo"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Proton Torpedo"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Proton Torpedo"
+        },
+        {
+          "count": 10,
+          "linked": 3,
+          "mount": "retractable",
+          "position": "ventral",
+          "type": "Concussion Missile (Assault)"
+        },
+        {
+          "count": 20,
+          "linked": 0,
+          "mount": "ventral",
+          "position": "ventral",
+          "type": "Tractor Beam (Medium)"
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "ventral",
+          "position": "ventral",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWA36"
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Dreadnought",
+      "Silhouette": 7,
+      "Speed": 2,
+      "Handling": -2,
+      "defFore": 1,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 1,
+      "Armor": 7,
+      "HT": 100,
+      "SS": 40,
+      "Manufacturer": "Rendili StarDrive",
+      "Hyperdrive": "Primary: Class 4, Backup: 18",
+      "Navicomputer": "Yes",
+      "sensorRange": "Medium",
+      "image": "dreadnought.jpg",
+      "shipsComplement": "9,000 to 16,000 officers, pilots, and enlisted crew, depending on configuration.",
+      "dockingBay": "Twelve starfighters",
+      "encumbranceCapacity": "7,500",
+      "passengerCapacity": "3000 troops",
+      "Consumables": "One year",
+      "Cost": "7,200,000",
+      "Restricted": "N",
+      "Rarity": 6,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "aft",
+          "position": "aft",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 10,
+          "linked": 3,
+          "mount": "port",
+          "position": "port",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 10,
+          "linked": 3,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Laser Cannon (Heavy)"
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Laser Cannon (Heavy)"
+        }
+      ],
+      "Source": "SWA02"
+    },
+    {
+      "hullType": "Carrier",
+      "Class": "Ton-Falk",
+      "Silhouette": 7,
+      "Speed": 2,
+      "Handling": -3,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 4,
+      "HT": 80,
+      "SS": 60,
+      "Manufacturer": "Kuat Drive Yards",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "tonfalk.jpg",
+      "shipsComplement": "4,000 officers, pilots, and enlisted crew",
+      "dockingBay": "72 starfighters",
+      "encumbranceCapacity": "9,000",
+      "passengerCapacity": "800 troops",
+      "Consumables": "One year",
+      "Cost": "3,500,000",
+      "Restricted": "Y",
+      "Rarity": 7,
+      "HP": 3,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mod": {
+            "Qualities": {
+              "Guided": "4"
+            }
+          },
+          "mount": "forward",
+          "position": "forward",
+          "type": "Concussion Missile Launcher"
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "hull",
+          "position": "hull",
+          "type": "Tractor Beam (Medium)"
+        }
+      ],
+      "Source": "SWA25"
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Keldabe",
+      "Silhouette": 7,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 8,
+      "HT": 100,
+      "SS": 60,
+      "Manufacturer": "MandalMotors / Zann Consortium",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 10",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "keldabe.jpg",
+      "shipsComplement": "6,000 crew",
+      "dockingBay": "36 starfighters",
+      "encumbranceCapacity": "8,000",
+      "passengerCapacity": "1,000",
+      "Consumables": "Two years",
+      "Cost": "200,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "dorsal",
+          "position": "dorsal",
+          "type": "Ion Cannon (Heavy)"
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Ion Cannon (Heavy)"
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Ion Cannon (Heavy)"
+        },
+        {
+          "COMMENT": "NEEDS UPDATE",
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Mass Drive Missile Launchers"
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWE08"
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Neutron Star",
+      "Silhouette": 7,
+      "Speed": 1,
+      "Handling": -3,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 1,
+      "Armor": 6,
+      "HT": 80,
+      "SS": 50,
+      "Manufacturer": "Rendili Star Drive",
+      "Hyperdrive": "Primary: Class 3, Backup: Class 20",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "neutron.png",
+      "shipsComplement": "2,200 crew",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "5,000",
+      "passengerCapacity": "250",
+      "Consumables": "One year",
+      "Cost": "2,800,000",
+      "Restricted": "N",
+      "Rarity": 4,
+      "HP": 6,
+      "Weapons": [
+        {
+          "count": 4,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "dorsal",
+          "position": "dorsal",
+          "type": "Laser Cannon (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Laser Cannon (Heavy)"
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "port",
+          "position": "port",
+          "type": "Laser Cannon (Heavy)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWE08"
+    },
+    {
+      "hullType": "Carrier",
+      "Class": "Quasar Fire",
+      "Silhouette": 6,
+      "Speed": 2,
+      "Handling": -2,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 1,
+      "Armor": 5,
+      "HT": 62,
+      "SS": 45,
+      "Manufacturer": "SoroSuub Corporation",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "250 officers, pilots, and enlisted crew.",
+      "dockingBay": "48 starfighters",
+      "encumbranceCapacity": "5,000",
+      "passengerCapacity": "150",
+      "Consumables": "One year",
+      "Cost": "1,750,000",
+      "Restricted": "N",
+      "Rarity": 6,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 2,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "hull",
+          "position": "hull",
+          "type": "Tractor Beam (Medium)"
+        }
+      ],
+      "Source": "SWA25"
+    },
+    {
+      "hullType": "Light Cruiser",
+      "Class": "MC40a",
+      "Silhouette": 6,
+      "Speed": 2,
+      "Handling": -1,
+      "defFore": 3,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 3,
+      "Armor": 6,
+      "HT": 92,
+      "SS": 56,
+      "Manufacturer": "Mon Calamari Shipyards",
+      "Hyperdrive": "Primary: Class 1, Backup: Class 15",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "3770 officers, pilots, and enlisted crew",
+      "dockingBay": "Twelve starfighters",
+      "encumbranceCapacity": "5000 depending on configuration",
+      "passengerCapacity": "540 troops",
+      "Consumables": "Two years",
+      "Cost": "15,500,000",
+      "Restricted": "Y",
+      "Rarity": 6,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 7,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 7,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Concussion Missile Launcher"
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "aft",
+          "position": "aft",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Tractor Beam (Heavy)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Tractor Beam (Heavy)"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "aft",
+          "position": "aft",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWA30"
+    },
+    {
+      "hullType": "Frigate",
+      "Class": "Nebulon-B",
+      "Silhouette": 6,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 6,
+      "HT": 71,
+      "SS": 40,
+      "Manufacturer": "Kuat Drive Yards",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "920 officers, pilots, and enlisted crew",
+      "dockingBay": "Twenty-four starfighters",
+      "encumbranceCapacity": "4,000",
+      "passengerCapacity": "75 troops",
+      "Consumables": "Two years",
+      "Cost": "8,500,000",
+      "Restricted": "Y",
+      "Rarity": 7,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 6,
+          "linked": 0,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 6,
+          "linked": 0,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "turret",
+          "position": "forward",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "turret",
+          "position": "port",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "turret",
+          "position": "aft",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWE/A02"
+    },
+    {
+      "hullType": "Frigate",
+      "Class": "Kantoban",
+      "Silhouette": 6,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 6,
+      "HT": 75,
+      "SS": 60,
+      "Manufacturer": "Corellian Engineering Corporation",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 10",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "800 crew and troop support",
+      "dockingBay": "24 starfighters, six assault speeders, four troop speeders, two command speeders, and two shuttles.",
+      "encumbranceCapacity": "4,000",
+      "passengerCapacity": "250",
+      "Consumables": "Two years",
+      "Cost": "10,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Heavy)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Ion Cannon (Heavy)"
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Proton Torpedo Launcher"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWE08"
+    },
+    {
+      "hullType": "Frigate",
+      "Class": "Kossak",
+      "Silhouette": 6,
+      "Speed": 3,
+      "Handling": -2,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 1,
+      "Armor": 6,
+      "HT": 75,
+      "SS": 45,
+      "Manufacturer": "Ubrikkian Industries",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "975 officers, pilots, and crew",
+      "dockingBay": "8 Starfighters, 4 bombers, 3 shuttles",
+      "encumbranceCapacity": "3,500",
+      "passengerCapacity": "90 guards",
+      "Consumables": "Two years",
+      "Cost": "8,300,000",
+      "Restricted": "N",
+      "Rarity": 7,
+      "HP": 3,
+      "Weapons": [
+        {
+          "count": 6,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 6,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 4,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 4,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 4,
+          "linked": 1,
+          "mount": "turret",
+          "position": "aft",
+          "type": "Laser Cannon (Light)"
+        },
+        {
+          "count": 4,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)"
+        }
+      ],
+      "Source": "SWE11"
+    },
+    {
+      "hullType": "Corvette",
+      "Class": "CR90",
+      "Silhouette": 5,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 2,
+      "Armor": 5,
+      "HT": 50,
+      "SS": 25,
+      "Manufacturer": "Corellian Engineering Corporation",
+      "Hyperdrive": "Primary: Class 2, Backup: None",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "30 to 165",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "Up to 2,500",
+      "passengerCapacity": "Up to 600",
+      "Consumables": "One year",
+      "Cost": "1,200,000",
+      "Restricted": "N",
+      "Rarity": 5,
+      "HP": 3,
+      "Weapons": [
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Turbolasers (Light)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Turbolasers (Light)"
+        }
+      ],
+      "Source": "All"
+    },
+    {
+      "hullType": "Frigate",
+      "Class": "Lancer",
+      "Silhouette": 5,
+      "Speed": 2,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 1,
+      "Armor": 5,
+      "HT": 52,
+      "SS": 34,
+      "Manufacturer": "Kuat Drive Yards",
+      "Hyperdrive": "Primary: Class 1, Backup: Class 15",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "800 officers and enlisted crew",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "200",
+      "passengerCapacity": "40 troops",
+      "Consumables": "Six months",
+      "Cost": "4,760,000",
+      "Restricted": "Y",
+      "Rarity": 7,
+      "HP": 0,
+      "Weapons": [
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "turret",
+          "position": "port",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "turret",
+          "position": "forward",
+          "type": "Quad Laser Cannon"
+        }
+      ],
+      "Source": "SWA02"
+    },
+    {
+      "hullType": "Frigate",
+      "Class": "DP20",
+      "Silhouette": 5,
+      "Speed": 4,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 1,
+      "Armor": 5,
+      "HT": 55,
+      "SS": 30,
+      "Manufacturer": "Corellian Engineering Corporation",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 16",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "91 officers and enlisted crew",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "Minimum 300",
+      "passengerCapacity": "None",
+      "Consumables": "Eight Months",
+      "Cost": "3,200,000",
+      "Restricted": "N",
+      "Rarity": 6,
+      "HP": 1,
+      "Weapons": [
+        {
+          "count": 2,
+          "linked": 1,
+          "mount": "turret",
+          "position": "fore",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "turret",
+          "position": "port",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Concussion Missile Launcher"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Concussion Missile Launcher"
+        }
+      ],
+      "Source": "SWE02"
+    },
+    {
+      "hullType": "Corvette",
+      "Class": "CR92a",
+      "Silhouette": 5,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 1,
+      "Armor": 5,
+      "HT": 55,
+      "SS": 25,
+      "Manufacturer": "Corellian Engineering Corporation",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 16",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "60-150 officers and crew",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "1,000",
+      "passengerCapacity": "60",
+      "Consumables": "One year",
+      "Cost": "2,500,000",
+      "Restricted": "Y",
+      "Rarity": 6,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Medium)"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Quad Laser Cannon"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Proton Torpedo Launcher"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Medium)"
+        }
+      ],
+      "Source": "SWE07"
+    },
+    {
+      "hullType": "Transport",
+      "Class": "YZ-775",
+      "Silhouette": 5,
+      "Speed": 2,
+      "Handling": -3,
+      "defFore": 1,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 1,
+      "Armor": 4,
+      "HT": 34,
+      "SS": 25,
+      "Manufacturer": "Corellian Engineering Corporation",
+      "Hyperdrive": "Primary: Class 1, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Medium",
+      "shipsComplement": "One captain, one pilot, one copilot, two engineers, one cargo master, two gunners",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "850",
+      "passengerCapacity": "None",
+      "Consumables": "Six months",
+      "Cost": "500,000",
+      "Restricted": "N",
+      "Rarity": 3,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Concussion Missile Launcher"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "aft",
+          "position": "aft",
+          "type": "Concussion Missile Launcher"
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Laser Cannon (Medium)"
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Laser Cannon (Medium)"
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Proton Torpedo Launcher"
+        }
+      ],
+      "Source": "SWE08"
+    },
+    {
+      "hullType": "Yacht",
+      "Class": "Minstrel",
+      "Silhouette": 5,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 2,
+      "Armor": 6,
+      "HT": 45,
+      "SS": 28,
+      "Manufacturer": "Ubrikkian Industries",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Medium",
+      "shipsComplement": "37 officers, pilots, and crew",
+      "dockingBay": "6 Starfighters, 2 Shuttles",
+      "encumbranceCapacity": "800",
+      "passengerCapacity": "75",
+      "Consumables": "One year",
+      "Cost": "1,750,000",
+      "Restricted": "N",
+      "Rarity": 7,
+      "HP": 3,
+      "Weapons": [
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "mod": "Concealed",
+          "position": "port",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "mod": "Concealed",
+          "position": "starboard",
+          "type": "Turbolaser (Light)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Ion Cannon (Medium)"
+        },
+        {
+          "count": 3,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Ion Cannon (Medium)"
+        }
+      ],
+      "Source": "SWE11"
+    },
+    {
+      "hullType": "Freighter",
+      "Class": "TL-1200",
+      "Silhouette": 5,
+      "Speed": 3,
+      "Handling": -3,
+      "defFore": 1,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 1,
+      "Armor": 3,
+      "HT": 26,
+      "SS": 15,
+      "Manufacturer": "Suwantek Systems",
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Short",
+      "shipsComplement": "One pilot, one co-pilot, one engineer, three crew.",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "600",
+      "passengerCapacity": "8 (up to 100 in the cargo holds)",
+      "Consumables": "Three months",
+      "Cost": "170,000",
+      "Restricted": "N",
+      "Rarity": 6,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "turret",
+          "position": "port",
+          "type": "Laser Cannon (Medium)'"
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Laser Cannon (Medium)'"
+        }
+      ],
+      "Source": "SWE11"
+    }
+  ]
+}

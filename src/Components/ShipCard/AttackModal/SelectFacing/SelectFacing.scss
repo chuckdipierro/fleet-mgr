@@ -1,0 +1,96 @@
+.SelectFacing {
+  .chooseZone {
+    border-radius: 100%;
+    margin: 10px auto;
+    overflow: hidden;
+    position: relative;
+    height: 305px;
+    width: 300px;
+    button {
+      background: transparent;
+      border: 0px solid black;
+      height: 0px;
+      position: absolute;
+      width: 0px;
+      &:before {
+        color: #fff;
+        position: absolute;
+      }
+
+      &.aft {
+        border-bottom: 100px solid green;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        &:before {
+          content: 'Aft';
+          left: 42px;
+          bottom: -55px;
+        }
+      }
+      &.dorsal {
+        background: red;
+        height: 50px;
+        left: 101px;
+        top: 101px;
+        width: 98px;
+        &:before {
+          content: 'Dorsal';
+          left: 28px;
+          top: 15px;
+        }
+      }
+      &.forward {
+        border-top: 100px solid green;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        top: 0px;
+        width: 100%;
+        &:before {
+          content: 'Forward';
+          left: 25px;
+          top: -60px;
+        }
+      }
+      &.port {
+        border-bottom: 100px solid transparent;
+        border-left: 100px solid green;
+        border-top: 100px solid transparent;
+        height: 300px;
+        left: 0;
+        top: 2px;
+        &:before {
+          content: 'Port';
+          left: -70px;
+        }
+      }
+      &.starboard {
+        border-bottom: 100px solid transparent;
+        border-right: 100px solid green;
+        border-top: 100px solid transparent;
+        height: 300px;
+        right: 0;
+        top: 2px;
+        &:before {
+          content: 'Starboard';
+          right: -77px;
+        }
+      }
+
+      &.ventral {
+        background: red;
+        height: 50px;
+        left: 101px;
+        top: 154px;
+        width: 98px;
+        &:before {
+          content: 'Ventral';
+          left: 28px;
+          top: 15px;
+        }
+      }
+    }
+  }
+}

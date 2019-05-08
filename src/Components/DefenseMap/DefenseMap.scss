@@ -1,0 +1,90 @@
+.DefenseMap {
+  border-radius: 100%;
+  margin: 10px auto;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  width: 300px;
+
+  button {
+    background: transparent;
+    border: 0px solid black;
+    height: 0px;
+    position: absolute;
+    width: 0px;
+    &:before {
+      color: #fff;
+      position: absolute;
+    }
+    &.aft {
+      border-bottom: 125px solid green;
+      border-left: 125px solid transparent;
+      border-right: 125px solid transparent;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      &:before {
+        content: 'Aft';
+        left: 20px;
+        bottom: -70px;
+      }
+      span {
+        left: 50%;
+        bottom: -90px;
+      }
+    }
+    &.fore {
+      border-top: 125px solid green;
+      border-left: 125px solid transparent;
+      border-right: 125px solid transparent;
+      top: 0px;
+      width: 100%;
+      &:before {
+        content: 'Forward';
+        left: 0px;
+        top: -70px;
+      }
+      span {
+        left: 50%;
+        top: -90px;
+      }
+    }
+    &.port {
+      border-bottom: 125px solid transparent;
+      border-left: 125px solid green;
+      border-top: 125px solid transparent;
+      height: 296px;
+      left: 0;
+      top: 2px;
+      &:before {
+        content: 'Port';
+        left: -70px;
+      }
+      span {
+        left: -70px;
+        top: 40px;
+      }
+    }
+    &.starboard {
+      border-bottom: 125px solid transparent;
+      border-right: 125px solid green;
+      border-top: 125px solid transparent;
+      height: 296px;
+      right: 0;
+      top: 2px;
+      &:before {
+        content: 'Starboard';
+        right: -90px;
+      }
+      span {
+        right: -70px;
+        top: 40px;
+      }
+    }
+    span {
+      color: #fff;
+      font-weight: bold;
+      position: absolute;
+    }
+  }
+}

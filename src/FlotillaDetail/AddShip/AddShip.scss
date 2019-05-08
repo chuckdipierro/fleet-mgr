@@ -1,0 +1,8 @@
+.AddShip {
+  .description {
+    text-align: center;
+    > * {
+      margin: 5px 10px;
+    }
+  }
+}
