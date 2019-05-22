@@ -23,7 +23,7 @@ const AddShip = ({ addShip, shiplist, weaponList }) => {
       curr_SS: currShip.SS,
       crits: [],
       captain,
-      id: Math.floor(Math.random()),
+      id: Math.floor(Math.random() * 100000000),
       Name: shipName,
       Weapons: mapWeapons(currShip.Weapons, weaponList),
     });

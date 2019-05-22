@@ -17,7 +17,7 @@ const SelectProficiency = ({ confirmSelections }) => {
   const agiBtns = [];
   for (let i = 1; i < 7; i++) {
     crewBtns.push(
-      <Button key={i} onClick={() => updateState({ crew: i })}>
+      <Button key={i} active={i === state.crew} onClick={() => updateState({ crew: i })}>
         {i}
       </Button>
     );
@@ -25,7 +25,7 @@ const SelectProficiency = ({ confirmSelections }) => {
 
   for (let i = 1; i < 7; i++) {
     agiBtns.push(
-      <Button key={i} onClick={() => updateState({ agility: i })}>
+      <Button key={i} active={i === state.agility} onClick={() => updateState({ agility: i })}>
         {i}
       </Button>
     );

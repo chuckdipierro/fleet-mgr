@@ -4,7 +4,7 @@ import { List, Checkbox } from 'semantic-ui-react';
 
 import './WeaponList.scss';
 
-const WeaponList = ({ weapons, selected }) => {
+const WeaponList = ({ weapons, selected, weaponType }) => {
   const weaponList = weapons.map((wpn, i) => {
     let wpnType = wpn.type.split('(');
     if (wpnType.length > 1) {
@@ -13,10 +13,14 @@ const WeaponList = ({ weapons, selected }) => {
     return (
       <List.Item key={i}>
         <List.Content>
-          <Checkbox checked={!!wpn.selected} onChange={() => selected(i)} />
+          <Checkbox
+            checked={!!wpn.selected}
+            disabled={weaponType.length > 0 && weaponType !== wpn.type}
+            onChange={() => selected(i)}
+          />
           <List.Header as="a">{`${wpn.count} ${wpn.mount.charAt(0).toUpperCase() +
             wpn.mount.slice(1)} Mounted ${wpnType}${
-            parseInt(wpn.count) > 1 ? 's' : ''
+            parseInt(wpn.count, 16) > 1 ? 's' : ''
           }`}</List.Header>
           <List.Description>{`${wpn.stats.Range} Range`}</List.Description>
         </List.Content>
@@ -31,6 +35,8 @@ const WeaponList = ({ weapons, selected }) => {
 };
 WeaponList.propTypes = {
   selected: PropType.func,
+  selectedCount: PropType.number,
   weapons: PropType.array.isRequired,
+  weaponType: PropType.string,
 };
 export default WeaponList;

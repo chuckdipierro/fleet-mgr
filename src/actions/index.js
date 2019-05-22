@@ -11,20 +11,61 @@ export const addFriendlyShip = ship => {
     ship,
   };
 };
+export const clearEncounter = () => {
+  return {
+    type: 'CLEAR_ENCOUNTER',
+  };
+};
+export const clearRound = () => {
+  return {
+    type: 'CLEAR_ROUND',
+  };
+};
+export const getEncounter = encounter => {
+  return {
+    type: 'SET_ENCOUNTER',
+    encounter: encounter || {},
+  };
+};
 export const getFlotilla = () => {
   return async dispatch => {
     try {
       const response = await fetch(`${REACT_APP_API_URL}/flotilla`);
       const ships = await response.json();
       dispatch({
+        type: 'FETCH_COMPLETE',
+      });
+      dispatch({
         type: 'SET_FLOTILLA',
+        ships,
+      });
+      dispatch({
+        type: 'UPDATE_ENCOUNTER',
         ships,
       });
     } catch (err) {
       dispatch({
+        type: 'FETCH_COMPLETE',
+      });
+      dispatch({
         type: 'SET_FLOTILLA',
         ships: [],
       });
+    }
+  };
+};
+export const setHull = (id, target) => {
+  return async dispatch => {
+    try {
+      const options = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(target),
+      };
+      await fetch(`${REACT_APP_API_URL}/flotilla/${id}/`, options);
+      dispatch(getFlotilla());
+    } catch (err) {
+      dispatch(getFlotilla());
     }
   };
 };
@@ -60,9 +101,24 @@ export const getShiplist = () => {
     }
   };
 };
+export const setShipActed = (enemy, id) => {
+  return {
+    type: 'SET_SHIP_ACTED',
+    enemy,
+    id,
+  };
+};
 export const setWeaponList = weapons => {
   return {
     type: 'SET_WEAPON_LIST',
     weapons,
+  };
+};
+
+export const updateEnemy = (id, ship) => {
+  return {
+    type: 'UPDATE_ENEMY',
+    id,
+    ship,
   };
 };

@@ -10,18 +10,21 @@ import SelectWeapons from './SelectWeapons';
 import SelectProficiency from './SelectProficiency';
 import RollResults from './RollResults';
 
-const AttackModal = ({ ship, targets }) => {
-  const [state, setState] = useState({
+const AttackModal = ({ applyDamage, ship, targets }) => {
+  const baseState = {
     agility: 0,
     aim: false,
     crew: 0,
     facing: '',
     open: false,
+    selectedCount: 0,
     step: 0,
     target: {},
     targetZone: '',
     validWeapons: [],
-  });
+    weaponType: '',
+  };
+  const [state, setState] = useState(baseState);
 
   const updateState = newState => {
     setState(
@@ -32,9 +35,19 @@ const AttackModal = ({ ship, targets }) => {
   };
 
   const handleSelection = i => {
-    let newValidWeapons = [].concat(...state.validWeapons);
-    newValidWeapons[i].selected = !!!newValidWeapons[i].selected;
-    updateState({ validWeapons: newValidWeapons });
+    const newValidWeapons = [].concat(...state.validWeapons);
+    let { selectedCount } = state;
+    let weaponType = newValidWeapons[i].type;
+    newValidWeapons[i].selected = !newValidWeapons[i].selected;
+    if (newValidWeapons[i].selected) {
+      selectedCount += 1;
+    } else if (selectedCount > 0) {
+      selectedCount -= 1;
+    }
+    if (state.weaponType.length > 0 && selectedCount === 0) {
+      weaponType = '';
+    }
+    updateState({ selectedCount, weaponType, validWeapons: newValidWeapons });
   };
 
   const validateWeapons = facing => {
@@ -102,7 +115,9 @@ const AttackModal = ({ ship, targets }) => {
           <SelectWeapons
             facing={state.facing}
             handleSelection={i => handleSelection(i)}
+            selectedCount={state.selectedCount}
             validWeapons={state.validWeapons}
+            weaponType={state.weaponType}
           />
           <Button onClick={() => updateState({ step: (state.step += 1) })}>Fire Weapons</Button>
         </div>
@@ -118,7 +133,17 @@ const AttackModal = ({ ship, targets }) => {
       );
       break;
     case 5:
-      attackStep = <RollResults {...state} ship={ship} />;
+      attackStep = (
+        <RollResults
+          {...state}
+          ship={ship}
+          applyDamage={(target, dam, strain, crit) => {
+            console.log('Crit in Attack: ', crit);
+            applyDamage(ship.id, target, dam, strain, crit);
+            updateState(baseState);
+          }}
+        />
+      );
       break;
     default:
       attackStep = <div>Error</div>;
@@ -128,7 +153,7 @@ const AttackModal = ({ ship, targets }) => {
       size="tiny"
       className="AttackModal"
       open={state.open}
-      onClose={() => updateState({ open: false })}
+      onClose={() => updateState(baseState)}
       trigger={
         <Button
           basic
@@ -154,7 +179,7 @@ const AttackModal = ({ ship, targets }) => {
         <Button
           negative
           onClick={() => {
-            if (state.step > 0) updateState({ open: false });
+            if (state.step > 0) updateState(baseState);
           }}
         >
           Cancel Attack
