@@ -3,11 +3,9 @@ import PropType from 'prop-types';
 import { Button, Checkbox, Form, Input, Modal } from 'semantic-ui-react';
 
 import './RepairModal.scss';
-import { updateVariableStatement } from 'typescript';
 
-const RepairModal = ({ repairDamage, ship }) => {
+const RepairModal = ({ crits, repairDamage }) => {
   const [state, setState] = useState({ ht: 0, open: false, ss: 0 });
-
   const updateState = newState => {
     setState(
       Object.assign({}, state, {
@@ -55,7 +53,7 @@ const RepairModal = ({ repairDamage, ship }) => {
             </Form.Field>
           </Form>
           <div className="CritList">
-            {ship.crits.map((crit, i) => {
+            {crits.map((crit, i) => {
               return (
                 <p key={i}>
                   {crit.name} - Difficulty: {crit.difficulty}
@@ -69,7 +67,7 @@ const RepairModal = ({ repairDamage, ship }) => {
         <Button
           onClick={() => {
             updateState({ open: false });
-            repairDamage(ship, state.ht, state.ss);
+            repairDamage(state.ht, state.ss);
           }}
         >
           Done
@@ -78,6 +76,6 @@ const RepairModal = ({ repairDamage, ship }) => {
     </Modal>
   );
 };
-RepairModal.defaultProps = {};
-RepairModal.propTypes = { ship: PropType.object.isRequired };
+RepairModal.defaultProps = { crits: [] };
+RepairModal.propTypes = { crits: PropType.array };
 export default RepairModal;

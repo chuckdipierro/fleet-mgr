@@ -451,7 +451,7 @@ const weapons = [
     Restricted: 'Y',
     Rarity: 7,
     Size: '6-10',
-    Qualities: 'Breach 3, Slow Firing 1',
+    Qualities: 'Breach 3, Slow-Firing 1',
     Source: 'All Core',
   },
   {

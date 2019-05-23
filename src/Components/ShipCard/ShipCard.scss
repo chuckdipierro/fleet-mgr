@@ -1,16 +1,35 @@
-.ShipCard {
+.ui.card.ShipCard {
   display: inline-block;
   margin: 5px;
+  vertical-align: top;
   &.acted {
     opacity: 0.65;
   }
   &.knockedOut {
     box-shadow: 0px 0px 18px #a00b0b;
   }
+
+  &.destroyed {
+    box-shadow: 0px 0px 18px #303030;
+    opacity: 0.4;
+  }
   .swDice {
     font-family: 'eote_symbolregular';
   }
   .red {
     color: rgb(170, 0, 0);
+  }
+  .image {
+    object-fit: cover;
+  }
+  .CritTracker {
+    position: absolute;
+    left: 3%;
+    top: 200px;
+    .swDice {
+      -webkit-text-fill-color: #b90000; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #b1b1b1;
+    }
   }
 }

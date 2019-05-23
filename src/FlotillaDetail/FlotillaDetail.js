@@ -9,11 +9,11 @@ const FlotillaDetail = ({ flotilla }) => {
   const ShipList = flotilla.map((ship, i) => {
     let status = 'green';
     if (ship.curr_HT < ship.HT) {
-      status = 'red';
-    } else if (ship.curr_HT <= ship.HT / 2) {
       status = 'yellow';
+    } else if (ship.curr_HT <= ship.HT / 2) {
+      status = 'red';
     } else if (ship.HT <= 0) {
-      status = 'gray';
+      status = 'grey';
     }
     return <ShipCard key={i} {...ship} status={status} />;
   });

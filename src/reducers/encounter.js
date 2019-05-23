@@ -33,12 +33,12 @@ const encounter = (state = baseState, action) => {
           return ship.id === action.id;
         });
         rebels[selectedShip].acted = true;
-        console.log('Identified: ', rebels[selectedShip]);
       } else {
         let selectedShip = enemy.findIndex(ship => {
           return ship.id === action.id;
         });
         enemy[selectedShip].acted = true;
+        enemy[selectedShip].Weapons = JSON.parse(JSON.stringify(action.ship.Weapons));
       }
       return Object.assign({}, state, { enemy, rebels });
     case 'UPDATE_ENCOUNTER':
@@ -48,14 +48,6 @@ const encounter = (state = baseState, action) => {
         return ship.id === action.id;
       });
       enemy[newShip] = action.ship;
-      // enemy.forEach((ship, i) => {
-      //   let newShip = ship;
-      //   console.log('new: ', newShip.id, 'action', action.id);
-      //   if (newShip.id === action.id) {
-      //     newShip = action.ship;
-      //   }
-      // });
-      console.log('enemy:', enemy);
       return Object.assign({}, state, { enemy });
     default:
       return state;

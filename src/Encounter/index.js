@@ -41,9 +41,9 @@ const mapDispatchToProps = dispatch => {
     addFriendlyShip: ship => {
       dispatch(addFriendlyShip(ship.id));
     },
-    applyDamage: (shipID, target, damage, strain, crit, enemy = false) => {
+    applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
+      console.log(shipID, target, damage, strain, crit, fired, turn, enemy);
       let critHit = crit > 0;
-      console.log(crit, critHit);
 
       const targetUpdate = Object.assign({}, target, {
         curr_HT: target.curr_HT - damage >= 0 ? target.curr_HT - damage : 0,
@@ -51,22 +51,52 @@ const mapDispatchToProps = dispatch => {
       });
       if (critHit) {
         const chance = new Chance();
-        const key = chance.integer({ min: 0, max: 100 });
-        targetUpdate.crits.push(
-          vehicleCritTable(key + (targetUpdate.crits.length + crit - 1) * 10)
-        );
+        const critRoll =
+          chance.integer({ min: 0, max: 100 }) + (targetUpdate.crits.length + crit - 1) * 10;
+        if (critRoll > 145) {
+          targetUpdate.destroyed = true;
+        }
+        targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
       if (targetUpdate.curr_HT === 0 || targetUpdate.curr_SS === 0) {
         const chance = new Chance();
-        const key = chance.integer({ min: 0, max: 100 });
-        targetUpdate.crits.push(vehicleCritTable(key + targetUpdate.crits.length * 10));
+        const critRoll = chance.integer({ min: 0, max: 100 }) + targetUpdate.crits.length * 10;
+        if (critRoll > 145) {
+          targetUpdate.destroyed = true;
+        }
+        targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
+      fired.forEach(index => {
+        shipFiring.Weapons[index].fired = turn;
+      });
+      shipFiring.Weapons.forEach((weapon, i) => {
+        if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
+          const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
+
+          console.log(
+            i,
+            'Slow Firing found! turn:',
+            turn,
+            ' fired, ',
+            weapon.fired,
+            'SlowFiring: ',
+            slowFiring,
+            ' Eval:',
+            turn < weapon.fired + slowFiring
+          );
+          if (weapon.fired !== undefined && turn < weapon.fired + slowFiring) {
+            shipFiring.Weapons[i].disabled = true;
+          } else {
+            shipFiring.Weapons[i].disabled = false;
+          }
+        }
+      });
       if (enemy) {
         dispatch(updateEnemy(target.id, targetUpdate));
       } else {
         dispatch(setHull(target.id, targetUpdate));
       }
-      dispatch(setShipActed(enemy, shipID));
+      dispatch(setShipActed(enemy, shipID, shipFiring));
     },
     clearEncounter: () => {
       dispatch(clearEncounter());

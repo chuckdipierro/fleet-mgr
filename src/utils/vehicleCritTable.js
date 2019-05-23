@@ -1,5 +1,5 @@
 const vehicleCritTable = int => {
-  console.log('Vehicle: ', int);
+  console.log('Crit Roll: ', int);
   if (int < 10)
     return {
       difficulty: 1,

@@ -17,12 +17,24 @@ const RollResults = ({
   targetZone,
   validWeapons,
 }) => {
+  const firedWeapons = [];
+  const setBacks = 0;
+  const boosts = 0;
   const baseState = {
     buys: {},
     concentrated: false,
     critical: 0,
     results: {},
     selectedWeapons: validWeapons.filter(weapon => {
+      if (weapon.selected) {
+        firedWeapons.push(weapon.Index);
+        if (weapon.stats.Qualities.indexOf('Inaccurate') > -1) {
+          setBacks = parseInt(weapon.stats.Qualities.split('Inaccurate')[1].split(',')[0]);
+        }
+        if (weapon.stats.Qualities.indexOf('Accurate') > -1) {
+          boosts = 1;
+        }
+      }
       return weapon.selected;
     }),
   };
@@ -78,10 +90,11 @@ const RollResults = ({
     updateState(stateChange);
   };
   const submitResults = () => {
-    const damageNum =
+    let damageNum =
       parseInt(state.selectedWeapons[0].stats.Dam) +
       state.results.success +
       (state.concentrated ? weaponCount - 1 : 0);
+    if (state.results.success === undefined) damageNum = 0;
     const weaponUsed = validWeapons.filter(weapon => weapon.selected === true)[0];
     let breach = 0;
     let ion = false;
@@ -96,7 +109,8 @@ const RollResults = ({
       target,
       ion ? 0 : damageNum - armorSoak,
       ion ? damageNum - armorSoak : 0,
-      state.critical
+      state.critical,
+      firedWeapons
     );
   };
   let proficiency = 0;
@@ -128,8 +142,8 @@ const RollResults = ({
     ability,
     difficulty,
     proficiency,
-    setback: target[targetZone],
-    boost: aim ? 1 : 0,
+    setback: target[targetZone] + setBacks,
+    boost: (aim ? 1 : 0) + boosts,
   });
   state.selectedWeapons.forEach(weapon => {
     weaponCount += weapon.count;

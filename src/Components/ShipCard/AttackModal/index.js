@@ -10,7 +10,7 @@ import SelectWeapons from './SelectWeapons';
 import SelectProficiency from './SelectProficiency';
 import RollResults from './RollResults';
 
-const AttackModal = ({ applyDamage, ship, targets }) => {
+const AttackModal = ({ applyDamage, ship, targets, turn }) => {
   const baseState = {
     agility: 0,
     aim: false,
@@ -37,10 +37,11 @@ const AttackModal = ({ applyDamage, ship, targets }) => {
   const handleSelection = i => {
     const newValidWeapons = [].concat(...state.validWeapons);
     let { selectedCount } = state;
-    let weaponType = newValidWeapons[i].type;
     newValidWeapons[i].selected = !newValidWeapons[i].selected;
+    let weaponType = '';
     if (newValidWeapons[i].selected) {
       selectedCount += 1;
+      weaponType = newValidWeapons[i].type;
     } else if (selectedCount > 0) {
       selectedCount -= 1;
     }
@@ -52,7 +53,7 @@ const AttackModal = ({ applyDamage, ship, targets }) => {
 
   const validateWeapons = facing => {
     const validWeaponList = [];
-    ship.Weapons.forEach(weapon => {
+    ship.Weapons.forEach((weapon, i) => {
       if (
         weapon.position === facing ||
         (weapon.mount.indexOf('turret') > -1 &&
@@ -65,6 +66,16 @@ const AttackModal = ({ applyDamage, ship, targets }) => {
           !(facing === 'dorsal' && weapon.position === 'ventral') &&
           !(facing === 'ventral' && weapon.position === 'dorsal'))
       ) {
+        weapon.selected = false;
+        weapon.Index = i;
+        // if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
+        //   const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
+        //   if (turn < weapon.fired + slowFiring) {
+        //     weapon.disabled = true;
+        //   } else {
+        //     weapon.disabled = false;
+        //   }
+        // }
         validWeaponList.push(weapon);
       }
     });
@@ -95,7 +106,9 @@ const AttackModal = ({ applyDamage, ship, targets }) => {
           aft={state.target.defAft}
           port={state.target.defPort}
           starboard={state.target.defStarboard}
-          selectZone={zone => updateState({ targetZone: zone, step: (state.step += 1) })}
+          selectZone={zone =>
+            updateState({ targetZone: zone, step: (state.step += 1), weaponType: '' })
+          }
         />
       );
       break;
@@ -137,9 +150,8 @@ const AttackModal = ({ applyDamage, ship, targets }) => {
         <RollResults
           {...state}
           ship={ship}
-          applyDamage={(target, dam, strain, crit) => {
-            console.log('Crit in Attack: ', crit);
-            applyDamage(ship.id, target, dam, strain, crit);
+          applyDamage={(target, dam, strain, crit, fired) => {
+            applyDamage(ship.id, target, dam, strain, crit, fired);
             updateState(baseState);
           }}
         />

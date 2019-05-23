@@ -209,6 +209,1423 @@
       "id": 46805550,
       "Name": "test",
       "acted": true
+    },
+    {
+      "hullType": "Battlecruiser",
+      "Class": "Maelstrom",
+      "Silhouette": 8,
+      "Speed": 1,
+      "Handling": -3,
+      "defFore": 3,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 3,
+      "Armor": 8,
+      "HT": 125,
+      "SS": 65,
+      "Manufacturer": "Kuat Drive Yards",
+      "Massive": 2,
+      "Hyperdrive": "Primary: Class 3, Backup: Class 15",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "maelstrom.jpg",
+      "shipsComplement": "45,000 ofﬁcers, pilots, and enlisted crew.",
+      "dockingBay": "96 starfighters",
+      "encumbranceCapacity": "12,500",
+      "passengerCapacity": "15,000",
+      "Consumables": "Two Years",
+      "Cost": "158,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "selected": false,
+          "Index": 0,
+          "fired": 9,
+          "disabled": true
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "selected": false,
+          "Index": 1,
+          "fired": 9,
+          "disabled": true
+        },
+        {
+          "count": 10,
+          "linked": 1,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Ion Cannon (Battleship)",
+          "stats": {
+            "Name": "Ion Cannon (Battleship)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "9",
+            "Crit": "4",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 8,
+            "Size": "8-10",
+            "Qualities": "Breach 3, Ion, Slow-Firing 2",
+            "Source": "SWA/F02"
+          },
+          "selected": false,
+          "Index": 2,
+          "disabled": false,
+          "fired": 8
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Ion Cannon (Medium)",
+          "stats": {
+            "Name": "Ion Cannon (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "4",
+            "Price": "6,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Ion Cannon (Medium)",
+          "stats": {
+            "Name": "Ion Cannon (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "4",
+            "Price": "6,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Proton Torpedo",
+          "stats": {
+            "Name": "Proton Torpedo",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "8",
+            "Crit": "2",
+            "Price": "750",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "",
+            "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "selected": true,
+          "Index": 5,
+          "disabled": true,
+          "fired": 10
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Proton Torpedo",
+          "stats": {
+            "Name": "Proton Torpedo",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "8",
+            "Crit": "2",
+            "Price": "750",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "",
+            "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "disabled": false
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Proton Torpedo",
+          "stats": {
+            "Name": "Proton Torpedo",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "8",
+            "Crit": "2",
+            "Price": "750",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "",
+            "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "disabled": false
+        },
+        {
+          "count": 10,
+          "linked": 3,
+          "mount": "retractable",
+          "position": "ventral",
+          "type": "Concussion Missile (Assault)",
+          "stats": {
+            "Name": "Concussion Missile (Assault)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "10",
+            "Crit": "3",
+            "Price": "500",
+            "Restricted": "Y",
+            "Rarity": 5,
+            "Size": "",
+            "Qualities": "Blast 10, Breach 10, Inaccurate 4, Slow-Firing 4",
+            "Source": "All Core"
+          },
+          "disabled": false
+        },
+        {
+          "count": 20,
+          "linked": 0,
+          "mount": "ventral",
+          "position": "ventral",
+          "type": "Tractor Beam (Medium)",
+          "stats": {
+            "Name": "Tractor Beam (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Short ",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "8,000",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "5-10",
+            "Qualities": "Tractor 4",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "ventral",
+          "position": "ventral",
+          "type": "Tractor Beam (Heavy)",
+          "stats": {
+            "Name": "Tractor Beam (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Tractor 6",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWA36",
+      "curr_HT": 26,
+      "curr_SS": 38,
+      "crits": [
+        {
+          "difficulty": 1,
+          "name": "Losing Power to Shields",
+          "desc": "Decrease defense in affected defense zone by 1 until repaired. If ship or vehicle has no defense, suffer 1 system strain."
+        },
+        {
+          "difficulty": 1,
+          "name": "Tailspin",
+          "desc": "All firing from ship or vehicle suffers 2 Setbacks until end of pilot’s next turn."
+        },
+        {
+          "difficulty": 2,
+          "name": "Engine Damaged",
+          "desc": "Ship or vehicle ’s maximum speed reduced by 1, to a minimum of 1, until repaired."
+        },
+        {
+          "difficulty": 2,
+          "name": "Shields Down",
+          "desc": "Decrease defense in affected defense zone to 0 and all other defense zones by 1 point until repaired. If ship or vehicle has no defense, suffer 4 system strain."
+        },
+        {
+          "difficulty": 3,
+          "name": "Fire!",
+          "desc": "Fire rages through ship or vehicle and it immediately takes 2 system strain. Fire can be extinguished with appropriate skill, Vigilance or Cool checks at GM’s discretion. Takes one round per two silhouette to put out."
+        },
+        {
+          "difficulty": 2,
+          "name": "Power Fluctuations",
+          "desc": "Pilot cannot voluntarily inflict system strain on the ship until repaired."
+        }
+      ],
+      "captain": "Test",
+      "id": 3558324,
+      "Name": "Test",
+      "acted": true
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Dreadnought",
+      "Silhouette": 7,
+      "Speed": 2,
+      "Handling": -2,
+      "defFore": 1,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 1,
+      "Armor": 7,
+      "HT": 100,
+      "SS": 40,
+      "Manufacturer": "Rendili StarDrive",
+      "Massive": 1,
+      "Hyperdrive": "Primary: Class 4, Backup: 18",
+      "Navicomputer": "Yes",
+      "sensorRange": "Medium",
+      "image": "dreadnought.jpg",
+      "shipsComplement": "9,000 to 16,000 officers, pilots, and enlisted crew, depending on configuration.",
+      "dockingBay": "Twelve starfighters",
+      "encumbranceCapacity": "7,500",
+      "passengerCapacity": "3000 troops",
+      "Consumables": "One year",
+      "Cost": "7,200,000",
+      "Restricted": "N",
+      "Rarity": 6,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Turbolaser (Medium)",
+          "stats": {
+            "Name": "Turbolaser (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "10",
+            "Crit": "3",
+            "Price": "15,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Breach 3, Slow Firing 1",
+            "Source": "All Core"
+          },
+          "selected": true
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "aft",
+          "position": "aft",
+          "type": "Turbolaser (Medium)",
+          "stats": {
+            "Name": "Turbolaser (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "10",
+            "Crit": "3",
+            "Price": "15,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Breach 3, Slow Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 10,
+          "linked": 3,
+          "mount": "port",
+          "position": "port",
+          "type": "Turbolaser (Light)",
+          "stats": {
+            "Name": "Turbolaser (Light)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "9",
+            "Crit": "3",
+            "Price": "12,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "5-10",
+            "Qualities": "Breach 2, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "selected": true
+        },
+        {
+          "count": 10,
+          "linked": 3,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Turbolaser (Light)",
+          "stats": {
+            "Name": "Turbolaser (Light)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "9",
+            "Crit": "3",
+            "Price": "12,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "5-10",
+            "Qualities": "Breach 2, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "selected": true
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Laser Cannon (Heavy)",
+          "stats": {
+            "Name": "Laser Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "4-10",
+            "Qualities": "",
+            "Source": "All Core"
+          },
+          "selected": false
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Laser Cannon (Heavy)",
+          "stats": {
+            "Name": "Laser Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "4-10",
+            "Qualities": "",
+            "Source": "All Core"
+          },
+          "selected": false
+        }
+      ],
+      "Source": "SWA02",
+      "curr_HT": 10,
+      "curr_SS": 40,
+      "crits": [
+        {
+          "difficulty": 2,
+          "name": "Power Fluctuations",
+          "desc": "Pilot cannot voluntarily inflict system strain on the ship until repaired."
+        },
+        {
+          "difficulty": 1,
+          "name": "Tailspin",
+          "desc": "All firing from ship or vehicle suffers 2 Setbacks until end of pilot’s next turn."
+        },
+        {
+          "difficulty": 1,
+          "name": "Knocked Off Course",
+          "desc": "On next turn, pilot cannot execute any maneuvers. Instead, must make a Piloting check to regain bearings and resume course. Difficulty depends on current speed"
+        },
+        {
+          "difficulty": 2,
+          "name": "Power Fluctuations",
+          "desc": "Pilot cannot voluntarily inflict system strain on the ship until repaired."
+        },
+        {
+          "difficulty": 2,
+          "name": "Shields Failing ",
+          "desc": "Decrease defense in all defense zones by 1 until repaired. If ship or vehicle has no defense, suffer 2 system strain."
+        },
+        {
+          "difficulty": 2,
+          "name": "Engine Damaged",
+          "desc": "Ship or vehicle ’s maximum speed reduced by 1, to a minimum of 1, until repaired."
+        },
+        {
+          "difficulty": 2,
+          "name": "Shields Down",
+          "desc": "Decrease defense in affected defense zone to 0 and all other defense zones by 1 point until repaired. If ship or vehicle has no defense, suffer 4 system strain."
+        },
+        {
+          "difficulty": 2,
+          "name": "Shields Down",
+          "desc": "Decrease defense in affected defense zone to 0 and all other defense zones by 1 point until repaired. If ship or vehicle has no defense, suffer 4 system strain."
+        },
+        {
+          "difficulty": 2,
+          "name": "Engine Damaged",
+          "desc": "Ship or vehicle ’s maximum speed reduced by 1, to a minimum of 1, until repaired."
+        },
+        {
+          "difficulty": 3,
+          "name": "Vaporized",
+          "desc": "The ship or vehicle is completely destroyed, consumed in a large and dramatic fireball. Nothing survives."
+        }
+      ],
+      "captain": "Test",
+      "id": 19310531,
+      "Name": "Test",
+      "acted": false
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Keldabe",
+      "Silhouette": 7,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 8,
+      "HT": 100,
+      "SS": 60,
+      "Manufacturer": "MandalMotors / Zann Consortium",
+      "Massive": 1,
+      "Hyperdrive": "Primary: Class 2, Backup: Class 10",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "keldabe.jpg",
+      "shipsComplement": "6,000 crew",
+      "dockingBay": "36 starfighters",
+      "encumbranceCapacity": "8,000",
+      "passengerCapacity": "1,000",
+      "Consumables": "Two years",
+      "Cost": "200,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 4,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "fired": 1,
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "fired": 1,
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "turret",
+          "position": "port",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "fired": 1,
+          "disabled": true,
+          "selected": false
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          },
+          "selected": true
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          },
+          "selected": true
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "turret",
+          "position": "port",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          },
+          "selected": true
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Mass Driver Missile Launcher",
+          "stats": {
+            "Name": "Mass Driver Missile Launcher",
+            "Skill": "Gunnery",
+            "Range": "Extreme",
+            "Dam": "14",
+            "Crit": "3",
+            "Price": "500",
+            "Restricted": "Y",
+            "Rarity": 5,
+            "Size": "",
+            "Qualities": "Blast 4, Breach 4, Inaccurate 1, Limited Ammo 10, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "disabled": false,
+          "selected": false
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)",
+          "stats": {
+            "Name": "Tractor Beam (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Tractor 6",
+            "Source": "All Core"
+          },
+          "selected": false
+        }
+      ],
+      "Source": "SWE08",
+      "curr_HT": 55,
+      "curr_SS": 60,
+      "crits": [
+        {
+          "difficulty": 1,
+          "name": "Mechanical Stress",
+          "desc": "Ship or vehicle suffers 1 system strain."
+        },
+        {
+          "difficulty": 1,
+          "name": "Component Hit",
+          "desc": "Component from Small Ship Components or Large Ship Components (see tables below) is rendered inoperable until end of next round."
+        }
+      ],
+      "captain": "Test",
+      "id": 21805513,
+      "Name": "Test",
+      "acted": true
+    },
+    {
+      "hullType": "Cruiser",
+      "Class": "Neutron Star",
+      "Silhouette": 7,
+      "Speed": 1,
+      "Handling": -3,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 1,
+      "Armor": 6,
+      "HT": 80,
+      "SS": 50,
+      "Manufacturer": "Rendili Star Drive",
+      "Massive": 1,
+      "Hyperdrive": "Primary: Class 3, Backup: Class 20",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "neutron.png",
+      "shipsComplement": "2,200 crew",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "5,000",
+      "passengerCapacity": "250",
+      "Consumables": "One year",
+      "Cost": "2,800,000",
+      "Restricted": "N",
+      "Rarity": 4,
+      "HP": 6,
+      "Weapons": [
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "fired": 4,
+          "disabled": true
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "selected": true,
+          "disabled": false
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          },
+          "selected": true,
+          "disabled": false
+        },
+        {
+          "count": 5,
+          "linked": 0,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Laser Cannon (Heavy)",
+          "stats": {
+            "Name": "Laser Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "4-10",
+            "Qualities": "",
+            "Source": "All Core"
+          },
+          "selected": false
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Laser Cannon (Heavy)",
+          "stats": {
+            "Name": "Laser Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "4-10",
+            "Qualities": "",
+            "Source": "All Core"
+          },
+          "selected": false
+        },
+        {
+          "count": 10,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Laser Cannon (Heavy)",
+          "stats": {
+            "Name": "Laser Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "4-10",
+            "Qualities": "",
+            "Source": "All Core"
+          },
+          "selected": false
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)",
+          "stats": {
+            "Name": "Tractor Beam (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Tractor 6",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWE08",
+      "curr_HT": 0,
+      "curr_SS": 44,
+      "crits": [
+        {
+          "difficulty": 2,
+          "name": "Hyperdrive or Navicomputer Failure",
+          "desc": "Cannot make any jump to hyperspace until repaired. If ship or vehicle has no hyperdrive, navigation systems fail leaving it unable to tell where it is or is going"
+        },
+        {
+          "difficulty": 2,
+          "name": "Shield Overload",
+          "desc": "Decrease defense in all defense zones to 0 until repaired. In addition, suffer 2 system strain. Cannot be repaired until end of encounter. If ship or vehicle has no defense, reduce armor by 1 until repaired."
+        },
+        {
+          "difficulty": 3,
+          "name": "Engines Down",
+          "desc": "Ship or vehicle’s maximum speed reduced to 0. In addition, ship or vehicle cannot execute  maneuvers until repaired. Ship continues on course at current speed and cannot be stopped or course changed until repaired."
+        },
+        {
+          "difficulty": 2,
+          "name": "Shield Overload",
+          "desc": "Decrease defense in all defense zones to 0 until repaired. In addition, suffer 2 system strain. Cannot be repaired until end of encounter. If ship or vehicle has no defense, reduce armor by 1 until repaired."
+        },
+        {
+          "difficulty": 2,
+          "name": "Power Fluctuations",
+          "desc": "Pilot cannot voluntarily inflict system strain on the ship until repaired."
+        },
+        {
+          "difficulty": 1,
+          "name": "Component Hit",
+          "desc": "Component from Small Ship Components or Large Ship Components (see tables below) is rendered inoperable until end of next round."
+        }
+      ],
+      "captain": "Test",
+      "id": 3898871,
+      "Name": "Test",
+      "acted": false
+    },
+    {
+      "hullType": "Carrier",
+      "Class": "Ton-Falk",
+      "Silhouette": 7,
+      "Speed": 2,
+      "Handling": -3,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "Armor": 4,
+      "HT": 80,
+      "SS": 60,
+      "Manufacturer": "Kuat Drive Yards",
+      "Massive": 1,
+      "Hyperdrive": "Primary: Class 2, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "image": "tonfalk.jpg",
+      "shipsComplement": "4,000 officers, pilots, and enlisted crew",
+      "dockingBay": "72 starfighters",
+      "encumbranceCapacity": "9,000",
+      "passengerCapacity": "800 troops",
+      "Consumables": "One year",
+      "Cost": "3,500,000",
+      "Restricted": "Y",
+      "Rarity": 7,
+      "HP": 3,
+      "Weapons": [
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Laser Cannon (Light)",
+          "stats": {
+            "Name": "Laser Cannon (Light)",
+            "Skill": "Gunnery",
+            "Range": "Close",
+            "Dam": "5",
+            "Crit": "3",
+            "Price": "5,500",
+            "Restricted": "N",
+            "Rarity": 4,
+            "Size": "3-10",
+            "Qualities": "",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 5,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Laser Cannon (Light)",
+          "stats": {
+            "Name": "Laser Cannon (Light)",
+            "Skill": "Gunnery",
+            "Range": "Close",
+            "Dam": "5",
+            "Crit": "3",
+            "Price": "5,500",
+            "Restricted": "N",
+            "Rarity": 4,
+            "Size": "3-10",
+            "Qualities": "",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mod": {
+            "Qualities": {
+              "Guided": "4"
+            }
+          },
+          "mount": "forward",
+          "position": "forward",
+          "type": "Concussion Missile Launcher",
+          "stats": {
+            "Name": "Concussion Missile Launcher",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "3-10",
+            "Qualities": "Blast 4, Breach 4, Guided 4, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 4,
+          "linked": 0,
+          "mount": "hull",
+          "position": "hull",
+          "type": "Tractor Beam (Medium)",
+          "stats": {
+            "Name": "Tractor Beam (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Short ",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "8,000",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "5-10",
+            "Qualities": "Tractor 4",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWA25",
+      "curr_HT": 80,
+      "curr_SS": 60,
+      "crits": [],
+      "captain": "Test",
+      "id": 66915781,
+      "Name": "Test"
+    },
+    {
+      "hullType": "Frigate",
+      "Class": "Kandoben",
+      "Silhouette": 6,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 2,
+      "image": "kandoben.jpg",
+      "Armor": 6,
+      "HT": 75,
+      "SS": 60,
+      "Manufacturer": "Corellian Engineering Corporation",
+      "Massive": 0,
+      "Hyperdrive": "Primary: Class 2, Backup: Class 10",
+      "Navicomputer": "Yes",
+      "sensorRange": "Long",
+      "shipsComplement": "800 crew and troop support",
+      "dockingBay": "24 starfighters, six assault speeders, four troop speeders, two command speeders, and two shuttles.",
+      "encumbranceCapacity": "4,000",
+      "passengerCapacity": "250",
+      "Consumables": "Two years",
+      "Cost": "10,000,000",
+      "Restricted": "Y",
+      "Rarity": 8,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Heavy)",
+          "stats": {
+            "Name": "Turbolaser (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Long",
+            "Dam": "11",
+            "Crit": "3",
+            "Price": "20,000",
+            "Restricted": "Y",
+            "Rarity": 8,
+            "Size": "6-10",
+            "Qualities": "Breach 4, Slow-Firing 2",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "starboard",
+          "position": "starboard",
+          "type": "Turbolaser (Light)",
+          "stats": {
+            "Name": "Turbolaser (Light)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "9",
+            "Crit": "3",
+            "Price": "12,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "5-10",
+            "Qualities": "Breach 2, Slow-Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "port",
+          "position": "port",
+          "type": "Turbolaser (Light)",
+          "stats": {
+            "Name": "Turbolaser (Light)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "9",
+            "Crit": "3",
+            "Price": "12,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "5-10",
+            "Qualities": "Breach 2, Slow-Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "turret",
+          "position": "ventral",
+          "type": "Ion Cannon (Heavy)",
+          "stats": {
+            "Name": "Ion Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "7",
+            "Crit": "4",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 7,
+            "Size": "6-10",
+            "Qualities": "Slow Firing 1, Ion",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Proton Torpedo Launcher",
+          "stats": {
+            "Name": "Proton Torpedo Launcher",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "8",
+            "Crit": "2",
+            "Price": "9,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "3-10",
+            "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Heavy)",
+          "stats": {
+            "Name": "Tractor Beam (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "10,000",
+            "Restricted": "N",
+            "Rarity": 6,
+            "Size": "5-10",
+            "Qualities": "Tractor 6",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "Source": "SWE08",
+      "curr_HT": 75,
+      "curr_SS": 60,
+      "crits": [],
+      "captain": "test",
+      "id": 62661647,
+      "Name": "test"
+    },
+    {
+      "hullType": "Transport",
+      "Class": "YZ-775",
+      "Silhouette": 5,
+      "Speed": 2,
+      "Handling": -3,
+      "defFore": 1,
+      "defPort": 1,
+      "defStarboard": 1,
+      "defAft": 1,
+      "image": "yz775.jpg",
+      "Armor": 4,
+      "HT": 34,
+      "SS": 25,
+      "Manufacturer": "Corellian Engineering Corporation",
+      "Massive": 0,
+      "Hyperdrive": "Primary: Class 1, Backup: Class 12",
+      "Navicomputer": "Yes",
+      "sensorRange": "Medium",
+      "shipsComplement": "One captain, one pilot, one copilot, two engineers, one cargo master, two gunners",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "850",
+      "passengerCapacity": "None",
+      "Consumables": "Six months",
+      "Cost": "500,000",
+      "Restricted": "N",
+      "Rarity": 3,
+      "HP": 2,
+      "Weapons": [
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "aft",
+          "position": "aft",
+          "type": "Concussion Missile Launcher",
+          "stats": {
+            "Name": "Concussion Missile Launcher",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "3-10",
+            "Qualities": "Blast 4, Breach 4, Guided 3, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "fired": 1,
+          "disabled": false
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Light)",
+          "stats": {
+            "Name": "Turbolaser (Light)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "9",
+            "Crit": "3",
+            "Price": "12,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "5-10",
+            "Qualities": "Breach 2, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "selected": true,
+          "disabled": false
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "port",
+          "type": "Laser Cannon (Medium)",
+          "stats": {
+            "Name": "Laser Cannon (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Close",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,000",
+            "Restricted": "N",
+            "Rarity": 4,
+            "Size": "3-10",
+            "Qualities": "",
+            "Source": "All Core"
+          },
+          "selected": false
+        },
+        {
+          "count": 1,
+          "linked": 1,
+          "mount": "turret",
+          "position": "starboard",
+          "type": "Laser Cannon (Medium)",
+          "stats": {
+            "Name": "Laser Cannon (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Close",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,000",
+            "Restricted": "N",
+            "Rarity": 4,
+            "Size": "3-10",
+            "Qualities": "",
+            "Source": "All Core"
+          },
+          "selected": false
+        },
+        {
+          "count": 2,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Proton Torpedo Launcher",
+          "stats": {
+            "Name": "Proton Torpedo Launcher",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "8",
+            "Crit": "2",
+            "Price": "9,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "3-10",
+            "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+            "Source": "All Core"
+          },
+          "selected": false,
+          "disabled": false
+        }
+      ],
+      "Source": "SWE08",
+      "curr_HT": 0,
+      "curr_SS": 25,
+      "crits": [
+        {
+          "difficulty": 2,
+          "name": "Shields Failing ",
+          "desc": "Decrease defense in all defense zones by 1 until repaired. If ship or vehicle has no defense, suffer 2 system strain."
+        },
+        {
+          "difficulty": 1,
+          "name": "Component Hit",
+          "desc": "Component from Small Ship Components or Large Ship Components (see tables below) is rendered inoperable until end of next round."
+        },
+        {
+          "difficulty": 1,
+          "name": "Component Hit",
+          "desc": "Component from Small Ship Components or Large Ship Components (see tables below) is rendered inoperable until end of next round."
+        },
+        {
+          "difficulty": 2,
+          "name": "Shield Overload",
+          "desc": "Decrease defense in all defense zones to 0 until repaired. In addition, suffer 2 system strain. Cannot be repaired until end of encounter. If ship or vehicle has no defense, reduce armor by 1 until repaired."
+        }
+      ],
+      "captain": "test",
+      "id": 11472402,
+      "Name": "test",
+      "acted": true
     }
   ],
   "shiplist": [
@@ -963,6 +2380,7 @@
       "defPort": 2,
       "defStarboard": 2,
       "defAft": 2,
+      "image": "kandoben.jpg",
       "Armor": 6,
       "HT": 75,
       "SS": 60,
@@ -1394,6 +2812,7 @@
       "defPort": 1,
       "defStarboard": 1,
       "defAft": 1,
+      "image": "yz775.jpg",
       "Armor": 4,
       "HT": 34,
       "SS": 25,

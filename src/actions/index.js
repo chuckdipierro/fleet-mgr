@@ -101,11 +101,13 @@ export const getShiplist = () => {
     }
   };
 };
-export const setShipActed = (enemy, id) => {
+export const setShipActed = (enemy, id, ship) => {
+  if (enemy) setHull(ship);
   return {
     type: 'SET_SHIP_ACTED',
     enemy,
     id,
+    ship,
   };
 };
 export const setWeaponList = weapons => {

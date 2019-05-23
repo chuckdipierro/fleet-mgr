@@ -36,12 +36,13 @@ const Encounter = ({
         </Button.Group>
       </div>
       <Tray
-        applyDamage={(id, target, damage, strain, crit) =>
-          applyDamage(id, target, damage, strain, crit, true)
+        applyDamage={(id, target, damage, strain, crit, fired, ship) =>
+          applyDamage(id, target, damage, strain, crit, fired, turn, ship, true)
         }
         repairDamage={repairDamage}
         ships={rebels}
         targets={enemy}
+        turn={turn}
       />
       <div className="btn-tray">
         <AddModal
@@ -60,10 +61,13 @@ const Encounter = ({
         />
       </div>
       <Tray
-        applyDamage={applyDamage}
+        applyDamage={(id, target, damage, strain, crit, fired, ship) =>
+          applyDamage(id, target, damage, strain, crit, fired, turn, ship, false)
+        }
         repairDamage={(target, hull, strain) => repairDamage(target, hull, strain, true)}
         ships={enemy}
         targets={rebels}
+        turn={turn}
       />
     </div>
   );

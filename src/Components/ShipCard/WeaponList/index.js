@@ -15,14 +15,16 @@ const WeaponList = ({ weapons, selected, weaponType }) => {
         <List.Content>
           <Checkbox
             checked={!!wpn.selected}
-            disabled={weaponType.length > 0 && weaponType !== wpn.type}
+            disabled={(weaponType.length > 0 && weaponType !== wpn.type) || wpn.disabled}
             onChange={() => selected(i)}
           />
           <List.Header as="a">{`${wpn.count} ${wpn.mount.charAt(0).toUpperCase() +
             wpn.mount.slice(1)} Mounted ${wpnType}${
             parseInt(wpn.count, 16) > 1 ? 's' : ''
           }`}</List.Header>
-          <List.Description>{`${wpn.stats.Range} Range`}</List.Description>
+          <List.Description>{`${wpn.stats.Range} Range ${
+            wpn.disabled ? '- On Cooldown' : ''
+          }`}</List.Description>
         </List.Content>
       </List.Item>
     );

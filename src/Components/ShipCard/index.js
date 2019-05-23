@@ -12,6 +12,7 @@ const ShipCard = ({
   crits,
   curr_HT,
   curr_SS,
+  destroyed,
   HT,
   hullType,
   image,
@@ -22,18 +23,25 @@ const ShipCard = ({
   SS,
   status,
   targets,
+  turn,
 }) => {
-  console.log('Crits: ', crits);
   return (
-    <div className={`ShipCard ${acted ? 'acted' : ''}  ${curr_HT === 0 ? 'knockedOut' : ''}`}>
-      <Card color={status} className={`${status}`}>
-        {targets.length > 0 && !acted && (
-          <Button.Group floated="right">
-            <AttackModal applyDamage={applyDamage} ship={ship} targets={targets} />
-            <RepairModal repairDamage={repairDamage} ship={ship} />
-          </Button.Group>
-        )}
-        <Image src={`/img/${image}`} />
+    <Card
+      color={status}
+      className={`${status} ShipCard ${applyDamage && acted ? 'acted' : ''}  ${
+        curr_HT === 0 || curr_SS === 0 ? 'knockedOut' : ''
+      } ${destroyed ? 'destroyed' : ''}`}
+    >
+      {!destroyed && (
+        <Button.Group floated="right">
+          {targets.length > 0 && !acted && curr_HT > 0 && curr_SS > 0 && (
+            <AttackModal applyDamage={applyDamage} ship={ship} targets={targets} turn={turn} />
+          )}
+          <RepairModal repairDamage={(ht, ss) => repairDamage(ship, ht, ss)} crits={crits} />
+        </Button.Group>
+      )}
+      <Image src={`/img/${image}`} height="200" />
+      <Card.Description className="CritTracker">
         {crits.map((crit, i) => {
           return (
             <span key={i} className="swDice red">
@@ -41,35 +49,35 @@ const ShipCard = ({
             </span>
           );
         })}
-        <Card.Content>
-          <Card.Header>{Name}</Card.Header>
-          <Card.Meta>
-            <span className="date">
-              {Class} Class {hullType}
-            </span>
-          </Card.Meta>
-          <Card.Description>
-            <p>
-              <b>
-                Hull Trauma: {curr_HT}/{HT}
-              </b>
-            </p>
-            <p>
-              <b>
-                System Strain: {curr_SS}/{SS}
-              </b>
-            </p>
-            <p>
-              <b>Crew: {shipsComplement}</b>
-            </p>
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          {/* <Icon name="user" /> */}
-          {hullType}
-        </Card.Content>
-      </Card>
-    </div>
+      </Card.Description>
+      <Card.Content>
+        <Card.Header>{Name}</Card.Header>
+        <Card.Meta>
+          <span className="date">
+            {Class} Class {hullType}
+          </span>
+        </Card.Meta>
+        <Card.Description>
+          <p>
+            <b>
+              Hull Trauma: {curr_HT}/{HT}
+            </b>
+          </p>
+          <p>
+            <b>
+              System Strain: {curr_SS}/{SS}
+            </b>
+          </p>
+          <p>
+            <b>Crew: {shipsComplement}</b>
+          </p>
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        {/* <Icon name="user" /> */}
+        {hullType}
+      </Card.Content>
+    </Card>
   );
 };
 ShipCard.defaultProps = {
