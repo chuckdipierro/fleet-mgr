@@ -56,6 +56,7 @@ const AddModal = ({ addShip, btnTxt, hdrTxt, shipList, title, weaponList }) => {
             placeholder="Choose a Ship"
             options={shipOptions}
             onChange={(e, { value }) => setShip(shipList[value])}
+            search
           />
 
           <Button

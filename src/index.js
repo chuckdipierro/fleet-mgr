@@ -4,7 +4,8 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import fleetManager from './reducers';
-import { getEncounter, getFlotilla, getShiplist, setWeaponList } from './actions';
+import { getEncounter, getFlotilla, getShiplist, setShipForm, setWeaponList } from './actions';
+import shipForm from './API/shipForm';
 import weapons from './API/weapons';
 import './index.css';
 import App from './App';
@@ -16,6 +17,7 @@ const store = createStore(fleetManager, composeEnhancers(applyMiddleware(ReduxTh
 store.dispatch(getEncounter(JSON.parse(window.localStorage.getItem('fleet_encounter'))));
 store.dispatch(getFlotilla());
 store.dispatch(getShiplist());
+store.dispatch(setShipForm(shipForm));
 store.dispatch(setWeaponList(weapons));
 
 ReactDOM.render(

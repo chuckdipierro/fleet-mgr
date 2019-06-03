@@ -19,6 +19,7 @@ const Encounter = ({
   repairDamage,
   shipList,
   turn,
+  updateDefense,
   weaponList,
 }) => {
   if (!fetchComplete) return <div>Loading</div>;
@@ -43,6 +44,9 @@ const Encounter = ({
         ships={rebels}
         targets={enemy}
         turn={turn}
+        updateDefense={(target, aft, fore, port, starboard) =>
+          updateDefense(target, aft, fore, port, starboard, false)
+        }
       />
       <div className="btn-tray">
         <AddModal
@@ -64,10 +68,15 @@ const Encounter = ({
         applyDamage={(id, target, damage, strain, crit, fired, ship) =>
           applyDamage(id, target, damage, strain, crit, fired, turn, ship, false)
         }
-        repairDamage={(target, hull, strain) => repairDamage(target, hull, strain, true)}
+        repairDamage={(target, hull, strain, crits) =>
+          repairDamage(target, hull, strain, crits, true)
+        }
         ships={enemy}
         targets={rebels}
         turn={turn}
+        updateDefense={(target, aft, fore, port, starboard) =>
+          updateDefense(target, aft, fore, port, starboard, true)
+        }
       />
     </div>
   );

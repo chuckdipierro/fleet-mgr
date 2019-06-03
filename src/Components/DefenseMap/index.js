@@ -2,21 +2,57 @@ import React from 'react';
 import PropType from 'prop-types';
 
 import './DefenseMap.scss';
+import DefenseWidget from './DefenseWidget';
 
-const DefenseMap = ({ fore, aft, port, selectZone, starboard }) => {
+const DefenseMap = ({
+  aft,
+  center,
+  fore,
+  lowerShield,
+  port,
+  raiseShield,
+  selectZone,
+  starboard,
+}) => {
   return (
     <div className="DefenseMap">
       <button className="fore" onClick={() => selectZone('defFore')}>
-        <span className="text">{fore}</span>
+        <DefenseWidget
+          center={center}
+          lowerShield={() => lowerShield('fore')}
+          raiseShield={() => raiseShield('fore')}
+          val={fore}
+        />
       </button>
       <button className="aft" onClick={() => selectZone('defAft')}>
-        <span className="text">{aft}</span>
+        <DefenseWidget
+          center={center}
+          lowerShield={() => lowerShield('aft')}
+          raiseShield={() => raiseShield('aft')}
+          val={aft}
+        />
       </button>
+      {center !== undefined && (
+        <div className="center">
+          Avail: <br />
+          {center}
+        </div>
+      )}
       <button className="port" onClick={() => selectZone('defPort')}>
-        <span className="text">{port}</span>
+        <DefenseWidget
+          center={center}
+          lowerShield={() => lowerShield('port')}
+          raiseShield={() => raiseShield('port')}
+          val={port}
+        />
       </button>
       <button className="starboard" onClick={() => selectZone('defStarboard')}>
-        <span className="text">{starboard}</span>
+        <DefenseWidget
+          center={center}
+          lowerShield={() => lowerShield('starboard')}
+          raiseShield={() => raiseShield('starboard')}
+          val={starboard}
+        />
       </button>
     </div>
   );

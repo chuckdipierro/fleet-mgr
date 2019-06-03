@@ -61,6 +61,7 @@ const AddShip = ({ addShip, shiplist, weaponList }) => {
             placeholder="Choose a Ship"
             options={shipOptions}
             onChange={(e, { value }) => setShip(shiplist[value])}
+            search
           />
 
           <Button

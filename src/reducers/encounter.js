@@ -9,7 +9,7 @@ const encounter = (state = baseState, action) => {
         : Object.assign({}, state, { squadFull: true });
     case 'ADD_ENEMY_SHIP':
       return Object.assign({}, state, {
-        enemy: [...state.enemy, { ...action.ship, acted: false }],
+        enemy: [...state.enemy, { ...JSON.parse(JSON.stringify(action.ship)), acted: false }],
       });
     case 'CLEAR_ENCOUNTER':
       return baseState;
@@ -47,7 +47,8 @@ const encounter = (state = baseState, action) => {
       let newShip = enemy.findIndex(ship => {
         return ship.id === action.id;
       });
-      enemy[newShip] = action.ship;
+      console.log('Found Ship: ', action.id, action.ship);
+      enemy[newShip] = JSON.parse(JSON.stringify(action.ship));
       return Object.assign({}, state, { enemy });
     default:
       return state;

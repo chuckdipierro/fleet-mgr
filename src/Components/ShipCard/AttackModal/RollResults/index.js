@@ -18,12 +18,14 @@ const RollResults = ({
   validWeapons,
 }) => {
   const firedWeapons = [];
-  const setBacks = 0;
-  const boosts = 0;
+  let setBacks = 0;
+  let boosts = 0;
+  let linkedMax = 0;
   const baseState = {
     buys: {},
     concentrated: false,
     critical: 0,
+    linked: 0,
     results: {},
     selectedWeapons: validWeapons.filter(weapon => {
       if (weapon.selected) {
@@ -33,6 +35,9 @@ const RollResults = ({
         }
         if (weapon.stats.Qualities.indexOf('Accurate') > -1) {
           boosts = 1;
+        }
+        if (weapon.linked > 0) {
+          linkedMax = weapon.linked;
         }
       }
       return weapon.selected;
@@ -71,6 +76,9 @@ const RollResults = ({
     } else if (type === 'critical') {
       stateChange.critical = state.critical + 1;
       num = state.critical + (spent ? 0 : 1);
+    } else if (type === 'linked') {
+      stateChange.linked = state.linked + 1;
+      num = state.linked + (spent ? 0 : 1);
     }
     stateChange.buys = updateBuys(type, 'triumph', 1, num);
     updateState(stateChange);
@@ -94,6 +102,7 @@ const RollResults = ({
       parseInt(state.selectedWeapons[0].stats.Dam) +
       state.results.success +
       (state.concentrated ? weaponCount - 1 : 0);
+    let linkedDamage = 0;
     if (state.results.success === undefined) damageNum = 0;
     const weaponUsed = validWeapons.filter(weapon => weapon.selected === true)[0];
     let breach = 0;
@@ -105,10 +114,13 @@ const RollResults = ({
       ion = true;
     }
     const armorSoak = target.Armor - breach > 0 ? target.Armor - breach : 0;
+    linkedDamage =
+      (parseInt(state.selectedWeapons[0].stats.Dam) + state.results.success - armorSoak) *
+      state.linked;
     applyDamage(
       target,
-      ion ? 0 : damageNum - armorSoak,
-      ion ? damageNum - armorSoak : 0,
+      ion ? 0 : damageNum - armorSoak + linkedDamage,
+      ion ? damageNum - armorSoak + linkedDamage : 0,
       state.critical,
       firedWeapons
     );
@@ -235,6 +247,7 @@ const RollResults = ({
             <Triumph
               concentrated={state.concentrated}
               key={index * 100 + i * 100 + 1}
+              linkedAvail={linkedMax > 0 && state.linked < linkedMax}
               index={i}
               select={type => selectTriumph(type, i < triSpent)}
               spent={i < triSpent}
@@ -264,7 +277,8 @@ const RollResults = ({
           ? 'None'
           : parseInt(state.selectedWeapons[0].stats.Dam) +
             state.results.success +
-            (state.concentrated ? weaponCount - 1 : 0)}
+            (state.concentrated ? weaponCount - 1 : 0) +
+            state.linked * parseInt(state.selectedWeapons[0].stats.Dam)}
       </div>
       <div>
         <Checkbox
@@ -323,6 +337,42 @@ const RollResults = ({
         </Button.Group>
         Critical Hit ({parseInt(state.selectedWeapons[0].stats.Crit) + target.Massive} Adv.)
       </div>
+      {linkedMax > 0 && (
+        <div>
+          <Button.Group
+            disabled={state.results.success === undefined || state.results.success === 0}
+          >
+            <Button
+              disabled={
+                state.results.success === undefined ||
+                state.results.advantage === undefined ||
+                advSpent + 2 > state.results.advantage ||
+                state.linked === linkedMax
+              }
+              icon="plus"
+              onClick={() => {
+                updateState({
+                  linked: state.linked + 1,
+                  buys: updateBuys('linked', 'adv', 2, state.linked + 1),
+                });
+              }}
+            />
+
+            <div className="critNum button">{state.linked}</div>
+            <Button
+              disabled={state.linked === 0}
+              icon="minus"
+              onClick={() => {
+                updateState({
+                  linked: state.linked - 1,
+                  buys: updateBuys('linked', 'adv', 2, state.linked),
+                });
+              }}
+            />
+          </Button.Group>
+          Link Weapons: (2 Adv.)
+        </div>
+      )}
       <div>
         <Button onClick={() => submitResults()}>Submit Results</Button>
       </div>

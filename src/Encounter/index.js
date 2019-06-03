@@ -42,9 +42,8 @@ const mapDispatchToProps = dispatch => {
       dispatch(addFriendlyShip(ship.id));
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
-      console.log(shipID, target, damage, strain, crit, fired, turn, enemy);
+      console.log('Strain: ', strain);
       let critHit = crit > 0;
-
       const targetUpdate = Object.assign({}, target, {
         curr_HT: target.curr_HT - damage >= 0 ? target.curr_HT - damage : 0,
         curr_SS: target.curr_SS - strain >= 0 ? target.curr_SS - strain : 0,
@@ -73,17 +72,6 @@ const mapDispatchToProps = dispatch => {
         if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
           const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
 
-          console.log(
-            i,
-            'Slow Firing found! turn:',
-            turn,
-            ' fired, ',
-            weapon.fired,
-            'SlowFiring: ',
-            slowFiring,
-            ' Eval:',
-            turn < weapon.fired + slowFiring
-          );
           if (weapon.fired !== undefined && turn < weapon.fired + slowFiring) {
             shipFiring.Weapons[i].disabled = true;
           } else {
@@ -91,10 +79,12 @@ const mapDispatchToProps = dispatch => {
           }
         }
       });
-      if (enemy) {
-        dispatch(updateEnemy(target.id, targetUpdate));
-      } else {
-        dispatch(setHull(target.id, targetUpdate));
+      if (damage > 0 || strain > 0) {
+        if (enemy) {
+          dispatch(updateEnemy(target.id, targetUpdate));
+        } else {
+          dispatch(setHull(target.id, targetUpdate));
+        }
       }
       dispatch(setShipActed(enemy, shipID, shipFiring));
     },
@@ -104,7 +94,7 @@ const mapDispatchToProps = dispatch => {
     clearRound: () => {
       dispatch(clearRound());
     },
-    repairDamage: (target, hull, strain, enemy = false) => {
+    repairDamage: (target, hull, strain, crits, enemy = false) => {
       const targetUpdate = Object.assign({}, target, {
         curr_HT:
           target.curr_HT + parseInt(hull) > target.HT ? target.HT : target.curr_HT + parseInt(hull),
@@ -112,6 +102,27 @@ const mapDispatchToProps = dispatch => {
           target.curr_SS + parseInt(strain) > target.SS
             ? target.SS
             : target.curr_SS + parseInt(strain),
+      });
+      crits.forEach((crit, i) => {
+        if (crit) {
+          targetUpdate.crits[i] = null;
+        }
+      });
+      targetUpdate.crits = targetUpdate.crits.filter(item => {
+        return item != null;
+      });
+      if (enemy) {
+        dispatch(updateEnemy(target.id, targetUpdate));
+      } else {
+        dispatch(setHull(target.id, targetUpdate));
+      }
+    },
+    updateDefense: (target, defAft, defFore, defPort, defStarboard, enemy = false) => {
+      const targetUpdate = Object.assign({}, target, {
+        defAft,
+        defFore,
+        defPort,
+        defStarboard,
       });
       if (enemy) {
         dispatch(updateEnemy(target.id, targetUpdate));

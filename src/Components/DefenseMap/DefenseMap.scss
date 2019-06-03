@@ -1,12 +1,20 @@
 .DefenseMap {
   border-radius: 100%;
+  border: 5px solid #1d5388;
   margin: 10px auto;
   overflow: hidden;
   position: relative;
   height: 300px;
   width: 300px;
-
-  button {
+  .center {
+    top: calc(50% - 20px);
+    right: calc(50% - 26px);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+  }
+  > button {
     background: transparent;
     border: 0px solid black;
     height: 0px;
@@ -14,76 +22,78 @@
     width: 0px;
     &:before {
       color: #fff;
+      left: calc(50% - 25px);
       position: absolute;
+      text-align: center;
+      width: 50px;
     }
     &.aft {
-      border-bottom: 125px solid green;
+      border-bottom: 125px solid #3088e2;
       border-left: 125px solid transparent;
       border-right: 125px solid transparent;
-      bottom: 0px;
+      bottom: -8px;
       left: 0px;
       width: 100%;
       &:before {
+        bottom: -65px;
         content: 'Aft';
-        left: 20px;
-        bottom: -70px;
       }
-      span {
-        left: 50%;
+      .DefenseWidget {
+        left: calc(50% - 50px);
         bottom: -90px;
       }
     }
     &.fore {
-      border-top: 125px solid green;
+      border-top: 125px solid #3088e2;
       border-left: 125px solid transparent;
       border-right: 125px solid transparent;
-      top: 0px;
+      top: -4px;
       width: 100%;
       &:before {
         content: 'Forward';
-        left: 0px;
         top: -70px;
       }
-      span {
-        left: 50%;
-        top: -90px;
+      .DefenseWidget {
+        left: calc(50% - 50px);
+        top: -50px;
       }
     }
     &.port {
       border-bottom: 125px solid transparent;
-      border-left: 125px solid green;
+      border-left: 125px solid #3088e2;
       border-top: 125px solid transparent;
       height: 296px;
-      left: 0;
-      top: 2px;
+      left: -4px;
+      top: -1px;
       &:before {
         content: 'Port';
-        left: -70px;
+        left: -82px;
       }
-      span {
-        left: -70px;
-        top: 40px;
+      .DefenseWidget {
+        left: -108px;
+        top: 42px;
       }
     }
     &.starboard {
       border-bottom: 125px solid transparent;
-      border-right: 125px solid green;
+      border-right: 125px solid #3088e2;
       border-top: 125px solid transparent;
       height: 296px;
-      right: 0;
-      top: 2px;
+      right: -4px;
+      top: -1px;
       &:before {
         content: 'Starboard';
-        right: -90px;
+        left: 43px;
       }
-      span {
-        right: -70px;
-        top: 40px;
+      .DefenseWidget {
+        right: -108px;
+        top: 42px;
       }
     }
-    span {
+    .DefenseWidget {
       color: #fff;
       font-weight: bold;
+      width: 100px;
       position: absolute;
     }
   }

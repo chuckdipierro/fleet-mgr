@@ -5,7 +5,7 @@ import ShipCard from '../Components/ShipCard';
 
 import './FlotillaDetail.scss';
 
-const FlotillaDetail = ({ flotilla }) => {
+const FlotillaDetail = ({ flotilla, repairDamage, updateDefense }) => {
   const ShipList = flotilla.map((ship, i) => {
     let status = 'green';
     if (ship.curr_HT < ship.HT) {
@@ -15,7 +15,16 @@ const FlotillaDetail = ({ flotilla }) => {
     } else if (ship.HT <= 0) {
       status = 'grey';
     }
-    return <ShipCard key={i} {...ship} status={status} />;
+    return (
+      <ShipCard
+        key={i}
+        {...ship}
+        status={status}
+        ship={ship}
+        repairDamage={repairDamage}
+        updateDefense={updateDefense}
+      />
+    );
   });
   return (
     <div className="FlotillaDetail">

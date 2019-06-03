@@ -3,7 +3,7 @@ import PropType from 'prop-types';
 import { Button, Label, Popup } from 'semantic-ui-react';
 import './Triumph.scss';
 
-const Triumph = ({ concentrated, select, spent }) => {
+const Triumph = ({ linkedAvail, concentrated, select, spent }) => {
   return (
     <Popup
       trigger={
@@ -22,6 +22,9 @@ const Triumph = ({ concentrated, select, spent }) => {
           </Button>
           <Button disabled={spent} onClick={() => select('critical')}>
             Critical Hit
+          </Button>
+          <Button disabled={!linkedAvail || spent} onClick={() => select('linked')}>
+            Fire Linked
           </Button>
         </Button.Group>
       </Popup.Content>

@@ -32,4 +32,12 @@
       -webkit-text-stroke-color: #b1b1b1;
     }
   }
+  .ShipImage {
+    padding-top: calc(100% / 1.45);
+    width: 100%;
+    margin-top: 35px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }

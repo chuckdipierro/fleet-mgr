@@ -4,6 +4,7 @@ import { Card /* Icon, */, Image, Button } from 'semantic-ui-react';
 import AttackModal from './AttackModal';
 import RepairModal from './RepairModal';
 import './ShipCard.scss';
+import DefenseModal from './DefenseModal';
 
 const ShipCard = ({
   acted = false,
@@ -12,6 +13,10 @@ const ShipCard = ({
   crits,
   curr_HT,
   curr_SS,
+  defAft,
+  defFore,
+  defPort,
+  defStarboard,
   destroyed,
   HT,
   hullType,
@@ -24,6 +29,7 @@ const ShipCard = ({
   status,
   targets,
   turn,
+  updateDefense,
 }) => {
   return (
     <Card
@@ -34,13 +40,23 @@ const ShipCard = ({
     >
       {!destroyed && (
         <Button.Group floated="right">
-          {targets.length > 0 && !acted && curr_HT > 0 && curr_SS > 0 && (
+          {targets.length > 0 && curr_HT > 0 && curr_SS > 0 && (
             <AttackModal applyDamage={applyDamage} ship={ship} targets={targets} turn={turn} />
           )}
-          <RepairModal repairDamage={(ht, ss) => repairDamage(ship, ht, ss)} crits={crits} />
+          <RepairModal
+            repairDamage={(ht, ss, crits) => repairDamage(ship, ht, ss, crits)}
+            crits={crits}
+          />
+          <DefenseModal
+            {...{ defAft, defFore, defPort, defStarboard }}
+            updateDefense={(aft, fore, port, starboard) =>
+              updateDefense(ship, aft, fore, port, starboard)
+            }
+          />
         </Button.Group>
       )}
-      <Image src={`/img/${image}`} height="200" />
+      <div className="ShipImage" style={{ backgroundImage: `url(/img/${image})` }} />
+      {/* <Image src={`/img/${image}`} height="200" /> */}
       <Card.Description className="CritTracker">
         {crits.map((crit, i) => {
           return (

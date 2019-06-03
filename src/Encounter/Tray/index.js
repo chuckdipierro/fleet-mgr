@@ -4,7 +4,7 @@ import ShipCard from '../../Components/ShipCard';
 
 import './Tray.scss';
 
-const Tray = ({ applyDamage, repairDamage, ships, targets, turn }) => {
+const Tray = ({ applyDamage, repairDamage, ships, targets, turn, updateDefense }) => {
   const shipHTML = ships.map((ship, i) => {
     return (
       <ShipCard
@@ -18,6 +18,7 @@ const Tray = ({ applyDamage, repairDamage, ships, targets, turn }) => {
         status={ship.curr_HT > ship.HT / 2 ? 'green' : 'red'}
         targets={targets}
         turn={turn}
+        updateDefense={updateDefense}
       />
     );
   });

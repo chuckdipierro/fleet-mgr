@@ -1,0 +1,66 @@
+.Frx {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1000px;
+  min-width: 500px;
+  height: 50%;
+}
+.Frx .Button {
+  max-width: 100px;
+}
+.FrxFooter {
+  display: block;
+  width: 100%;
+}
+.Frx textarea {
+  resize: none;
+}
+.Frx .FrxSegment {
+  display: inline-block;
+
+  padding: 10px 10px 0;
+  text-align: left;
+  width: 100%;
+}
+
+.Frx .FrxSegment.single > * {
+  width: 49%;
+}
+.Frx .FrxSegment.half {
+  width: 50%;
+}
+.Frx .FrxSegment.quarter {
+  width: 25%;
+}
+.Frx .FrxSegment.eighth {
+  width: 12.5%;
+}
+.Frx .FrxSegment.half > *,
+.Frx .FrxSegment.quarter > * {
+  width: 100%;
+}
+.Frx .FrxSegment.quarter > label {
+  // margin: 8px 0px;
+  width: auto;
+}
+.Frx .FrxSegment h4 {
+  color: #666;
+  display: block;
+  font-weight: normal;
+  margin: 5px 0px;
+}
+.Frx .FrxSegment input {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  height: 30px;
+  margin: 5px 0;
+}
+.Frx .FrxSegment .Error-Msg {
+  padding: 5px 0px;
+  color: red;
+  font: 400 0.75em 'Helvetica';
+}
+.ui-message {
+  min-width: 200px;
+}

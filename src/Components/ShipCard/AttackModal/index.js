@@ -83,13 +83,18 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
   };
   let attackStep = {};
   const zones = ['forward', 'port', 'starboard', 'aft', 'dorsal', 'ventral', 'hull'];
-  const shipOptions = targets.map((ship, i) => {
-    return {
-      key: i,
-      text: `${ship.Class} Class ${ship.hullType}`,
-      value: i,
-    };
-  });
+  const shipOptions = targets
+    // .filter(ship => {
+    //   return ship.curr_HT > 0 && ship.curr_SS > 0;
+    // })
+    .map((ship, i) => {
+      return {
+        key: i,
+        disabled: ship.curr_HT === 0 || ship.curr_SS === 0,
+        text: `${ship.Name} - ${ship.Class} Class ${ship.hullType}`,
+        value: i,
+      };
+    });
   switch (state.step) {
     case 0:
       attackStep = (
@@ -139,9 +144,18 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
     case 4:
       attackStep = (
         <SelectProficiency
-          confirmSelections={(agility, aim, crew) =>
-            updateState({ agility, aim, crew, step: (state.step += 1) })
-          }
+          confirmSelections={selections => {
+            updateState({
+              ability: selections.ability,
+              aim: selections.aim,
+              boosts: selections.boosts,
+              crew: selections.crew,
+              challenge: selections.challenge,
+              prof: selections.prof,
+              setbacks: selections.setbacks,
+              step: (state.step += 1),
+            });
+          }}
         />
       );
       break;

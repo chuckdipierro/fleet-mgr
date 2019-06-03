@@ -84,6 +84,21 @@ export const addShiptoFlotilla = ship => {
     }
   };
 };
+export const addShipType = ship => {
+  return async dispatch => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(ship),
+      };
+      await fetch(`${REACT_APP_API_URL}/shiplist/`, options);
+      dispatch(getShiplist());
+    } catch {
+      dispatch(getShiplist());
+    }
+  };
+};
 export const getShiplist = () => {
   return async dispatch => {
     try {
@@ -102,12 +117,19 @@ export const getShiplist = () => {
   };
 };
 export const setShipActed = (enemy, id, ship) => {
+  console.log('Enemy: ', enemy, 'ID: ', id, 'Ship: ', ship);
   if (enemy) setHull(ship);
   return {
     type: 'SET_SHIP_ACTED',
     enemy,
     id,
     ship,
+  };
+};
+export const setShipForm = shipForm => {
+  return {
+    type: 'SET_SHIP_FORM',
+    shipForm,
   };
 };
 export const setWeaponList = weapons => {
