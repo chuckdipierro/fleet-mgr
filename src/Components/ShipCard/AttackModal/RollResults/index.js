@@ -10,8 +10,12 @@ import { __values } from 'tslib';
 const RollResults = ({
   agility,
   aim,
+  boost,
   applyDamage,
+  challenge,
   crew,
+  prof,
+  setback,
   ship,
   target,
   targetZone,
@@ -44,7 +48,8 @@ const RollResults = ({
     }),
   };
   const [state, setState] = useState(baseState);
-
+  setBacks += setback;
+  boosts += boost;
   const updateState = newState => {
     setState(
       Object.assign({}, state, {
@@ -129,6 +134,7 @@ const RollResults = ({
   let ability = 0;
   let weaponCount = 0;
   let difficulty = 0;
+  let challengeDice = 0;
   const silDif = ship.Silhouette - target.Silhouette;
   if (agility > crew) {
     ability = agility - crew;
@@ -150,8 +156,30 @@ const RollResults = ({
   } else if (silDif > 3) {
     difficulty = 5;
   }
+  if (difficulty > challenge) {
+    let origDiff = difficulty;
+    difficulty = origDiff - challenge;
+    challengeDice = origDiff - difficulty;
+  } else if (difficulty === challenge) {
+    challengeDice = challenge;
+    difficulty = 0;
+  } else {
+    let origDiff = difficulty;
+    difficulty = challenge - origDiff;
+    challengeDice = challenge - difficulty;
+  }
+  if (prof > 0) {
+    if (ability > 0) {
+      proficiency += prof > ability ? ability : prof;
+      ability = ability - prof > 0 ? ability - prof : 0;
+    }
+    if (ability == 0) {
+      ability += prof;
+    }
+  }
   const rolls = SWD.roll({
     ability,
+    challenge: challengeDice,
     difficulty,
     proficiency,
     setback: target[targetZone] + setBacks,
@@ -170,6 +198,13 @@ const RollResults = ({
           symbolArr.push(
             <span key={index * 100 + i * 100 + 1} style={{ color: 'green' }}>
               d
+            </span>
+          );
+          break;
+        case 'challenge':
+          symbolArr.push(
+            <span key={index * 100 + i * 100 + 1} style={{ color: 'red' }}>
+              c
             </span>
           );
           break;

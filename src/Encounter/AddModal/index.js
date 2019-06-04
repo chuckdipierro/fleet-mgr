@@ -31,7 +31,7 @@ const AddModal = ({ addShip, btnTxt, hdrTxt, shipList, title, weaponList }) => {
   };
   return (
     <Modal
-      size="mini"
+      size="small"
       onClose={() => setOpen(false)}
       open={open}
       className="AllyModal"

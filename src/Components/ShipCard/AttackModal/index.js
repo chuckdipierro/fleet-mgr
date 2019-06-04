@@ -14,10 +14,14 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
   const baseState = {
     agility: 0,
     aim: false,
+    boost: 0,
+    challenge: 0,
     crew: 0,
     facing: '',
     open: false,
+    prof: 0,
     selectedCount: 0,
+    setback: 0,
     step: 0,
     target: {},
     targetZone: '',
@@ -146,13 +150,13 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
         <SelectProficiency
           confirmSelections={selections => {
             updateState({
-              ability: selections.ability,
+              agility: selections.agility,
               aim: selections.aim,
-              boosts: selections.boosts,
+              boost: selections.boost,
               crew: selections.crew,
               challenge: selections.challenge,
               prof: selections.prof,
-              setbacks: selections.setbacks,
+              setback: selections.setback,
               step: (state.step += 1),
             });
           }}
@@ -176,7 +180,7 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
   }
   return (
     <Modal
-      size="tiny"
+      size="small"
       className="AttackModal"
       open={state.open}
       onClose={() => updateState(baseState)}

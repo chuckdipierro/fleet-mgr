@@ -34,7 +34,7 @@ const AddShip = ({ addShip, shiplist, weaponList }) => {
     <Modal
       open={open}
       onClose={() => setOpen(false)}
-      size="mini"
+      size="small"
       className="AddShip"
       trigger={
         <Button primary onClick={() => setOpen(true)}>

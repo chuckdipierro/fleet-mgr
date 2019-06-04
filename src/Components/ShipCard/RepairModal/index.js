@@ -21,7 +21,7 @@ const RepairModal = ({ crits, repairDamage }) => {
   }, [crits]);
   return (
     <Modal
-      size="tiny"
+      size="small"
       className="RepairModal"
       open={state.open}
       onClose={() => updateState({ open: false })}

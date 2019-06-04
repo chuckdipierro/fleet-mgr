@@ -42,7 +42,6 @@ const mapDispatchToProps = dispatch => {
       dispatch(addFriendlyShip(ship.id));
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
-      console.log('Strain: ', strain);
       let critHit = crit > 0;
       const targetUpdate = Object.assign({}, target, {
         curr_HT: target.curr_HT - damage >= 0 ? target.curr_HT - damage : 0,

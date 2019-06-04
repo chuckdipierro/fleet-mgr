@@ -9,6 +9,7 @@ import DefenseModal from './DefenseModal';
 const ShipCard = ({
   acted = false,
   applyDamage,
+  captain,
   Class,
   crits,
   curr_HT,
@@ -84,9 +85,7 @@ const ShipCard = ({
               System Strain: {curr_SS}/{SS}
             </b>
           </p>
-          <p>
-            <b>Crew: {shipsComplement}</b>
-          </p>
+          <p>{ship.captain ? <b>{ship.captain}</b> : <b>Crew: {shipsComplement}</b>}</p>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>

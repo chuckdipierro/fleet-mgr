@@ -29,7 +29,7 @@ const FlotillaDetail = ({ flotilla, repairDamage, updateDefense }) => {
   return (
     <div className="FlotillaDetail">
       <AddShipConnector />
-      {ShipList}
+      <div className="ShipContainer">{ShipList}</div>
     </div>
   );
 };
