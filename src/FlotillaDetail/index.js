@@ -5,6 +5,10 @@ import { setHull } from '../actions';
 const mapStateToProps = state => {
   return {
     flotilla: state.flotilla.ships,
+    morale: state.resources.morale,
+    ordnance: state.resources.ordnance,
+    provisions: state.resources.provisions,
+    repair: state.resources.repair,
   };
 };
 
