@@ -116,7 +116,7 @@ const ShipForm = ({ shipForm, onAddClick, weapons }) => {
               <Button
                 icon="delete"
                 onClick={() => {
-                  let Weapons = JSON.parse(JSON.stringify(state.Weapons));
+                  const Weapons = JSON.parse(JSON.stringify(state.Weapons));
                   Weapons.splice(i, 1);
                   updateState({ Weapons });
                 }}
@@ -127,7 +127,7 @@ const ShipForm = ({ shipForm, onAddClick, weapons }) => {
       })}
       <Button
         onClick={() => {
-          let shipObject = {};
+          const shipObject = {};
           shipForm.forEach(val => {
             shipObject[val.data] = state[val.data];
           });

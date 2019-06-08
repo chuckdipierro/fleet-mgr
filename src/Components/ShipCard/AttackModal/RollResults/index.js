@@ -4,8 +4,8 @@ import SWD from 'star-wars-dice';
 
 import './RollResults.scss';
 import { Button, Checkbox } from 'semantic-ui-react';
-import Triumph from './Triumph';
 import { __values } from 'tslib';
+import Triumph from './Triumph';
 
 const RollResults = ({
   agility,
@@ -157,14 +157,14 @@ const RollResults = ({
     difficulty = 5;
   }
   if (difficulty > challenge) {
-    let origDiff = difficulty;
+    const origDiff = difficulty;
     difficulty = origDiff - challenge;
     challengeDice = origDiff - difficulty;
   } else if (difficulty === challenge) {
     challengeDice = challenge;
     difficulty = 0;
   } else {
-    let origDiff = difficulty;
+    const origDiff = difficulty;
     difficulty = challenge - origDiff;
     challengeDice = challenge - difficulty;
   }
@@ -248,9 +248,9 @@ const RollResults = ({
   let triSpent = 0;
   Object.entries(state.buys).forEach(([key, value]) => {
     if (value.currency && value.currency === 'adv') {
-      advSpent = advSpent + value.cost;
+      advSpent += value.cost;
     } else if (value.currency && value.currency === 'triumph') {
-      triSpent = triSpent + value.cost;
+      triSpent += value.cost;
     }
   });
   const diceResults = [];

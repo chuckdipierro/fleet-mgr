@@ -37,6 +37,10 @@ export const getFlotilla = () => {
       });
       dispatch({
         type: 'SET_FLOTILLA',
+        ships: [],
+      });
+      dispatch({
+        type: 'SET_FLOTILLA',
         ships,
       });
       dispatch({
@@ -117,7 +121,6 @@ export const getShiplist = () => {
   };
 };
 export const setShipActed = (enemy, id, ship) => {
-  console.log('Enemy: ', enemy, 'ID: ', id, 'Ship: ', ship);
   if (enemy) setHull(ship);
   return {
     type: 'SET_SHIP_ACTED',
@@ -138,7 +141,12 @@ export const setWeaponList = weapons => {
     weapons,
   };
 };
-
+export const spendRepair = cost => {
+  return {
+    type: 'SPEND_REPAIR',
+    cost,
+  };
+};
 export const updateEnemy = (id, ship) => {
   return {
     type: 'UPDATE_ENEMY',

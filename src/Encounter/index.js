@@ -20,6 +20,7 @@ const mapStateToProps = state => {
       return ship.id === rebel.id;
     });
   });
+  console.log('Turn: ', state.encounter.turn);
   return {
     enemy: state.encounter.enemy,
     fetchComplete: state.app.fetchComplete,
@@ -42,7 +43,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(addFriendlyShip(ship.id));
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
-      let critHit = crit > 0;
+      const critHit = crit > 0;
       const targetUpdate = Object.assign({}, target, {
         curr_HT: target.curr_HT - damage >= 0 ? target.curr_HT - damage : 0,
         curr_SS: target.curr_SS - strain >= 0 ? target.curr_SS - strain : 0,
@@ -65,19 +66,23 @@ const mapDispatchToProps = dispatch => {
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
       fired.forEach(index => {
-        shipFiring.Weapons[index].fired = turn;
-      });
-      shipFiring.Weapons.forEach((weapon, i) => {
-        if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
-          const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
-
-          if (weapon.fired !== undefined && turn < weapon.fired + slowFiring) {
-            shipFiring.Weapons[i].disabled = true;
-          } else {
-            shipFiring.Weapons[i].disabled = false;
-          }
+        if (shipFiring.Weapons[index].stats.Qualities.indexOf('Slow-Firing') > -1) {
+          const slowFiring = parseInt(
+            shipFiring.Weapons[index].stats.Qualities.split('Slow-Firing')[1].split(',')[0]
+          );
+          shipFiring.Weapons[index].cooldown = turn + slowFiring;
         }
       });
+      // shipFiring.Weapons.forEach((weapon, i) => {
+      //   if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
+      //     const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
+      //     if (weapon.fired !== undefined && turn < weapon.fired + slowFiring) {
+      //       shipFiring.Weapons[i].disabled = true;
+      //     } else {
+      //       shipFiring.Weapons[i].disabled = false;
+      //     }
+      //   }
+      // });
       if (damage > 0 || strain > 0) {
         if (enemy) {
           dispatch(updateEnemy(target.id, targetUpdate));

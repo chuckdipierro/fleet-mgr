@@ -3,6 +3,8 @@ const resources = (
   action
 ) => {
   switch (action.type) {
+    case 'SPEND_REPAIR':
+      return Object.assign({}, state, { repair: state.repair - action.cost });
     default:
       return state;
   }
