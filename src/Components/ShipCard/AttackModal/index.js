@@ -138,6 +138,7 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
             facing={state.facing}
             handleSelection={i => handleSelection(i)}
             selectedCount={state.selectedCount}
+            turn={turn}
             validWeapons={state.validWeapons}
             weaponType={state.weaponType}
           />

@@ -1,7 +1,7 @@
 const baseState = { rebels: [], squadFull: false, enemy: [], turn: 0 };
 const encounter = (state = baseState, action) => {
-  let enemy = state.enemy;
-  let rebels = state.rebels;
+  let { enemy } = state;
+  let { rebels } = state;
   switch (action.type) {
     case 'ADD_FRIENDLY_SHIP':
       return state.rebels.length < 6
@@ -15,12 +15,12 @@ const encounter = (state = baseState, action) => {
       return baseState;
     case 'CLEAR_ROUND':
       enemy = enemy.map(ship => {
-        let clearedShip = ship;
+        const clearedShip = ship;
         clearedShip.acted = false;
         return clearedShip;
       });
       rebels = rebels.map(ship => {
-        let clearedShip = ship;
+        const clearedShip = ship;
         clearedShip.acted = false;
         return clearedShip;
       });
@@ -29,12 +29,12 @@ const encounter = (state = baseState, action) => {
       return Object.assign({}, state, action.encounter);
     case 'SET_SHIP_ACTED':
       if (action.enemy) {
-        let selectedShip = rebels.findIndex(ship => {
+        const selectedShip = rebels.findIndex(ship => {
           return ship.id === action.id;
         });
         rebels[selectedShip].acted = true;
       } else {
-        let selectedShip = enemy.findIndex(ship => {
+        const selectedShip = enemy.findIndex(ship => {
           return ship.id === action.id;
         });
         enemy[selectedShip].acted = true;
@@ -44,10 +44,9 @@ const encounter = (state = baseState, action) => {
     case 'UPDATE_ENCOUNTER':
       return state;
     case 'UPDATE_ENEMY':
-      let newShip = enemy.findIndex(ship => {
+      const newShip = enemy.findIndex(ship => {
         return ship.id === action.id;
       });
-      console.log('Found Ship: ', action.id, action.ship);
       enemy[newShip] = JSON.parse(JSON.stringify(action.ship));
       return Object.assign({}, state, { enemy });
     default:

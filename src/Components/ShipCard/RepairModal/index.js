@@ -4,8 +4,17 @@ import { Button, Checkbox, Form, Input, Modal } from 'semantic-ui-react';
 
 import './RepairModal.scss';
 
-const RepairModal = ({ crits, repairDamage }) => {
-  const [state, setState] = useState({ ht: 0, open: false, ss: 0, critSelected: [] });
+const RepairModal = ({ crits, currHT, currSS, HT, repairCost, repairDamage, repair, SS }) => {
+  const [state, setState] = useState({
+    cost: 0,
+    ht: 0,
+    open: false,
+    overCost: false,
+    ss: 0,
+    critSelected: crits.map(crit => {
+      return false;
+    }),
+  });
   const updateState = newState => {
     setState(
       Object.assign({}, state, {
@@ -13,12 +22,29 @@ const RepairModal = ({ crits, repairDamage }) => {
       })
     );
   };
-  useEffect(() => {
-    let critSelected = crits.map(crit => {
-      return false;
+  const setRepairCost = () => {
+    let critCost = 0;
+    let htRepair = state.ht;
+    let ssRepair = state.ss;
+    state.critSelected.forEach(crit => {
+      critCost += crit ? 25 : 0;
     });
-    updateState({ critSelected });
-  }, [crits]);
+    if (parseInt(currHT) + parseInt(htRepair) > HT) {
+      htRepair = HT - currHT;
+    }
+    if (parseInt(currSS) + parseInt(ssRepair) > SS) {
+      ssRepair = parseInt(SS) - parseInt(currSS);
+    }
+    updateState({
+      cost: parseInt(state.ht) + parseInt(state.ss) + parseInt(critCost),
+      ht: htRepair,
+      overCost: parseInt(state.ht) + parseInt(state.ss) + parseInt(critCost) > repair,
+      ss: ssRepair,
+    });
+  };
+  useEffect(() => {
+    setRepairCost();
+  }, [state.ht, state.ss]);
   return (
     <Modal
       size="small"
@@ -38,12 +64,20 @@ const RepairModal = ({ crits, repairDamage }) => {
       <Modal.Header>Repair Ship</Modal.Header>
       {state.open && (
         <Modal.Content>
+          {repairCost && (
+            <Modal.Description>
+              <div>Repair Points: {repair}</div>
+              <div>Repair Cost: {state.cost}</div>
+            </Modal.Description>
+          )}
           <Modal.Description>
             <Form>
               <Form.Field>
                 <label>Hull Repaired:</label>
                 <Input
-                  onChange={e => updateState({ ht: e.target.value })}
+                  onChange={e => {
+                    updateState({ ht: e.target.value });
+                  }}
                   placeholder="0"
                   type="number"
                   value={state.ht}
@@ -65,10 +99,12 @@ const RepairModal = ({ crits, repairDamage }) => {
                   <div key={i}>
                     <Checkbox
                       checked={state.critSelected[i]}
+                      disabled={!state.critSelected[i] && state.cost + 25 > repair}
                       onChange={() => {
-                        let critSelected = state.critSelected;
+                        const { critSelected } = state;
                         critSelected[i] = !critSelected[i];
                         updateState({ critSelected });
+                        setRepairCost();
                       }}
                     />{' '}
                     {crit.name} - Difficulty: {crit.difficulty}
@@ -81,9 +117,16 @@ const RepairModal = ({ crits, repairDamage }) => {
       )}
       <Modal.Actions>
         <Button
+          disabled={state.overCost && repairCost}
           onClick={() => {
             updateState({ open: false });
-            repairDamage(state.ht, state.ss, state.critSelected);
+            console.log(state.cost, state.cost > 0);
+            repairDamage(
+              state.ht,
+              state.ss,
+              state.critSelected,
+              repairCost && state.cost > 0 ? state.cost : 0
+            );
           }}
         >
           Done
@@ -92,6 +135,6 @@ const RepairModal = ({ crits, repairDamage }) => {
     </Modal>
   );
 };
-RepairModal.defaultProps = { crits: [] };
+RepairModal.defaultProps = { crits: [], repair: -1 };
 RepairModal.propTypes = { crits: PropType.array };
 export default RepairModal;

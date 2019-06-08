@@ -24,6 +24,7 @@ const ShipCard = ({
   image,
   Name,
   repairDamage,
+  repairPoints,
   ship,
   shipsComplement,
   SS,
@@ -45,8 +46,14 @@ const ShipCard = ({
             <AttackModal applyDamage={applyDamage} ship={ship} targets={targets} turn={turn} />
           )}
           <RepairModal
-            repairDamage={(ht, ss, crits) => repairDamage(ship, ht, ss, crits)}
             crits={crits}
+            currHT={curr_HT}
+            currSS={curr_SS}
+            HT={HT}
+            repair={repairPoints || -1}
+            repairCost={targets.length === 0}
+            repairDamage={(ht, ss, crits, cost) => repairDamage(ship, ht, ss, crits, cost)}
+            SS={SS}
           />
           <DefenseModal
             {...{ defAft, defFore, defPort, defStarboard }}
@@ -85,7 +92,7 @@ const ShipCard = ({
               System Strain: {curr_SS}/{SS}
             </b>
           </p>
-          <p>{ship.captain ? <b>{ship.captain}</b> : <b>Crew: {shipsComplement}</b>}</p>
+          <p>{captain ? <b>{captain}</b> : <b>Crew: {shipsComplement}</b>}</p>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>

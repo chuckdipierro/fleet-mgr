@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropType from 'prop-types';
 import AddShipConnector from './AddShip';
 import ShipCard from '../Components/ShipCard';
 
 import './FlotillaDetail.scss';
-import { Label } from 'semantic-ui-react';
+import { Label, Select } from 'semantic-ui-react';
 
 const FlotillaDetail = ({
   flotilla,
@@ -15,7 +15,36 @@ const FlotillaDetail = ({
   repairDamage,
   updateDefense,
 }) => {
-  const ShipList = flotilla.map((ship, i) => {
+  const [sortedFlotilla, setSortedFlotilla] = useState([]);
+  const [sorting, setSort] = useState('');
+  const sortShips = (ships, value) => {
+    let newSort = [...ships];
+    newSort = newSort.sort(function(a, b) {
+      if (value === 'damage') {
+        if (a.curr_HT / a.HT > b.curr_HT / b.HT) {
+          return 1;
+        }
+        if (a.curr_HT / a.HT < b.curr_HT / b.HT) {
+          return -1;
+        }
+      } else {
+        if (a[value] > b[value]) {
+          return value === 'hullType' ? 1 : -1;
+        }
+        if (a[value] < b[value]) {
+          return value === 'hullType' ? -1 : 1;
+        }
+      }
+      return 0;
+    });
+    return newSort;
+  };
+
+  if (flotilla.length !== sortedFlotilla.length) {
+    setSortedFlotilla(sortShips(flotilla, sorting));
+  }
+
+  const ShipList = sortedFlotilla.map((ship, i) => {
     let status = 'green';
     if (ship.curr_HT < ship.HT) {
       status = 'yellow';
@@ -31,6 +60,7 @@ const FlotillaDetail = ({
         status={status}
         ship={ship}
         repairDamage={repairDamage}
+        repairPoints={repair}
         updateDefense={updateDefense}
       />
     );
@@ -51,6 +81,22 @@ const FlotillaDetail = ({
           Morale<Label.Detail>{morale}</Label.Detail>
         </Label>
         <AddShipConnector />
+        <Select
+          placeholder="Sort by..."
+          search
+          selection
+          options={[
+            { key: 'class', value: 'hullType', text: 'Class' },
+            { key: 'crits', value: 'crits', text: 'Critical Hits' },
+            { key: 'damage', value: 'damage', text: 'Damage' },
+            { key: 'ht', value: 'HT', text: 'Hull Trauma' },
+            { key: 'sil', value: 'Silhouette', text: 'Silhoutte' },
+          ]}
+          onChange={(e, { value }) => {
+            setSort(value);
+            setSortedFlotilla(sortShips(sortedFlotilla, value));
+          }}
+        />
       </div>
       <div className="ShipContainer">{ShipList}</div>
     </div>

@@ -48,7 +48,7 @@ const Form = ({
               name={field.data}
               onChange={e => handletextentry(e, true)}
               required={field.required}
-              type={'number'}
+              type="number"
               value={values[field.data]}
             />
             <Message className="ui-message" error content={error[field.data]} />
