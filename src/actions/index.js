@@ -1,4 +1,5 @@
 const { REACT_APP_API_URL } = process.env;
+
 export const addEnemyShip = ship => {
   return {
     type: 'ADD_ENEMY_SHIP',
@@ -31,7 +32,19 @@ export const getFlotilla = () => {
   return async dispatch => {
     try {
       const response = await fetch(`${REACT_APP_API_URL}/flotilla`);
+      const secondResponse = await fetch('/api/fleetShipList');
       const ships = await response.json();
+
+      let shipsAdded = await secondResponse.json();
+      console.log('shipsAdded: ', shipsAdded);
+      shipsAdded = shipsAdded.map(ship => {
+        let correctedShip = ship;
+        delete correctedShip.ship._id;
+        correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+        delete correctedShip.ship;
+        return correctedShip;
+      });
+      console.log('ShipsAdded: ', shipsAdded);
       dispatch({
         type: 'FETCH_COMPLETE',
       });
@@ -41,11 +54,11 @@ export const getFlotilla = () => {
       });
       dispatch({
         type: 'SET_FLOTILLA',
-        ships,
+        ships: ships.concat(shipsAdded),
       });
       dispatch({
         type: 'UPDATE_ENCOUNTER',
-        ships,
+        ships: ships.concat(shipsAdded),
       });
     } catch (err) {
       dispatch({
@@ -81,7 +94,8 @@ export const addShiptoFlotilla = ship => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(ship),
       };
-      await fetch(`${REACT_APP_API_URL}/flotilla/`, options);
+
+      await fetch('/api/addFleetShip', options);
       dispatch(getFlotilla());
     } catch {
       dispatch(getFlotilla());
@@ -106,11 +120,11 @@ export const addShipType = ship => {
 export const getShiplist = () => {
   return async dispatch => {
     try {
-      const response = await fetch(`${REACT_APP_API_URL}/shiplist`);
+      const response = await fetch('/api/shipList');
       const shiplist = await response.json();
       dispatch({
         type: 'SET_SHIPLIST',
-        shiplist,
+        shiplist: shiplist.shipList,
       });
     } catch (err) {
       dispatch({

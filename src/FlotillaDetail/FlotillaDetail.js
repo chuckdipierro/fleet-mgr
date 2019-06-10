@@ -4,7 +4,8 @@ import AddShipConnector from './AddShip';
 import ShipCard from '../Components/ShipCard';
 
 import './FlotillaDetail.scss';
-import { Label, Select } from 'semantic-ui-react';
+import { Label, Select, Button } from 'semantic-ui-react';
+import { getList } from '../actions';
 
 const FlotillaDetail = ({
   flotilla,

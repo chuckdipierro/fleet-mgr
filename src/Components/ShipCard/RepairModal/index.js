@@ -99,7 +99,7 @@ const RepairModal = ({ crits, currHT, currSS, HT, repairCost, repairDamage, repa
                   <div key={i}>
                     <Checkbox
                       checked={state.critSelected[i]}
-                      disabled={!state.critSelected[i] && state.cost + 25 > repair}
+                      disabled={repairCost && !state.critSelected[i] && state.cost + 25 > repair}
                       onChange={() => {
                         const { critSelected } = state;
                         critSelected[i] = !critSelected[i];
@@ -120,7 +120,6 @@ const RepairModal = ({ crits, currHT, currSS, HT, repairCost, repairDamage, repa
           disabled={state.overCost && repairCost}
           onClick={() => {
             updateState({ open: false });
-            console.log(state.cost, state.cost > 0);
             repairDamage(
               state.ht,
               state.ss,
