@@ -91,6 +91,8 @@ const FlotillaDetail = ({
             { key: 'damage', value: 'damage', text: 'Damage' },
             { key: 'ht', value: 'HT', text: 'Hull Trauma' },
             { key: 'sil', value: 'Silhouette', text: 'Silhoutte' },
+            { key: 'speed', value: 'Speed', text: 'Speed' },
+            { key: 'strain', value: 'SS', text: 'System Strain' },
           ]}
           onChange={(e, { value }) => {
             setSort(value);

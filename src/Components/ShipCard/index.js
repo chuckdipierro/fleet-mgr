@@ -25,8 +25,10 @@ const ShipCard = ({
   Name,
   repairDamage,
   repairPoints,
+  sensorRange,
   ship,
   shipsComplement,
+  Speed,
   SS,
   status,
   targets,
@@ -93,6 +95,11 @@ const ShipCard = ({
             </b>
           </p>
           <p>{captain ? <b>{captain}</b> : <b>Crew: {shipsComplement}</b>}</p>
+          <p>
+            <b>Sensor Range: </b>
+            {sensorRange}
+            <b> Speed:</b> {Speed}
+          </p>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
