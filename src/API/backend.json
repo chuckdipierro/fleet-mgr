@@ -6,10 +6,10 @@
       "Silhouette": 9,
       "Speed": 2,
       "Handling": -3,
-      "defFore": 3,
-      "defPort": 3,
-      "defStarboard": 3,
-      "defAft": 3,
+      "defFore": 4,
+      "defPort": 4,
+      "defStarboard": 0,
+      "defAft": 0,
       "Armor": 11,
       "HT": 185,
       "SS": 95,
@@ -47,7 +47,10 @@
             "Size": "6-10",
             "Qualities": "Breach 4, Slow-Firing 2",
             "Source": "All Core"
-          }
+          },
+          "selected": false,
+          "Index": 0,
+          "cooldown": 2
         },
         {
           "count": 30,
@@ -67,7 +70,10 @@
             "Size": "6-10",
             "Qualities": "Breach 4, Slow-Firing 2",
             "Source": "All Core"
-          }
+          },
+          "selected": false,
+          "Index": 1,
+          "cooldown": 2
         },
         {
           "count": 20,
@@ -87,7 +93,9 @@
             "Size": "6-10",
             "Qualities": "Breach 3, Slow-Firing 1",
             "Source": "All Core"
-          }
+          },
+          "selected": false,
+          "Index": 2
         },
         {
           "count": 20,
@@ -107,7 +115,9 @@
             "Size": "6-10",
             "Qualities": "Breach 3, Slow-Firing 1",
             "Source": "All Core"
-          }
+          },
+          "selected": false,
+          "Index": 3
         },
         {
           "count": 10,
@@ -130,7 +140,10 @@
             "Size": "8-10",
             "Qualities": "Breach 3, Ion, Slow-Firing 2",
             "Source": "SWA/F02"
-          }
+          },
+          "selected": true,
+          "Index": 4,
+          "cooldown": 4
         },
         {
           "count": 15,
@@ -150,7 +163,10 @@
             "Size": "8-10",
             "Qualities": "Breach 3, Ion, Slow-Firing 2",
             "Source": "SWA/F02"
-          }
+          },
+          "selected": true,
+          "Index": 5,
+          "cooldown": 4
         },
         {
           "count": 15,
@@ -170,7 +186,10 @@
             "Size": "8-10",
             "Qualities": "Breach 3, Ion, Slow-Firing 2",
             "Source": "SWA/F02"
-          }
+          },
+          "selected": true,
+          "Index": 6,
+          "cooldown": 4
         },
         {
           "count": 10,
@@ -194,12 +213,19 @@
         }
       ],
       "Source": "SWA02",
-      "curr_HT": 185,
-      "curr_SS": 95,
-      "crits": [],
+      "curr_HT": 86,
+      "curr_SS": 55,
+      "crits": [
+        {
+          "difficulty": 2,
+          "name": "Shields Failing ",
+          "desc": "Decrease defense in all defense zones by 1 until repaired. If ship or vehicle has no defense, suffer 2 system strain."
+        }
+      ],
       "captain": "Rear Admiral M@-33",
       "id": 80820624,
-      "Name": "Praetor"
+      "Name": "Praetor",
+      "acted": true
     },
     {
       "hullType": "Heavy Cruiser",
@@ -207,10 +233,10 @@
       "Silhouette": 6,
       "Speed": 3,
       "Handling": -1,
-      "defFore": 2,
-      "defPort": 2,
-      "defStarboard": 2,
-      "defAft": 2,
+      "defFore": 1,
+      "defPort": 5,
+      "defStarboard": 1,
+      "defAft": 1,
       "Armor": 6,
       "HT": 75,
       "SS": 60,
@@ -248,7 +274,10 @@
             "Size": "6-10",
             "Qualities": "Breach 4, Slow-Firing 2",
             "Source": "All Core"
-          }
+          },
+          "selected": true,
+          "Index": 0,
+          "cooldown": 4
         },
         {
           "count": 2,
@@ -268,7 +297,9 @@
             "Size": "6-10",
             "Qualities": "Slow Firing 1, Ion",
             "Source": "All Core"
-          }
+          },
+          "selected": false,
+          "Index": 1
         },
         {
           "count": 2,
@@ -308,7 +339,9 @@
             "Size": "6-10",
             "Qualities": "Breach 3, Slow-Firing 1",
             "Source": "All Core"
-          }
+          },
+          "selected": false,
+          "Index": 3
         },
         {
           "count": 1,
@@ -352,11 +385,12 @@
         }
       ],
       "id": 85643018,
-      "curr_HT": 75,
+      "curr_HT": 51,
       "curr_SS": 60,
       "crits": [],
       "captain": "Commander Kos",
-      "Name": "Ascension"
+      "Name": "Ascension",
+      "acted": true
     },
     {
       "hullType": "Battlecruiser",
@@ -1355,10 +1389,10 @@
       "Silhouette": 7,
       "Speed": 3,
       "Handling": -1,
-      "defFore": 2,
-      "defPort": 2,
-      "defStarboard": 2,
-      "defAft": 2,
+      "defFore": 1,
+      "defPort": 3,
+      "defStarboard": 1,
+      "defAft": 3,
       "Armor": 8,
       "HT": 100,
       "SS": 60,
@@ -1545,7 +1579,8 @@
       "crits": [],
       "captain": "Commander FAE",
       "id": 49986344,
-      "Name": "Keldabe"
+      "Name": "Keldabe",
+      "acted": false
     },
     {
       "hullType": "Corvette",
@@ -4305,10 +4340,10 @@
       "Silhouette": 7,
       "Speed": 2,
       "Handling": -3,
-      "defFore": 2,
-      "defPort": 2,
-      "defStarboard": 2,
-      "defAft": 2,
+      "defFore": 1,
+      "defPort": 5,
+      "defStarboard": 1,
+      "defAft": 1,
       "Armor": 4,
       "HT": 80,
       "SS": 60,
@@ -4420,7 +4455,8 @@
       "crits": [],
       "captain": "Commander Jiinan Bahr",
       "id": 27962296,
-      "Name": "Vandron's Compulsion"
+      "Name": "Vandron's Compulsion",
+      "acted": false
     },
     {
       "hullType": "Carrier",
@@ -4428,10 +4464,10 @@
       "Silhouette": 7,
       "Speed": 2,
       "Handling": -3,
-      "defFore": 2,
-      "defPort": 2,
-      "defStarboard": 2,
-      "defAft": 2,
+      "defFore": 1,
+      "defPort": 5,
+      "defStarboard": 1,
+      "defAft": 1,
       "Armor": 4,
       "HT": 80,
       "SS": 60,
@@ -4538,12 +4574,13 @@
         }
       ],
       "Source": "SWA25",
-      "curr_HT": 80,
+      "curr_HT": 62,
       "curr_SS": 60,
       "crits": [],
       "captain": "Commander Val Mariell",
       "id": 44438667,
-      "Name": "Tarsa's Obedience"
+      "Name": "Tarsa's Obedience",
+      "acted": false
     },
     {
       "hullType": "Frigate",
@@ -5339,8 +5376,8 @@
       "Silhouette": 6,
       "Speed": 2,
       "Handling": -3,
-      "defFore": 4,
-      "defPort": 1,
+      "defFore": 1,
+      "defPort": 4,
       "defStarboard": 1,
       "defAft": 1,
       "Armor": 7,
@@ -5468,7 +5505,8 @@
       "curr_SS": 84,
       "crits": [],
       "captain": "Captain M@-33",
-      "Name": "Gibbon I"
+      "Name": "Gibbon I",
+      "acted": false
     },
     {
       "hullType": "Frigate",
@@ -12452,6 +12490,98 @@
         }
       ],
       "id": 22360228
+    },
+    {
+      "hullType": "Corvette",
+      "Class": "Vigil",
+      "Silhouette": 5,
+      "Speed": 3,
+      "Handling": -1,
+      "defFore": 2,
+      "defPort": 2,
+      "defStarboard": 2,
+      "defAft": 1,
+      "Armor": 5,
+      "HT": 55,
+      "SS": 35,
+      "Manufacturer": "Kuat Drive Yards",
+      "Massive": 0,
+      "Hyperdrive": "Primary: Class 2, Backup: Class 10",
+      "Navicomputer": true,
+      "sensorRange": "Long",
+      "image": "vigil.jpg",
+      "shipsComplement": "200 officers, enlisted, and troops",
+      "dockingBay": "N/A",
+      "encumbranceCapacity": "1800",
+      "passengerCapacity": "200",
+      "Consumables": "One year",
+      "Cost": "3,500,000",
+      "Restricted": true,
+      "Rarity": 5,
+      "HP": 0,
+      "Weapons": [
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Turbolaser (Light)",
+          "stats": {
+            "Name": "Turbolaser (Light)",
+            "Skill": "Gunnery",
+            "Range": "Medium",
+            "Dam": "9",
+            "Crit": "3",
+            "Price": "12,000",
+            "Restricted": "Y",
+            "Rarity": 7,
+            "Size": "5-10",
+            "Qualities": "Breach 2, Slow-Firing 1",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 3,
+          "linked": 1,
+          "mount": "turret",
+          "position": "dorsal",
+          "type": "Laser Cannon (Heavy)",
+          "stats": {
+            "Name": "Laser Cannon (Heavy)",
+            "Skill": "Gunnery",
+            "Range": "Short",
+            "Dam": "6",
+            "Crit": "3",
+            "Price": "7,500",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "4-10",
+            "Qualities": "",
+            "Source": "All Core"
+          }
+        },
+        {
+          "count": 1,
+          "linked": 0,
+          "mount": "forward",
+          "position": "forward",
+          "type": "Tractor Beam (Medium)",
+          "stats": {
+            "Name": "Tractor Beam (Medium)",
+            "Skill": "Gunnery",
+            "Range": "Short ",
+            "Dam": "—",
+            "Crit": "—",
+            "Price": "8,000",
+            "Restricted": "N",
+            "Rarity": 5,
+            "Size": "5-10",
+            "Qualities": "Tractor 4",
+            "Source": "All Core"
+          }
+        }
+      ],
+      "id": 43316226
     }
   ]
 }
