@@ -21,8 +21,8 @@ const AddShip = ({ addShip, shiplist, weaponList }) => {
     const shipObj = Object.assign(
       {},
       {
-        curr_HT: currShip.HT,
-        curr_SS: currShip.SS,
+        currHT: currShip.HT,
+        currSS: currShip.SS,
         crits: [],
         captain,
         id: currShip._id,

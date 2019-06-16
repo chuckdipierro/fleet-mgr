@@ -7,6 +7,7 @@ import {
   addEnemyShip,
   clearEncounter,
   clearRound,
+  setFleetShip,
   setHull,
   setShipActed,
   updateEnemy,
@@ -44,9 +45,10 @@ const mapDispatchToProps = dispatch => {
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
       const critHit = crit > 0;
+      console.log('Crit test, ', critHit);
       const targetUpdate = Object.assign({}, target, {
-        curr_HT: target.curr_HT - damage >= 0 ? target.curr_HT - damage : 0,
-        curr_SS: target.curr_SS - strain >= 0 ? target.curr_SS - strain : 0,
+        currHT: target.currHT - damage >= 0 ? target.currHT - damage : 0,
+        currSS: target.currSS - strain >= 0 ? target.currSS - strain : 0,
       });
       if (critHit) {
         const chance = new Chance();
@@ -57,7 +59,7 @@ const mapDispatchToProps = dispatch => {
         }
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
-      if (targetUpdate.curr_HT === 0 || targetUpdate.curr_SS === 0) {
+      if (targetUpdate.currHT === 0 || targetUpdate.currSS === 0) {
         const chance = new Chance();
         const critRoll = chance.integer({ min: 0, max: 100 }) + targetUpdate.crits.length * 10;
         if (critRoll > 145) {
@@ -87,7 +89,7 @@ const mapDispatchToProps = dispatch => {
         if (enemy) {
           dispatch(updateEnemy(target.id, targetUpdate));
         } else {
-          dispatch(setHull(target.id, targetUpdate));
+          dispatch(setFleetShip(target._id, targetUpdate));
         }
       }
       dispatch(setShipActed(enemy, shipID, shipFiring));
@@ -100,12 +102,12 @@ const mapDispatchToProps = dispatch => {
     },
     repairDamage: (target, hull, strain, crits, enemy = false) => {
       const targetUpdate = Object.assign({}, target, {
-        curr_HT:
-          target.curr_HT + parseInt(hull) > target.HT ? target.HT : target.curr_HT + parseInt(hull),
-        curr_SS:
-          target.curr_SS + parseInt(strain) > target.SS
+        currHT:
+          target.currHT + parseInt(hull) > target.HT ? target.HT : target.currHT + parseInt(hull),
+        currSS:
+          target.currSS + parseInt(strain) > target.SS
             ? target.SS
-            : target.curr_SS + parseInt(strain),
+            : target.currSS + parseInt(strain),
       });
       crits.forEach((crit, i) => {
         if (crit) {
@@ -118,20 +120,20 @@ const mapDispatchToProps = dispatch => {
       if (enemy) {
         dispatch(updateEnemy(target.id, targetUpdate));
       } else {
-        dispatch(setHull(target.id, targetUpdate));
+        dispatch(setFleetShip(target._id, targetUpdate));
       }
     },
-    updateDefense: (target, defAft, defFore, defPort, defStarboard, enemy = false) => {
+    updateDefense: (target, defAftMod, defForeMod, defPortMod, defStarboardMod, enemy = false) => {
       const targetUpdate = Object.assign({}, target, {
-        defAft,
-        defFore,
-        defPort,
-        defStarboard,
+        defAftMod,
+        defForeMod,
+        defPortMod,
+        defStarboardMod,
       });
       if (enemy) {
         dispatch(updateEnemy(target.id, targetUpdate));
       } else {
-        dispatch(setHull(target.id, targetUpdate));
+        dispatch(setFleetShip(target._id, targetUpdate));
       }
     },
   };

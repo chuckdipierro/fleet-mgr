@@ -21,8 +21,8 @@ const AddModal = ({ addShip, btnTxt, hdrTxt, shipList, title, weaponList }) => {
     const ship = currShip;
     if (title) {
       ship.Name = shipName;
-      ship.curr_HT = ship.HT;
-      ship.curr_SS = ship.SS;
+      ship.currHT = ship.HT;
+      ship.currSS = ship.SS;
       ship.crits = [];
       ship.Weapons = mapWeapons(ship.Weapons, weaponList);
     }

@@ -12,12 +12,16 @@ const ShipCard = ({
   captain,
   Class,
   crits,
-  curr_HT,
-  curr_SS,
+  currHT,
+  currSS,
   defAft,
+  defAftMod,
   defFore,
+  defForeMod,
   defPort,
+  defPortMod,
   defStarboard,
+  defStarboardMod,
   destroyed,
   HT,
   hullType,
@@ -25,8 +29,10 @@ const ShipCard = ({
   Name,
   repairDamage,
   repairPoints,
+  sensorRange,
   ship,
   shipsComplement,
+  Speed,
   SS,
   status,
   targets,
@@ -37,18 +43,18 @@ const ShipCard = ({
     <Card
       color={status}
       className={`${status} ShipCard ${applyDamage && acted ? 'acted' : ''}  ${
-        curr_HT === 0 || curr_SS === 0 ? 'knockedOut' : ''
+        currHT === 0 || currSS === 0 ? 'knockedOut' : ''
       } ${destroyed ? 'destroyed' : ''}`}
     >
       {!destroyed && (
         <Button.Group floated="right">
-          {targets.length > 0 && curr_HT > 0 && curr_SS > 0 && (
+          {targets.length > 0 && currHT > 0 && currSS > 0 && (
             <AttackModal applyDamage={applyDamage} ship={ship} targets={targets} turn={turn} />
           )}
           <RepairModal
             crits={crits}
-            currHT={curr_HT}
-            currSS={curr_SS}
+            currHT={currHT}
+            currSS={currSS}
             HT={HT}
             repair={repairPoints || -1}
             repairCost={targets.length === 0}
@@ -56,7 +62,16 @@ const ShipCard = ({
             SS={SS}
           />
           <DefenseModal
-            {...{ defAft, defFore, defPort, defStarboard }}
+            {...{
+              defAft,
+              defAftMod,
+              defFore,
+              defForeMod,
+              defPort,
+              defPortMod,
+              defStarboard,
+              defStarboardMod,
+            }}
             updateDefense={(aft, fore, port, starboard) =>
               updateDefense(ship, aft, fore, port, starboard)
             }
@@ -84,15 +99,20 @@ const ShipCard = ({
         <Card.Description>
           <p>
             <b>
-              Hull Trauma: {curr_HT}/{HT}
+              Hull Trauma: {currHT}/{HT}
             </b>
           </p>
           <p>
             <b>
-              System Strain: {curr_SS}/{SS}
+              System Strain: {currSS}/{SS}
             </b>
           </p>
           <p>{captain ? <b>{captain}</b> : <b>Crew: {shipsComplement}</b>}</p>
+          <p>
+            <b>Sensor Range: </b>
+            {sensorRange}
+            <b> Speed:</b> {Speed}
+          </p>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
@@ -108,7 +128,7 @@ ShipCard.defaultProps = {
 };
 ShipCard.propTypes = {
   Class: PropType.string.isRequired,
-  curr_HT: PropType.number.isRequired,
+  currHT: PropType.number.isRequired,
   HT: PropType.number.isRequired,
   hullType: PropType.string.isRequired,
   Name: PropType.string.isRequired,

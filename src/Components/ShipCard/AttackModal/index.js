@@ -89,12 +89,12 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
   const zones = ['forward', 'port', 'starboard', 'aft', 'dorsal', 'ventral', 'hull'];
   const shipOptions = targets
     // .filter(ship => {
-    //   return ship.curr_HT > 0 && ship.curr_SS > 0;
+    //   return ship.currHT > 0 && ship.currSS > 0;
     // })
     .map((ship, i) => {
       return {
         key: i,
-        disabled: ship.curr_HT === 0 || ship.curr_SS === 0,
+        disabled: ship.currHT === 0 || ship.currSS === 0,
         text: `${ship.Name} - ${ship.Class} Class ${ship.hullType}`,
         value: i,
       };

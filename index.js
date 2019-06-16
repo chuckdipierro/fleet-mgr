@@ -7,6 +7,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const ship_controller = require('./controllers/shipController');
 const fleetShip_controller = require('./controllers/fleetShipController');
+const resources_controller = require('./controllers/resourcesController');
 const app = express();
 
 app.use(express.json()); // for parsing application/json
@@ -35,6 +36,10 @@ app.get('/api/getList', (req, res) => {
 app.get('/api/shipList', ship_controller.ship_list);
 app.get('/api/fleetShipList', fleetShip_controller.fleetShip_list);
 app.post('/api/addFleetShip', fleetShip_controller.fleetShip_create_post);
+app.post('/api/updateFleetShip/:id', fleetShip_controller.fleetShip_update_post);
+app.get('/api/resources', resources_controller.resources_get);
+app.post('/api/resources', resources_controller.resources_create);
+app.post('/api/resources/:id', resources_controller.resources_update);
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/build/index.html'));

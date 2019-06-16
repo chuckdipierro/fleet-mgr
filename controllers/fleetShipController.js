@@ -39,9 +39,13 @@ exports.fleetShip_create_get = (req, res) => {
 // Handle Fleet Ship create on POST.
 exports.fleetShip_create_post = (req, res) => {
   var fleetShip = new FleetShip({
-    currHT: req.body.curr_HT,
-    currSS: req.body.curr_SS,
+    currHT: req.body.currHT,
+    currSS: req.body.currSS,
     crits: [],
+    defAftMod: 0,
+    defForeMod: 0,
+    defPortMod: 0,
+    defStarboardMod: 0,
     Name: req.body.Name,
     captain: req.body.captain,
     ship: req.body.id,
@@ -71,5 +75,26 @@ exports.fleetShip_update_get = (req, res) => {
 
 // Handle Fleet Ship update on POST.
 exports.fleetShip_update_post = (req, res) => {
-  res.send('NOT IMPLEMENTED: Fleet Ship update POST');
+  var fleetShip = new FleetShip({
+    currHT: req.body.currHT,
+    currSS: req.body.currSS,
+    crits: req.body.crits,
+    defAftMod: req.body.defAftMod,
+    defForeMod: req.body.defForeMod,
+    defPortMod: req.body.defPortMod,
+    defStarboardMod: req.body.defStarboardMod,
+    _id: req.params.id,
+    Name: req.body.Name,
+    captain: req.body.captain,
+    ship: req.body.id,
+  });
+  FleetShip.findByIdAndUpdate(req.params.id, fleetShip, {}, function(err, fleetShip) {
+    if (err) {
+      return next(err);
+    }
+    res.send('Complete');
+    // Successful - redirect to book detail page.
+    //  res.redirect(thebook.url);
+  });
+  // res.send('NOT IMPLEMENTED: Fleet Ship update POST');
 };
