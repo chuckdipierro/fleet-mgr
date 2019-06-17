@@ -14,7 +14,6 @@ const DefenseMap = ({
   selectZone,
   starboard,
 }) => {
-  console.log(aft, fore, port, starboard);
   return (
     <div className="DefenseMap">
       <button className="fore" onClick={() => selectZone('defFore')}>

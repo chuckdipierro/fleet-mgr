@@ -9,7 +9,7 @@ const EnemyShipSchema = new Schema({
   defAftMod: { type: Number, required: true, min: -5, max: 5 },
   defForeMod: { type: Number, required: true, min: -5, max: 5 },
   defPortMod: { type: Number, required: true, min: -5, max: 5 },
-  defStarboard: { type: Number, required: true, min: -5, max: 5 },
+  defStarboardMod: { type: Number, required: true, min: -5, max: 5 },
   Name: { type: String, required: false },
   ship: { type: Schema.Types.ObjectId, ref: 'Ship' },
   weaponsFired: [],

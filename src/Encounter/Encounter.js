@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropType from 'prop-types';
 import Tray from './Tray';
 import AddModal from './AddModal';
@@ -12,6 +12,7 @@ const Encounter = ({
   applyDamage,
   clearEncounter,
   clearRound,
+  encounterID,
   enemy,
   fetchComplete,
   flotilla,
@@ -56,7 +57,7 @@ const Encounter = ({
           shipList={flotilla}
         />
         <AddModal
-          addShip={ship => addEnemyShip(ship)}
+          addShip={ship => addEnemyShip(ship, encounterID, enemy)}
           btnTxt="Select Opposition v"
           hdrTxt="Add Enemy Ship"
           shipList={shipList}

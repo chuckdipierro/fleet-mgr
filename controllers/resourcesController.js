@@ -28,7 +28,7 @@ exports.resources_create = (req, res) => {
   resources.save(function(err, result) {
     res.send(result);
   });
-  res.send('NOT IMPLEMENTED: Fleet Ship create POST');
+  // res.send('NOT IMPLEMENTED: Fleet Ship create POST');
 };
 
 // Handle Fleet Ship update on POST.

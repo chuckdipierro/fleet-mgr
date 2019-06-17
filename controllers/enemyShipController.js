@@ -16,8 +16,29 @@ exports.enemyShip_create_get = (req, res) => {
 };
 
 // Handle Enemy Ship create on POST.
-exports.enemyShip_create_post = (req, res) => {
-  res.send('NOT IMPLEMENTED: Enemy Ship create POST');
+exports.enemyShip_create_post = async (req, res) => {
+  var enemyShip = new EnemyShip({
+    currHT: req.body.currHT,
+    currSS: req.body.currSS,
+    crits: [],
+    defAftMod: 0,
+    defForeMod: 0,
+    defPortMod: 0,
+    defStarboardMod: 0,
+    Name: req.body.Name,
+    ship: req.body.id,
+    weaponsFired: req.body.weaponsFired,
+  });
+  console.log('EnemyShip: ', enemyShip);
+  let newShip = await enemyShip.save(function(err) {
+    // if (err) { return next(err); }
+    if (err) console.log('Err: ', err);
+    // Successful - redirect to new author record.
+    // res.redirect(author.url);
+  });
+
+  console.log('Newship, ', newShip, enemyShip._id);
+  res.send(enemyShip._id);
 };
 
 // Display Enemy Ship delete form on GET.

@@ -62,12 +62,6 @@ const FlotillaDetail = ({
         status={status}
         ship={ship}
         repairDamage={(ship, ht, ss, crits, cost) => {
-          console.log(
-            'Repair val being decided: ',
-            cost,
-            repair,
-            cost > 0 ? repair - cost : repair
-          );
           repairDamage(
             ship,
             ht,

@@ -49,6 +49,7 @@ exports.fleetShip_create_post = (req, res) => {
     Name: req.body.Name,
     captain: req.body.captain,
     ship: req.body.id,
+    weaponsFired: [],
   });
   fleetShip.save(function(err) {
     // if (err) { return next(err); }
@@ -87,6 +88,7 @@ exports.fleetShip_update_post = (req, res) => {
     Name: req.body.Name,
     captain: req.body.captain,
     ship: req.body.id,
+    weaponsFired: req.body.weaponsFired,
   });
   FleetShip.findByIdAndUpdate(req.params.id, fleetShip, {}, function(err, fleetShip) {
     if (err) {

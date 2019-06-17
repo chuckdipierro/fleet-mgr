@@ -21,7 +21,7 @@ import * as serviceWorker from './serviceWorker';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(fleetManager, composeEnhancers(applyMiddleware(ReduxThunk)));
 
-store.dispatch(getEncounter(JSON.parse(window.localStorage.getItem('fleet_encounter'))));
+store.dispatch(getEncounter());
 store.dispatch(getFlotilla());
 store.dispatch(getShiplist());
 store.dispatch(getResources());

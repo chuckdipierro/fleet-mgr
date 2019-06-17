@@ -1,4 +1,4 @@
-const baseState = { rebels: [], squadFull: false, enemy: [], turn: 0 };
+const baseState = { enemy: [], fetching: false, id: '', rebels: [], squadFull: false, turn: 0 };
 const encounter = (state = baseState, action) => {
   let { enemy } = state;
   let { rebels } = state;
@@ -26,7 +26,7 @@ const encounter = (state = baseState, action) => {
       });
       return Object.assign({}, state, { enemy, rebels, turn: state.turn + 1 });
     case 'SET_ENCOUNTER':
-      return Object.assign({}, state, action.encounter);
+      return Object.assign({}, state, { ...action.encounter });
     case 'SET_SHIP_ACTED':
       if (action.enemy) {
         const selectedShip = rebels.findIndex(ship => {

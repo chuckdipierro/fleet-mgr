@@ -8,25 +8,25 @@ import {
   clearEncounter,
   clearRound,
   setFleetShip,
-  setHull,
   setShipActed,
   updateEnemy,
 } from '../actions';
 
 const mapStateToProps = state => {
-  localStorage.setItem('fleet_encounter', JSON.stringify(state.encounter));
-  const rebelShips = state.encounter.rebels.map(rebel => {
-    return state.flotilla.ships.find(ship => {
-      if (ship.id === rebel.id) ship.acted = rebel.acted;
-      return ship.id === rebel.id;
-    });
-  });
-  console.log('Turn: ', state.encounter.turn);
+  // localStorage.setItem('fleet_encounter', JSON.stringify(state.encounter));
+  // const rebelShips = state.encounter.rebels.map(rebel => {
+  //   return state.flotilla.ships.find(ship => {
+  //     if (ship.id === rebel.id) ship.acted = rebel.acted;
+  //     return ship.id === rebel.id;
+  //   });
+  // });
+
   return {
     enemy: state.encounter.enemy,
     fetchComplete: state.app.fetchComplete,
     flotilla: state.flotilla.ships,
-    rebels: state.flotilla.ships.length === 0 ? [] : rebelShips,
+    encounterID: state.encounter.id,
+    rebels: state.flotilla.ships.length === 0 ? [] : [],
     shipList: state.shiplist.shiplist,
     turn: state.encounter.turn,
     weaponList: state.weapons.list,
@@ -35,10 +35,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addEnemyShip: ship => {
-      const shipWithId = ship;
-      shipWithId.id = Math.floor(Math.random() * 1000000);
-      dispatch(addEnemyShip(shipWithId));
+    addEnemyShip: (ship, id, list) => {
+      // const shipWithId = ship;
+      // shipWithId.id = Math.floor(Math.random() * 1000000);
+      dispatch(addEnemyShip(ship, id, list));
     },
     addFriendlyShip: ship => {
       dispatch(addFriendlyShip(ship.id));

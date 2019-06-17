@@ -16,7 +16,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     repairDamage: (target, hull, strain, crits, id, morale, ordnance, provisions, repair) => {
-      console.log('Repair value before dispatch: ', repair);
       const targetUpdate = Object.assign({}, target, {
         currHT:
           target.currHT + parseInt(hull) > target.HT ? target.HT : target.currHT + parseInt(hull),

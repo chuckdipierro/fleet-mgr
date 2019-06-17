@@ -1,11 +1,5 @@
 const { REACT_APP_API_URL } = process.env;
 
-export const addEnemyShip = ship => {
-  return {
-    type: 'ADD_ENEMY_SHIP',
-    ship,
-  };
-};
 export const addFriendlyShip = ship => {
   return {
     type: 'ADD_FRIENDLY_SHIP',
@@ -22,19 +16,52 @@ export const clearRound = () => {
     type: 'CLEAR_ROUND',
   };
 };
-export const getEncounter = encounter => {
-  return {
-    type: 'SET_ENCOUNTER',
-    encounter: encounter || {},
+export const getEncounter = () => {
+  return async dispatch => {
+    try {
+      const response = await fetch('/api/encounter');
+      const encounter = await response.json();
+      if (encounter.length === 0) {
+        const options = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({}),
+        };
+        const createResponse = await fetch(`/api/encounter/`, options);
+        encounter = await createResponse.json();
+      }
+      dispatch({
+        type: 'SET_ENCOUNTER',
+        encounter: {
+          id: encounter._id,
+          enemy: encounter.enemies,
+          rebels: encounter.rebels,
+          turn: encounter.turn,
+        },
+      });
+      let ws = new WebSocket('ws://localhost:5000/websocket');
+
+      ws.onopen = function() {
+        console.log('app connected to websocket!');
+      };
+      ws.onmessage = function(message) {
+        console.log(message);
+      };
+    } catch (err) {
+      dispatch({
+        type: 'SET_ENCOUNTER',
+        id: '',
+        enemy: [],
+        rebels: [],
+        turn: 0,
+      });
+    }
   };
 };
 export const getFlotilla = () => {
   return async dispatch => {
     try {
-      // const response = await fetch(`${REACT_APP_API_URL}/flotilla`);
       const response = await fetch('/api/fleetShipList');
-      // const ships = await response.json();
-
       let shipsAdded = await response.json();
       shipsAdded = shipsAdded.map(ship => {
         let correctedShip = ship;
@@ -74,7 +101,6 @@ export const getResources = () => {
     try {
       const response = await fetch('/api/resources');
       const resources = await response.json();
-      console.log('Resources:', resources);
       if (resources.length === 0) {
         const options = {
           method: 'POST',
@@ -130,6 +156,31 @@ export const setHull = (id, target) => {
       await fetch(`${REACT_APP_API_URL}/flotilla/${id}/`, options);
       dispatch(getFlotilla());
     } catch (err) {
+      dispatch(getFlotilla());
+    }
+  };
+};
+export const addEnemyShip = (ship, encounterID, shipList) => {
+  return async dispatch => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(ship),
+      };
+      console.log('Ship: ', ship);
+      let addedShip = await fetch('/api/addEnemyShip', options);
+      const newShipID = await addedShip.json();
+      console.log('Added: ', newShipID);
+
+      // return {
+      //   type: 'ADD_ENEMY_SHIP',
+      //   ship,
+      // };
+
+      dispatch(updateEncounter(encounterID, { enemies: [...shipList, newShipID] }));
+      dispatch(getFlotilla());
+    } catch {
       dispatch(getFlotilla());
     }
   };
@@ -215,6 +266,25 @@ export const spendRepair = (id, target) => {
       dispatch(getResources());
     } catch (err) {
       dispatch(getResources());
+    }
+  };
+};
+export const updateEncounter = (id, update) => {
+  return async dispatch => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(update),
+      };
+      console.log('Id: ', id, `/api/encounter/${id}`, update);
+      const updatedEncounter = await fetch(`/api/encounter/${id}`, options);
+      const encounterDetail = await updatedEncounter.json();
+      console.log('EncounterDetail', encounterDetail);
+      dispatch(getEncounter());
+    } catch (err) {
+      console.log('Err in acction: ', err);
+      dispatch(getEncounter());
     }
   };
 };
