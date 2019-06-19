@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const EncounterSchema = new Schema({
   enemies: [{ type: Schema.Types.ObjectId, ref: 'EnemyShip' }],
-  rebels: [],
+  rebels: [{ type: Schema.Types.ObjectId, ref: 'FleetShip' }],
   turn: { type: Number, required: true, min: 0, max: 100 },
 });
 

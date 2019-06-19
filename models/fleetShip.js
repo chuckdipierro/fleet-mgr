@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FleetShipSchema = new Schema({
+  acted: { type: Boolean, required: false },
   captain: { type: String, required: true },
   currHT: { type: Number, required: true },
   currSS: { type: Number, required: true },

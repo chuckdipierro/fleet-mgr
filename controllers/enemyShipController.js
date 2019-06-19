@@ -26,10 +26,9 @@ exports.enemyShip_create_post = async (req, res) => {
     defPortMod: 0,
     defStarboardMod: 0,
     Name: req.body.Name,
-    ship: req.body.id,
+    ship: req.body._id,
     weaponsFired: req.body.weaponsFired,
   });
-  console.log('EnemyShip: ', enemyShip);
   let newShip = await enemyShip.save(function(err) {
     // if (err) { return next(err); }
     if (err) console.log('Err: ', err);
@@ -37,7 +36,6 @@ exports.enemyShip_create_post = async (req, res) => {
     // res.redirect(author.url);
   });
 
-  console.log('Newship, ', newShip, enemyShip._id);
   res.send(enemyShip._id);
 };
 
@@ -58,5 +56,26 @@ exports.enemyShip_update_get = (req, res) => {
 
 // Handle Enemy Ship update on POST.
 exports.enemyShip_update_post = (req, res) => {
-  res.send('NOT IMPLEMENTED: Enemy Ship update POST');
+  var enemyShip = new EnemyShip({
+    currHT: req.body.currHT,
+    currSS: req.body.currSS,
+    crits: req.body.crits,
+    defAftMod: req.body.defAftMod,
+    defForeMod: req.body.defForeMod,
+    defPortMod: req.body.defPortMod,
+    defStarboardMod: req.body.defStarboardMod,
+    _id: req.params.id,
+    Name: req.body.Name,
+    captain: req.body.captain,
+    ship: req.body.id,
+    weaponsFired: req.body.weaponsFired,
+  });
+  EnemyShip.findByIdAndUpdate(req.params.id, enemyShip, {}, function(err, enemyShip) {
+    if (err) {
+      return next(err);
+    }
+    res.send('Complete');
+    // Successful - redirect to book detail page.
+    //  res.redirect(thebook.url);
+  });
 };

@@ -34,7 +34,7 @@ app.ws('/websocket', function(ws, req) {});
 var aWss = expressWs.getWss('/websocket');
 exports.alertSocket = deets => {
   aWss.clients.forEach(function(client) {
-    client.send('hello', deets);
+    client.send(JSON.stringify(deets));
   });
 };
 app.get('/api/shipList', ship_controller.ship_list);

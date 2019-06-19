@@ -1,19 +1,51 @@
 const Encounter = require('../models/encounter');
+const Ship = require('../models/ship');
 const Socket = require('../index');
 // Display list of all Enemy Ships.
 exports.encounter_get = (req, res) => {
   res.send('NOT IMPLEMENTED: Enemy Ship list');
+  Encounter.find({ _id: req.params.id })
+    .populate('enemies')
+    .exec(function(err, data) {
+      if (err) return handleError(err);
+
+      async.forEach(
+        data,
+        function(item, callback) {
+          Ship.populate('enemies', function(err, output) {
+            if (err) throw err; // or do something
+
+            callback();
+          });
+        },
+        function(err) {
+          res.json(data);
+        }
+      );
+    });
 };
 
 exports.encounter_get_all = (req, res) => {
   const getResults = async () => {
     let encounter = new Promise((resolve, reject) => {
-      Encounter.find().exec(function(err, encounter_results) {
-        if (err) {
-          return next(err);
-        }
-        resolve(encounter_results[0]);
-      });
+      Encounter.find()
+        .populate({ path: 'enemies', populate: { path: 'ship' } })
+        .populate({ path: 'rebels', populate: { path: 'ship' } })
+        .exec(function(err, encounter_results) {
+          if (err) {
+            return next(err);
+          }
+          let filled_encounter = encounter_results[0];
+          // filled_encounter.enemies = filled_encounter.enemies.map(ship => {
+          //   let correctedShip = ship;
+          //   //   // delete correctedShip.ship._id;
+          //   correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+          //   console.log('Ship:', correctedShip);
+          //   //   // delete correctedShip.ship;
+          //   return correctedShip;
+          // });
+          resolve(filled_encounter);
+        });
     });
     let result = await encounter;
     res.send(result ? result : []);
@@ -43,31 +75,32 @@ exports.encounter_delete = (req, res) => {
 
 // Handle Enemy Ship update on POST.
 exports.encounter_update = async (req, res) => {
-  console.log('REq: ', req.params, req.body, 'Sample: ', { ...req.body });
   const updatedEncounter = await Encounter.updateOne(
     { _id: req.params.id },
     { ...req.body },
     function(err, affected, resp) {
       if (err) console.log('Err: ', err);
-      console.log('response: ', affected.nModified, resp);
     }
   );
-  console.log('Update: ', updatedEncounter.nModified);
   let fullEncounter = new Promise((resolve, reject) => {
-    Encounter.find({ _id: req.params.id }).exec(function(err, encounterDeets) {
-      if (err) {
-        return next(err);
-      }
-      console.log('Deets: ', deets);
-      //Successful, so render
-      // list_ships.forEach(ship => {
-      //   let correctedShip = ship;
-      //   correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
-      //   delete correctedShip.ship;
-      //   console.log('correctedShip: ', correctedShip);
-      // });
-      resolve(encounterDeets);
-    });
+    Encounter.find({ _id: req.params.id })
+      .populate({ path: 'enemies', populate: { path: 'ship' } })
+      .populate({ path: 'rebels', populate: { path: 'ship' } })
+      .exec(function(err, encounter_results) {
+        if (err) {
+          return next(err);
+        }
+        let filled_encounter = encounter_results[0];
+        // filled_encounter.enemies = filled_encounter.enemies.map(ship => {
+        //   let correctedShip = ship;
+        //   //   // delete correctedShip.ship._id;
+        //   correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+        //   console.log('Ship:', correctedShip);
+        //   //   // delete correctedShip.ship;
+        //   return correctedShip;
+        // });
+        resolve(filled_encounter);
+      });
   });
   let result = await fullEncounter;
   Socket.alertSocket(result);

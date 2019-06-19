@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const EnemyShipSchema = new Schema({
+  acted: { type: Boolean, required: false },
   currHT: { type: Number, required: true },
   currSS: { type: Number, required: true },
   crits: [],

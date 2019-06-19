@@ -7,8 +7,10 @@ import {
   addEnemyShip,
   clearEncounter,
   clearRound,
+  setEnemyShip,
   setFleetShip,
   setShipActed,
+  updateEncounter,
   updateEnemy,
 } from '../actions';
 
@@ -26,7 +28,7 @@ const mapStateToProps = state => {
     fetchComplete: state.app.fetchComplete,
     flotilla: state.flotilla.ships,
     encounterID: state.encounter.id,
-    rebels: state.flotilla.ships.length === 0 ? [] : [],
+    rebels: state.flotilla.ships.length === 0 ? [] : state.encounter.rebels,
     shipList: state.shiplist.shiplist,
     turn: state.encounter.turn,
     weaponList: state.weapons.list,
@@ -36,12 +38,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addEnemyShip: (ship, id, list) => {
-      // const shipWithId = ship;
-      // shipWithId.id = Math.floor(Math.random() * 1000000);
       dispatch(addEnemyShip(ship, id, list));
     },
-    addFriendlyShip: ship => {
-      dispatch(addFriendlyShip(ship.id));
+    addFriendlyShip: (ship, id, list) => {
+      dispatch(addFriendlyShip(ship, id, list));
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
       const critHit = crit > 0;
@@ -87,7 +87,7 @@ const mapDispatchToProps = dispatch => {
       // });
       if (damage > 0 || strain > 0) {
         if (enemy) {
-          dispatch(updateEnemy(target.id, targetUpdate));
+          dispatch(setEnemyShip(target._id, targetUpdate));
         } else {
           dispatch(setFleetShip(target._id, targetUpdate));
         }
@@ -97,8 +97,8 @@ const mapDispatchToProps = dispatch => {
     clearEncounter: () => {
       dispatch(clearEncounter());
     },
-    clearRound: () => {
-      dispatch(clearRound());
+    clearRound: (id, turn) => {
+      dispatch(updateEncounter(id, { turn: turn + 1 }));
     },
     repairDamage: (target, hull, strain, crits, enemy = false) => {
       const targetUpdate = Object.assign({}, target, {
@@ -118,7 +118,7 @@ const mapDispatchToProps = dispatch => {
         return item != null;
       });
       if (enemy) {
-        dispatch(updateEnemy(target.id, targetUpdate));
+        dispatch(setEnemyShip(target._id, targetUpdate));
       } else {
         dispatch(setFleetShip(target._id, targetUpdate));
       }
@@ -131,7 +131,7 @@ const mapDispatchToProps = dispatch => {
         defStarboardMod,
       });
       if (enemy) {
-        dispatch(updateEnemy(target.id, targetUpdate));
+        dispatch(setEnemyShip(target._id, targetUpdate));
       } else {
         dispatch(setFleetShip(target._id, targetUpdate));
       }

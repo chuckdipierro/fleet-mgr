@@ -29,7 +29,7 @@ const Encounter = ({
       <div className="turnMgr">
         <span className="turnCnt">Round: {turn}</span>
         <Button.Group>
-          <Button primary onClick={() => clearRound()}>
+          <Button primary onClick={() => clearRound(encounterID, turn)}>
             End Round
           </Button>
           <Button primary onClick={() => clearEncounter()}>
@@ -51,13 +51,29 @@ const Encounter = ({
       />
       <div className="btn-tray">
         <AddModal
-          addShip={ship => addFriendlyShip(ship)}
+          addShip={ship =>
+            addFriendlyShip(
+              ship,
+              encounterID,
+              rebels.map(rebel => {
+                return rebel._id;
+              })
+            )
+          }
           btnTxt="^ Select Friendly"
           hdrTxt="Add Ally Ship"
           shipList={flotilla}
         />
         <AddModal
-          addShip={ship => addEnemyShip(ship, encounterID, enemy)}
+          addShip={ship =>
+            addEnemyShip(
+              ship,
+              encounterID,
+              enemy.map(en => {
+                return en._id;
+              })
+            )
+          }
           btnTxt="Select Opposition v"
           hdrTxt="Add Enemy Ship"
           shipList={shipList}

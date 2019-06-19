@@ -9,6 +9,7 @@ import {
   getFlotilla,
   getResources,
   getShiplist,
+  setEncounterSocket,
   setShipForm,
   setWeaponList,
 } from './actions';
@@ -25,6 +26,7 @@ store.dispatch(getEncounter());
 store.dispatch(getFlotilla());
 store.dispatch(getShiplist());
 store.dispatch(getResources());
+store.dispatch(setEncounterSocket());
 store.dispatch(setShipForm(shipForm));
 store.dispatch(setWeaponList(weapons));
 

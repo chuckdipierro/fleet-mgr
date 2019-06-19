@@ -1,11 +1,5 @@
 const { REACT_APP_API_URL } = process.env;
 
-export const addFriendlyShip = ship => {
-  return {
-    type: 'ADD_FRIENDLY_SHIP',
-    ship,
-  };
-};
 export const clearEncounter = () => {
   return {
     type: 'CLEAR_ENCOUNTER',
@@ -30,6 +24,21 @@ export const getEncounter = () => {
         const createResponse = await fetch(`/api/encounter/`, options);
         encounter = await createResponse.json();
       }
+      encounter.enemies = encounter.enemies.map(ship => {
+        let correctedShip = ship;
+        delete correctedShip.ship._id;
+        correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+        delete correctedShip.ship;
+        return correctedShip;
+      });
+
+      encounter.rebels = encounter.rebels.map(ship => {
+        let correctedShip = ship;
+        delete correctedShip.ship._id;
+        correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+        delete correctedShip.ship;
+        return correctedShip;
+      });
       dispatch({
         type: 'SET_ENCOUNTER',
         encounter: {
@@ -39,14 +48,6 @@ export const getEncounter = () => {
           turn: encounter.turn,
         },
       });
-      let ws = new WebSocket('ws://localhost:5000/websocket');
-
-      ws.onopen = function() {
-        console.log('app connected to websocket!');
-      };
-      ws.onmessage = function(message) {
-        console.log(message);
-      };
     } catch (err) {
       dispatch({
         type: 'SET_ENCOUNTER',
@@ -130,6 +131,21 @@ export const getResources = () => {
     }
   };
 };
+export const setEnemyShip = (id, target) => {
+  return async dispatch => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(target),
+      };
+      await fetch(`/api/updateEnemyShip/${id}`, options);
+      dispatch(getEncounter());
+    } catch (err) {
+      dispatch(getEncounter());
+    }
+  };
+};
 export const setFleetShip = (id, target) => {
   return async dispatch => {
     try {
@@ -139,6 +155,7 @@ export const setFleetShip = (id, target) => {
         body: JSON.stringify(target),
       };
       await fetch(`/api/updateFleetShip/${id}`, options);
+      dispatch(getEncounter());
       dispatch(getFlotilla());
     } catch (err) {
       dispatch(getFlotilla());
@@ -168,21 +185,16 @@ export const addEnemyShip = (ship, encounterID, shipList) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(ship),
       };
-      console.log('Ship: ', ship);
       let addedShip = await fetch('/api/addEnemyShip', options);
       const newShipID = await addedShip.json();
-      console.log('Added: ', newShipID);
-
-      // return {
-      //   type: 'ADD_ENEMY_SHIP',
-      //   ship,
-      // };
 
       dispatch(updateEncounter(encounterID, { enemies: [...shipList, newShipID] }));
-      dispatch(getFlotilla());
-    } catch {
-      dispatch(getFlotilla());
-    }
+    } catch {}
+  };
+};
+export const addFriendlyShip = (ship, encounterID, shipList) => {
+  return async dispatch => {
+    dispatch(updateEncounter(encounterID, { rebels: [...shipList, ship._id] }));
   };
 };
 export const addShiptoFlotilla = ship => {
@@ -233,6 +245,43 @@ export const getShiplist = () => {
     }
   };
 };
+export const setEncounterSocket = () => {
+  return async dispatch => {
+    let ws = new WebSocket('ws://localhost:5000/websocket');
+
+    ws.onopen = function() {
+      console.log('app connected to websocket!');
+    };
+    ws.onmessage = function(message) {
+      let encounter = JSON.parse(message.data);
+
+      encounter.enemies = encounter.enemies.map(ship => {
+        let correctedShip = ship;
+        delete correctedShip.ship._id;
+        correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+        delete correctedShip.ship;
+        return correctedShip;
+      });
+      encounter.rebels = encounter.rebels.map(ship => {
+        let correctedShip = ship;
+        delete correctedShip.ship._id;
+        correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+        delete correctedShip.ship;
+        return correctedShip;
+      });
+      dispatch({
+        type: 'SET_ENCOUNTER',
+        encounter: {
+          id: encounter._id,
+          enemy: encounter.enemies,
+          rebels: encounter.rebels,
+          turn: encounter.turn,
+        },
+      });
+    };
+    dispatch({ type: 'SOCKET_SETUP' });
+  };
+};
 export const setShipActed = (enemy, id, ship) => {
   if (enemy) setFleetShip(id, ship);
   return {
@@ -277,13 +326,10 @@ export const updateEncounter = (id, update) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(update),
       };
-      console.log('Id: ', id, `/api/encounter/${id}`, update);
       const updatedEncounter = await fetch(`/api/encounter/${id}`, options);
       const encounterDetail = await updatedEncounter.json();
-      console.log('EncounterDetail', encounterDetail);
       dispatch(getEncounter());
     } catch (err) {
-      console.log('Err in acction: ', err);
       dispatch(getEncounter());
     }
   };
