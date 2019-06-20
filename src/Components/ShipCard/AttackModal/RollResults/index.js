@@ -119,8 +119,17 @@ const RollResults = ({
       ion = true;
     }
     const armorSoak = target.Armor - breach > 0 ? target.Armor - breach : 0;
+    console.log(
+      'Numbers in modal: ',
+      parseInt(state.selectedWeapons[0].stats.Dam),
+      state.results.success,
+      armorSoak,
+      state.linked
+    );
     linkedDamage =
-      (parseInt(state.selectedWeapons[0].stats.Dam) + state.results.success - armorSoak) *
+      (parseInt(state.selectedWeapons[0].stats.Dam) +
+        (state.results.success ? state.results.success : 0) -
+        armorSoak) *
       state.linked;
     applyDamage(
       target,

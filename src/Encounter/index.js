@@ -20,7 +20,6 @@ const mapStateToProps = state => {
       return ship.id === rebel.id;
     });
   });
-  console.log('Turn: ', state.encounter.turn);
   return {
     enemy: state.encounter.enemy,
     fetchComplete: state.app.fetchComplete,
@@ -43,10 +42,25 @@ const mapDispatchToProps = dispatch => {
       dispatch(addFriendlyShip(ship.id));
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
+      console.log(
+        target.curr_HT,
+        ' - ',
+        damage,
+        ' = ',
+        target.curr_HT - damage,
+        'SS - Damage: ',
+        target.curr_SS - strain
+      );
       const critHit = crit > 0;
       const targetUpdate = Object.assign({}, target, {
-        curr_HT: target.curr_HT - damage >= 0 ? target.curr_HT - damage : 0,
-        curr_SS: target.curr_SS - strain >= 0 ? target.curr_SS - strain : 0,
+        curr_HT:
+          target.curr_HT - (damage < 0 ? 0 : damage) >= 0
+            ? target.curr_HT - (damage < 0 ? 0 : damage)
+            : 0,
+        curr_SS:
+          target.curr_SS - (strain < 0 ? 0 : strain) >= 0
+            ? target.curr_SS - (strain < 0 ? 0 : strain)
+            : 0,
       });
       if (critHit) {
         const chance = new Chance();
@@ -55,14 +69,17 @@ const mapDispatchToProps = dispatch => {
         if (critRoll > 145) {
           targetUpdate.destroyed = true;
         }
+        console.log('Crit hit roll applied!');
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
+      console.log('TargetUpdate: ', targetUpdate);
       if (targetUpdate.curr_HT === 0 || targetUpdate.curr_SS === 0) {
         const chance = new Chance();
         const critRoll = chance.integer({ min: 0, max: 100 }) + targetUpdate.crits.length * 10;
         if (critRoll > 145) {
           targetUpdate.destroyed = true;
         }
+        console.log('HT || SS hits 0 applied!');
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
       fired.forEach(index => {
@@ -83,12 +100,11 @@ const mapDispatchToProps = dispatch => {
       //     }
       //   }
       // });
-      if (damage > 0 || strain > 0) {
-        if (enemy) {
-          dispatch(updateEnemy(target.id, targetUpdate));
-        } else {
-          dispatch(setHull(target.id, targetUpdate));
-        }
+      console.log('Damage > 0: ', damage > 0, 'Strain > 0: ', strain > 0);
+      if (enemy) {
+        dispatch(updateEnemy(target.id, targetUpdate));
+      } else {
+        dispatch(setHull(target.id, targetUpdate));
       }
       dispatch(setShipActed(enemy, shipID, shipFiring));
     },
