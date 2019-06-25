@@ -32,28 +32,80 @@
       "linked": 3,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 30,
       "linked": 3,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 20,
       "linked": 1,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 20,
       "linked": 1,
       "mount": "turret",
       "position": "ventral",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
@@ -63,30 +115,84 @@
       },
       "mount": "forward",
       "position": "forward",
-      "type": "Ion Cannon (Battleship)"
+      "type": "Ion Cannon (Battleship)",
+      "stats": {
+        "Name": "Ion Cannon (Battleship)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "4",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 8,
+        "Size": "8-10",
+        "Qualities": "Breach 3, Ion, Slow-Firing 2",
+        "Source": "SWA/F02"
+      }
     },
     {
       "count": 15,
       "linked": 1,
       "mount": "turret",
       "position": "port",
-      "type": "Ion Cannon (Battleship)"
+      "type": "Ion Cannon (Battleship)",
+      "stats": {
+        "Name": "Ion Cannon (Battleship)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "4",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 8,
+        "Size": "8-10",
+        "Qualities": "Breach 3, Ion, Slow-Firing 2",
+        "Source": "SWA/F02"
+      }
     },
     {
       "count": 15,
       "linked": 1,
       "mount": "turret",
       "position": "starboard",
-      "type": "Ion Cannon (Battleship)"
+      "type": "Ion Cannon (Battleship)",
+      "stats": {
+        "Name": "Ion Cannon (Battleship)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "4",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 8,
+        "Size": "8-10",
+        "Qualities": "Breach 3, Ion, Slow-Firing 2",
+        "Source": "SWA/F02"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "hull",
       "position": "hull",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
+
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d3"),
   "Source": "SWA02"
 }
 {
@@ -123,79 +229,223 @@
       "linked": 1,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 1,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 1,
       "mount": "turret",
       "position": "ventral",
-      "type": "Ion Cannon (Battleship)"
+      "type": "Ion Cannon (Battleship)",
+      "stats": {
+        "Name": "Ion Cannon (Battleship)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "4",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 8,
+        "Size": "8-10",
+        "Qualities": "Breach 3, Ion, Slow-Firing 2",
+        "Source": "SWA/F02"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Proton Torpedo"
+      "type": "Proton Torpedo Launcher",
+      "stats": {
+        "Name": "Proton Torpedo Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "8",
+        "Crit": "2",
+        "Price": "9,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "3-10",
+        "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Proton Torpedo"
+      "type": "Proton Torpedo Launcher",
+      "stats": {
+        "Name": "Proton Torpedo Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "8",
+        "Crit": "2",
+        "Price": "9,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "3-10",
+        "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Proton Torpedo"
+      "type": "Proton Torpedo Launcher",
+      "stats": {
+        "Name": "Proton Torpedo Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "8",
+        "Crit": "2",
+        "Price": "9,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "3-10",
+        "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 3,
       "mount": "retractable",
       "position": "ventral",
-      "type": "Concussion Missile (Assault)"
+      "type": "Concussion Missile (Assault)",
+      "stats": {
+        "Name": "Concussion Missile (Assault)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "500",
+        "Restricted": "Y",
+        "Rarity": 5,
+        "Size": "3-10",
+        "Qualities": "Blast 10, Breach 10, Inaccurate 4, Slow-Firing 4",
+        "Source": "All Core"
+      }
     },
     {
       "count": 20,
       "linked": 0,
       "mount": "ventral",
       "position": "ventral",
-      "type": "Tractor Beam (Medium)"
+      "type": "Tractor Beam (Medium)",
+      "stats": {
+        "Name": "Tractor Beam (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short ",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "5-10",
+        "Qualities": "Tractor 4",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "ventral",
       "position": "ventral",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d0"),
   "Source": "SWA36"
 }
 {
@@ -232,44 +482,123 @@
       "linked": 1,
       "mount": "forward",
       "position": "forward",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 1,
       "mount": "aft",
       "position": "aft",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 3,
       "mount": "port",
       "position": "port",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 3,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Laser Cannon (Heavy)"
+      "type": "Laser Cannon (Heavy)",
+      "stats": {
+        "Name": "Laser Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "4-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Laser Cannon (Heavy)"
+      "type": "Laser Cannon (Heavy)",
+      "stats": {
+        "Name": "Laser Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "4-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d2"),
   "Source": "SWA02"
 }
 {
@@ -306,14 +635,40 @@
       "linked": 1,
       "mount": "turret",
       "position": "port",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 1,
       "mount": "turret",
       "position": "starboard",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
@@ -325,16 +680,43 @@
       },
       "mount": "forward",
       "position": "forward",
-      "type": "Concussion Missile Launcher"
+      "type": "Concussion Missile Launcher",
+      "stats": {
+        "Name": "Concussion Missile Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "3-10",
+        "Qualities": "Blast 4, Breach 4, Guided 3, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 0,
       "mount": "hull",
       "position": "hull",
-      "type": "Tractor Beam (Medium)"
+      "type": "Tractor Beam (Medium)",
+      "stats": {
+        "Name": "Tractor Beam (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short ",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "5-10",
+        "Qualities": "Tractor 4",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059cf"),
   "Source": "SWA25"
 }
 {
@@ -371,58 +753,163 @@
       "linked": 0,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Ion Cannon (Heavy)"
+      "type": "Ion Cannon (Heavy)",
+      "stats": {
+        "Name": "Ion Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "7",
+        "Crit": "4",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Slow Firing 1, Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Ion Cannon (Heavy)"
+      "type": "Ion Cannon (Heavy)",
+      "stats": {
+        "Name": "Ion Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "7",
+        "Crit": "4",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Slow Firing 1, Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Ion Cannon (Heavy)"
+      "type": "Ion Cannon (Heavy)",
+      "stats": {
+        "Name": "Ion Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "7",
+        "Crit": "4",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Slow Firing 1, Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Mass Driver Missile Launcher"
+      "type": "Mass Driver Missile Launcher",
+      "stats": {
+        "Name": "Mass Driver Missile Launcher",
+        "Skill": "Gunnery",
+        "Range": "Extreme",
+        "Dam": "14",
+        "Crit": "3",
+        "Price": "500",
+        "Restricted": "Y",
+        "Rarity": 5,
+        "Size": "",
+        "Qualities": "Blast 4, Breach 4, Inaccurate 1, Limited Ammo 10, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059dd"),
   "Source": "SWE08"
 }
 {
@@ -459,51 +946,143 @@
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Turbolaser (Heavy)"
+      "type": "Turbolaser (Heavy)",
+      "stats": {
+        "Name": "Turbolaser (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "11",
+        "Crit": "3",
+        "Price": "20,000",
+        "Restricted": "Y",
+        "Rarity": 8,
+        "Size": "6-10",
+        "Qualities": "Breach 4, Slow-Firing 2",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Laser Cannon (Heavy)"
+      "type": "Laser Cannon (Heavy)",
+      "stats": {
+        "Name": "Laser Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "4-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Laser Cannon (Heavy)"
+      "type": "Laser Cannon (Heavy)",
+      "stats": {
+        "Name": "Laser Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "4-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 10,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Laser Cannon (Heavy)"
+      "type": "Laser Cannon (Heavy)",
+      "stats": {
+        "Name": "Laser Cannon (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "4-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059ce"),
   "Source": "SWE08"
 }
 {
@@ -540,16 +1119,43 @@
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "hull",
       "position": "hull",
-      "type": "Tractor Beam (Medium)"
+      "type": "Tractor Beam (Medium)",
+      "stats": {
+        "Name": "Tractor Beam (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short ",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "5-10",
+        "Qualities": "Tractor 4",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d4"),
   "Source": "SWA25"
 }
 {
@@ -586,79 +1192,223 @@
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 7,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Concussion Missile Launcher"
+      "type": "Concussion Missile Launcher",
+      "stats": {
+        "Name": "Concussion Missile Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "3-10",
+        "Qualities": "Blast 4, Breach 4, Guided 3, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 5,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 0,
       "mount": "aft",
       "position": "aft",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 0,
       "mount": "aft",
       "position": "aft",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d1"),
   "Source": "SWA30"
 }
 {
@@ -695,51 +1445,143 @@
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 6,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "turret",
       "position": "forward",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "turret",
       "position": "aft",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d7"),
   "Source": "SWE/A02"
 }
 {
@@ -776,51 +1618,143 @@
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 6,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 1,
       "mount": "turret",
       "position": "port",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 1,
       "mount": "turret",
       "position": "starboard",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 1,
       "mount": "turret",
       "position": "aft",
-      "type": "Laser Cannon (Light)"
+      "type": "Laser Cannon (Light)",
+      "stats": {
+        "Name": "Laser Cannon (Light)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "5,500",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 1,
       "mount": "forward",
       "position": "forward",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Tractor Beam (Heavy)"
+      "type": "Tractor Beam (Heavy)",
+      "stats": {
+        "Name": "Tractor Beam (Heavy)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "10,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Tractor 6",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d8"),
   "Source": "SWE11"
 }
 {
@@ -857,30 +1791,83 @@
       "linked": 1,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 1,
       "mount": "turret",
       "position": "ventral",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Turbolasers (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Turbolasers (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d5"),
   "Source": "All"
 }
 {
@@ -917,37 +1904,103 @@
       "linked": 0,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 0,
       "mount": "turret",
       "position": "ventral",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 4,
       "linked": 0,
       "mount": "turret",
       "position": "forward",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d6"),
   "Source": "SWA02"
 }
 {
@@ -984,51 +2037,143 @@
       "linked": 1,
       "mount": "turret",
       "position": "fore",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 1,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 1,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Concussion Missile Launcher"
+      "type": "Concussion Missile Launcher",
+      "stats": {
+        "Name": "Concussion Missile Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "3-10",
+        "Qualities": "Blast 4, Breach 4, Guided 3, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Concussion Missile Launcher"
+      "type": "Concussion Missile Launcher",
+      "stats": {
+        "Name": "Concussion Missile Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "3-10",
+        "Qualities": "Blast 4, Breach 4, Guided 3, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059d9"),
   "Source": "SWE02"
 }
 {
@@ -1064,44 +2209,123 @@
       "linked": 1,
       "mount": "turret",
       "position": "port",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 1,
       "mount": "turret",
       "position": "starboard",
-      "type": "Turbolaser (Medium)"
+      "type": "Turbolaser (Medium)",
+      "stats": {
+        "Name": "Turbolaser (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Long",
+        "Dam": "10",
+        "Crit": "3",
+        "Price": "15,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "6-10",
+        "Qualities": "Breach 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 0,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 0,
       "mount": "turret",
       "position": "ventral",
-      "type": "Quad Laser Cannon"
+      "type": "Quad Laser Cannon",
+      "stats": {
+        "Name": "Quad Laser Cannon",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "5",
+        "Crit": "3",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "4-10",
+        "Qualities": "Accurate, Linked 3",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Proton Torpedo Launcher"
+      "type": "Proton Torpedo Launcher",
+      "stats": {
+        "Name": "Proton Torpedo Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "8",
+        "Crit": "2",
+        "Price": "9,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "3-10",
+        "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Tractor Beam (Medium)"
+      "type": "Tractor Beam (Medium)",
+      "stats": {
+        "Name": "Tractor Beam (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short ",
+        "Dam": "—",
+        "Crit": "—",
+        "Price": "8,000",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "5-10",
+        "Qualities": "Tractor 4",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059db"),
   "Source": "SWE07"
 }
 {
@@ -1138,37 +2362,103 @@
       "linked": 0,
       "mount": "aft",
       "position": "aft",
-      "type": "Concussion Missile Launcher"
+      "type": "Concussion Missile Launcher",
+      "stats": {
+        "Name": "Concussion Missile Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,500",
+        "Restricted": "N",
+        "Rarity": 5,
+        "Size": "3-10",
+        "Qualities": "Blast 4, Breach 4, Guided 3, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 1,
       "mount": "turret",
       "position": "dorsal",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 1,
       "mount": "turret",
       "position": "port",
-      "type": "Laser Cannon (Medium)"
+      "type": "Laser Cannon (Medium)",
+      "stats": {
+        "Name": "Laser Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,000",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 1,
       "mount": "turret",
       "position": "starboard",
-      "type": "Laser Cannon (Medium)"
+      "type": "Laser Cannon (Medium)",
+      "stats": {
+        "Name": "Laser Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,000",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 2,
       "linked": 0,
       "mount": "forward",
       "position": "forward",
-      "type": "Proton Torpedo Launcher"
+      "type": "Proton Torpedo Launcher",
+      "stats": {
+        "Name": "Proton Torpedo Launcher",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "8",
+        "Crit": "2",
+        "Price": "9,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "3-10",
+        "Qualities": "Blast 6, Breach 6, Guided 2, Limited Ammo 3, Slow-Firing 1",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059da"),
   "Source": "SWE08"
 }
 {
@@ -1206,7 +2496,20 @@
       "mount": "turret",
       "mod": "Concealed",
       "position": "port",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
@@ -1214,23 +2517,63 @@
       "mount": "turret",
       "mod": "Concealed",
       "position": "starboard",
-      "type": "Turbolaser (Light)"
+      "type": "Turbolaser (Light)",
+      "stats": {
+        "Name": "Turbolaser (Light)",
+        "Skill": "Gunnery",
+        "Range": "Medium",
+        "Dam": "9",
+        "Crit": "3",
+        "Price": "12,000",
+        "Restricted": "Y",
+        "Rarity": 7,
+        "Size": "5-10",
+        "Qualities": "Breach 2, Slow-Firing 1",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "port",
       "position": "port",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     },
     {
       "count": 3,
       "linked": 0,
       "mount": "starboard",
       "position": "starboard",
-      "type": "Ion Cannon (Medium)"
+      "type": "Ion Cannon (Medium)",
+      "stats": {
+        "Name": "Ion Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Short",
+        "Dam": "6",
+        "Crit": "4",
+        "Price": "6,000",
+        "Restricted": "N",
+        "Rarity": 6,
+        "Size": "5-10",
+        "Qualities": "Ion",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059de"),
   "Source": "SWE11"
 }
 {
@@ -1267,16 +2610,43 @@
       "linked": 0,
       "mount": "turret",
       "position": "port",
-      "type": "Laser Cannon (Medium)'"
+      "type": "Laser Cannon (Medium)",
+      "stats": {
+        "Name": "Laser Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,000",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     },
     {
       "count": 1,
       "linked": 0,
       "mount": "turret",
       "position": "starboard",
-      "type": "Laser Cannon (Medium)'"
+      "type": "Laser Cannon (Medium)",
+      "stats": {
+        "Name": "Laser Cannon (Medium)",
+        "Skill": "Gunnery",
+        "Range": "Close",
+        "Dam": "6",
+        "Crit": "3",
+        "Price": "7,000",
+        "Restricted": "N",
+        "Rarity": 4,
+        "Size": "3-10",
+        "Qualities": "",
+        "Source": "All Core"
+      }
     }
   ],
+  "_id": ObjectId("5cfd4f0a884430c1986059dc"),
   "Source": "SWE11"
 }
 {
@@ -1389,7 +2759,7 @@
       }
     }
   ],
-  "id": 32331399
+  "_id": ObjectId("5cfd4f0a884430c1986059df")
 }
 {
   "hullType": "Transport",
@@ -1481,7 +2851,7 @@
       }
     }
   ],
-  "id": 54102202
+  "_id": ObjectId("5cfd4f0a884430c1986059e0")
 }
 {
   "hullType": "Corvette",
@@ -1613,7 +2983,7 @@
       }
     }
   ],
-  "id": 15877774
+  "_id": ObjectId("5cfd4f0a884430c1986059e1")
 }
 {
   "hullType": "Dreadnought",
@@ -2005,7 +3375,7 @@
       }
     }
   ],
-  "id": 92851936
+  "_id": ObjectId("5cfd4f0a884430c1986059e4")
 }
 {
   "hullType": "Star Destroyer",
@@ -2277,7 +3647,7 @@
       }
     }
   ],
-  "id": 10716092
+  "_id": ObjectId("5cfd4f0a884430c1986059e2")
 }
 {
   "hullType": "Cruiser",
@@ -2549,7 +3919,7 @@
       }
     }
   ],
-  "id": 79229003
+  "_id": ObjectId("5cfd4f0a884430c1986059ed")
 }
 {
   "hullType": "Star Destroyer",
@@ -2681,7 +4051,7 @@
       }
     }
   ],
-  "id": 84652735
+  "_id": ObjectId("5cfd4f0a884430c1986059e3")
 }
 {
   "hullType": "Star Destroyer",
@@ -2853,7 +4223,7 @@
       }
     }
   ],
-  "id": 61645662
+  "_id": ObjectId("5cfd4f0a884430c1986059e5")
 }
 {
   "hullType": "Cruiser",
@@ -2985,7 +4355,7 @@
       }
     }
   ],
-  "id": 33900345
+  "_id": ObjectId("5cfd4f0a884430c1986059e6")
 }
 {
   "hullType": "Cruiser",
@@ -3217,7 +4587,7 @@
       }
     }
   ],
-  "id": 2224016
+  "_id": ObjectId("5cfd4f0a884430c1986059eb")
 }
 {
   "hullType": "Transport",
@@ -3309,7 +4679,7 @@
       }
     }
   ],
-  "id": 39461132
+  "_id": ObjectId("5cfd4f0a884430c1986059e9")
 }
 {
   "hullType": "Destroyer",
@@ -3421,7 +4791,7 @@
       }
     }
   ],
-  "id": 12527069
+  "_id": ObjectId("5cfd4f0a884430c1986059e7")
 }
 {
   "hullType": "Corvette",
@@ -3533,7 +4903,7 @@
       }
     }
   ],
-  "id": 96191106
+  "_id": ObjectId("5cfd4f0a884430c1986059e8")
 }
 {
   "hullType": "Frigate",
@@ -3665,7 +5035,7 @@
       }
     }
   ],
-  "id": 74788797
+  "_id": ObjectId("5cfd4f0a884430c1986059ea")
 }
 {
   "hullType": "Corvette",
@@ -3817,7 +5187,7 @@
       }
     }
   ],
-  "id": 61118298
+  "_id": ObjectId("5cfd4f0a884430c1986059ee")
 }
 {
   "hullType": "Bulk Cruiser",
@@ -3929,7 +5299,7 @@
       }
     }
   ],
-  "id": 59790233
+  "_id": ObjectId("5cfd4f0a884430c1986059ec")
 }
 {
   "hullType": "Frigate",
@@ -4101,7 +5471,7 @@
       }
     }
   ],
-  "id": 16799022
+  "_id": ObjectId("5cfd4f0a884430c1986059ef")
 }
 {
   "hullType": "Heavy Cruiser",
@@ -4253,5 +5623,5 @@
       }
     }
   ],
-  "id": 22360228
+  "_id": ObjectId("5cfd4f0a884430c1986059f0")
 }

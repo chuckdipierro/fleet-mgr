@@ -1,13 +1,35 @@
 const { REACT_APP_API_URL } = process.env;
 
-export const clearEncounter = () => {
-  return {
-    type: 'CLEAR_ENCOUNTER',
+export const clearEncounter = id => {
+  return async dispatch => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      };
+      const updatedEncounter = await fetch(`/api/encounter/${id}/clear`, options);
+      const encounterDetail = await updatedEncounter.json();
+      // dispatch(getEncounter());
+    } catch (err) {
+      dispatch(getEncounter());
+    }
   };
 };
-export const clearRound = () => {
-  return {
-    type: 'CLEAR_ROUND',
+export const clearRound = id => {
+  return async dispatch => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      };
+      const updatedEncounter = await fetch(`/api/encounter/${id}/clearRound`, options);
+      const encounterDetail = await updatedEncounter.json();
+      // dispatch(getEncounter());
+    } catch (err) {
+      dispatch(getEncounter());
+    }
   };
 };
 export const getEncounter = () => {
@@ -26,6 +48,7 @@ export const getEncounter = () => {
       }
       encounter.enemies = encounter.enemies.map(ship => {
         let correctedShip = ship;
+        console.log('Enemy ship:', ship.weaponsFired);
         delete correctedShip.ship._id;
         correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
         delete correctedShip.ship;
@@ -254,30 +277,41 @@ export const setEncounterSocket = () => {
     };
     ws.onmessage = function(message) {
       let encounter = JSON.parse(message.data);
-
-      encounter.enemies = encounter.enemies.map(ship => {
-        let correctedShip = ship;
-        delete correctedShip.ship._id;
-        correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
-        delete correctedShip.ship;
-        return correctedShip;
-      });
-      encounter.rebels = encounter.rebels.map(ship => {
-        let correctedShip = ship;
-        delete correctedShip.ship._id;
-        correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
-        delete correctedShip.ship;
-        return correctedShip;
-      });
-      dispatch({
-        type: 'SET_ENCOUNTER',
-        encounter: {
-          id: encounter._id,
-          enemy: encounter.enemies,
-          rebels: encounter.rebels,
-          turn: encounter.turn,
-        },
-      });
+      if (!message.data.deleted) {
+        encounter.enemies = encounter.enemies.map(ship => {
+          let correctedShip = ship;
+          delete correctedShip.ship._id;
+          correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+          delete correctedShip.ship;
+          return correctedShip;
+        });
+        encounter.rebels = encounter.rebels.map(ship => {
+          let correctedShip = ship;
+          delete correctedShip.ship._id;
+          correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+          delete correctedShip.ship;
+          return correctedShip;
+        });
+        dispatch({
+          type: 'SET_ENCOUNTER',
+          encounter: {
+            id: encounter._id,
+            enemy: encounter.enemies,
+            rebels: encounter.rebels,
+            turn: encounter.turn,
+          },
+        });
+      } else {
+        dispatch({
+          type: 'SET_ENCOUNTER',
+          encounter: {
+            id: '',
+            enemy: [],
+            rebels: [],
+            turn: -1,
+          },
+        });
+      }
     };
     dispatch({ type: 'SOCKET_SETUP' });
   };

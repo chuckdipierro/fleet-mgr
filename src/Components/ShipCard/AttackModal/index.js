@@ -72,6 +72,8 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
       ) {
         weapon.selected = false;
         weapon.Index = i;
+        console.log('Ship: ', ship);
+        weapon.cooldown = !Object.keys(ship.weaponsFired).length < 1 || ship.weaponsFired[i] > turn;
         // if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
         //   const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
         //   if (turn < weapon.fired + slowFiring) {
@@ -138,7 +140,6 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
             facing={state.facing}
             handleSelection={i => handleSelection(i)}
             selectedCount={state.selectedCount}
-            turn={turn}
             validWeapons={state.validWeapons}
             weaponType={state.weaponType}
           />

@@ -18,6 +18,7 @@ exports.enemyShip_create_get = (req, res) => {
 // Handle Enemy Ship create on POST.
 exports.enemyShip_create_post = async (req, res) => {
   var enemyShip = new EnemyShip({
+    acted: false,
     currHT: req.body.currHT,
     currSS: req.body.currSS,
     crits: [],
@@ -27,7 +28,7 @@ exports.enemyShip_create_post = async (req, res) => {
     defStarboardMod: 0,
     Name: req.body.Name,
     ship: req.body._id,
-    weaponsFired: req.body.weaponsFired,
+    weaponsFired: [],
   });
   let newShip = await enemyShip.save(function(err) {
     // if (err) { return next(err); }
@@ -57,6 +58,7 @@ exports.enemyShip_update_get = (req, res) => {
 // Handle Enemy Ship update on POST.
 exports.enemyShip_update_post = (req, res) => {
   var enemyShip = new EnemyShip({
+    acted: req.body.acted,
     currHT: req.body.currHT,
     currSS: req.body.currSS,
     crits: req.body.crits,

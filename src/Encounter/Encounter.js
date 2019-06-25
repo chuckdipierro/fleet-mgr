@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 import PropType from 'prop-types';
 import Tray from './Tray';
 import AddModal from './AddModal';
 
 import './Encounter.scss';
-import { Button } from 'semantic-ui-react';
 
 const Encounter = ({
   addEnemyShip,
@@ -23,7 +24,9 @@ const Encounter = ({
   updateDefense,
   weaponList,
 }) => {
+  const [redirect, setRedirect] = useState(false);
   if (!fetchComplete) return <div>Loading</div>;
+  if (redirect) return <Redirect to="/" />;
   return (
     <div className="Encounter">
       <div className="turnMgr">
@@ -32,7 +35,13 @@ const Encounter = ({
           <Button primary onClick={() => clearRound(encounterID, turn)}>
             End Round
           </Button>
-          <Button primary onClick={() => clearEncounter()}>
+          <Button
+            primary
+            onClick={() => {
+              clearEncounter(encounterID);
+              setRedirect(true);
+            }}
+          >
             End Encounter
           </Button>
         </Button.Group>

@@ -48,6 +48,8 @@ app.post('/api/resources', resources_controller.resources_create);
 app.post('/api/resources/:id', resources_controller.resources_update);
 app.get('/api/encounter/', encounter_controller.encounter_get_all);
 app.get('/api/encounter/:id', encounter_controller.encounter_get);
+app.post('/api/encounter/:id/clear', encounter_controller.encounter_clear);
+app.post('/api/encounter/:id/clearRound', encounter_controller.encounter_clearRound);
 app.post('/api/encounter/:id', encounter_controller.encounter_update);
 app.post('/api/encounter/', encounter_controller.encounter_create);
 // Handles any requests that don't match the ones above

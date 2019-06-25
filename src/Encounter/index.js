@@ -45,7 +45,6 @@ const mapDispatchToProps = dispatch => {
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
       const critHit = crit > 0;
-      console.log('Crit test, ', critHit);
       const targetUpdate = Object.assign({}, target, {
         currHT: target.currHT - damage >= 0 ? target.currHT - damage : 0,
         currSS: target.currSS - strain >= 0 ? target.currSS - strain : 0,
@@ -67,14 +66,20 @@ const mapDispatchToProps = dispatch => {
         }
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
+      if (Object.keys(shipFiring.weaponsFired).length < 1) {
+        shipFiring.Weapons.forEach((wpn, index) => {
+          shipFiring.weaponsFired[index] = 0;
+        });
+      }
       fired.forEach(index => {
         if (shipFiring.Weapons[index].stats.Qualities.indexOf('Slow-Firing') > -1) {
           const slowFiring = parseInt(
             shipFiring.Weapons[index].stats.Qualities.split('Slow-Firing')[1].split(',')[0]
           );
-          shipFiring.Weapons[index].cooldown = turn + slowFiring;
+          shipFiring.weaponsFired[index] = turn + slowFiring;
         }
       });
+      shipFiring.acted = true;
       // shipFiring.Weapons.forEach((weapon, i) => {
       //   if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
       //     const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
@@ -92,13 +97,19 @@ const mapDispatchToProps = dispatch => {
           dispatch(setFleetShip(target._id, targetUpdate));
         }
       }
-      dispatch(setShipActed(enemy, shipID, shipFiring));
+      if (enemy) {
+        dispatch(setFleetShip(shipFiring._id, shipFiring));
+      } else {
+        dispatch(setEnemyShip(shipFiring._id, shipFiring));
+      }
+      // dispatch(setShipActed(enemy, shipID, shipFiring));
     },
-    clearEncounter: () => {
-      dispatch(clearEncounter());
+    clearEncounter: id => {
+      dispatch(clearEncounter(id));
     },
     clearRound: (id, turn) => {
       dispatch(updateEncounter(id, { turn: turn + 1 }));
+      dispatch(clearRound(id));
     },
     repairDamage: (target, hull, strain, crits, enemy = false) => {
       const targetUpdate = Object.assign({}, target, {

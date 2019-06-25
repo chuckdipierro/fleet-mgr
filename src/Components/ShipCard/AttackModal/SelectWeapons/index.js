@@ -3,7 +3,7 @@ import PropType from 'prop-types';
 import WeaponList from '../../WeaponList';
 import './SelectWeapons.scss';
 
-const SelectWeapons = ({ facing, handleSelection, turn, validWeapons, weaponType }) => {
+const SelectWeapons = ({ facing, handleSelection, validWeapons, weaponType }) => {
   return (
     <div className="SelectWeapons">
       <div>{facing} weapons:</div>
@@ -11,7 +11,6 @@ const SelectWeapons = ({ facing, handleSelection, turn, validWeapons, weaponType
         weapons={validWeapons}
         weaponType={weaponType}
         selected={i => handleSelection(i)}
-        turn={turn}
       />
     </div>
   );
