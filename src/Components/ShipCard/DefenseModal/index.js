@@ -5,14 +5,24 @@ import { Button, Form, Input, Modal } from 'semantic-ui-react';
 import './DefenseModal.scss';
 import DefenseMap from '../../DefenseMap';
 
-const DefenseModal = ({ defAft, defFore, defPort, defStarboard, updateDefense }) => {
+const DefenseModal = ({
+  defAft,
+  defAftMod,
+  defFore,
+  defForeMod,
+  defPort,
+  defPortMod,
+  defStarboard,
+  defStarboardMod,
+  updateDefense,
+}) => {
   const [state, setState] = useState({
-    aft: defAft,
+    aft: defAftMod ? defAftMod : 0,
     avail: 0,
-    fore: defFore,
+    fore: defForeMod ? defForeMod : 0,
     open: false,
-    port: defPort,
-    starboard: defStarboard,
+    port: defPortMod ? defPortMod : 0,
+    starboard: defStarboardMod ? defStarboardMod : 0,
   });
   const updateState = newState => {
     setState(
@@ -41,18 +51,18 @@ const DefenseModal = ({ defAft, defFore, defPort, defStarboard, updateDefense })
       <Modal.Content>
         <Modal.Description>
           <DefenseMap
-            aft={state.aft}
+            aft={defAft + state.aft}
             center={state.avail}
             lowerShield={target =>
               updateState({ avail: state.avail + 1, [target]: state[target] - 1 })
             }
-            fore={state.fore}
-            port={state.port}
+            fore={defFore + state.fore}
+            port={defPort + state.port}
             raiseShield={target =>
               updateState({ avail: state.avail - 1, [target]: state[target] + 1 })
             }
             selectZone={() => {}}
-            starboard={state.starboard}
+            starboard={defStarboard + state.starboard}
           />
         </Modal.Description>
       </Modal.Content>

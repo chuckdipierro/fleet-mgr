@@ -3,8 +3,17 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, compose, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import { add } from 'react-redux-permissions';
 import fleetManager from './reducers';
-import { getEncounter, getFlotilla, getShiplist, setShipForm, setWeaponList } from './actions';
+import {
+  getEncounter,
+  getFlotilla,
+  getResources,
+  getShiplist,
+  setEncounterSocket,
+  setShipForm,
+  setWeaponList,
+} from './actions';
 import shipForm from './API/shipForm';
 import weapons from './API/weapons';
 import './index.css';
@@ -14,11 +23,14 @@ import * as serviceWorker from './serviceWorker';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(fleetManager, composeEnhancers(applyMiddleware(ReduxThunk)));
 
-store.dispatch(getEncounter(JSON.parse(window.localStorage.getItem('fleet_encounter'))));
+store.dispatch(getEncounter());
 store.dispatch(getFlotilla());
 store.dispatch(getShiplist());
+store.dispatch(getResources());
+store.dispatch(setEncounterSocket());
 store.dispatch(setShipForm(shipForm));
 store.dispatch(setWeaponList(weapons));
+store.dispatch(add(process.env.NODE_ENV === 'development' ? 'admin' : 'guest'));
 
 ReactDOM.render(
   <Provider store={store}>

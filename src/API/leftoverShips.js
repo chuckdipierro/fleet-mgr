@@ -1,6 +1,4 @@
 
-    
-    
     {
       "hullType": "Frigate",
       "Class": "Munificent",

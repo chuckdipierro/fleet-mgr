@@ -1,6 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { Card /* Icon, */, Image, Button } from 'semantic-ui-react';
+import Permissions from 'react-redux-permissions';
 import AttackModal from './AttackModal';
 import RepairModal from './RepairModal';
 import './ShipCard.scss';
@@ -12,12 +13,16 @@ const ShipCard = ({
   captain,
   Class,
   crits,
-  curr_HT,
-  curr_SS,
+  currHT,
+  currSS,
   defAft,
+  defAftMod,
   defFore,
+  defForeMod,
   defPort,
+  defPortMod,
   defStarboard,
+  defStarboardMod,
   destroyed,
   HT,
   hullType,
@@ -39,32 +44,44 @@ const ShipCard = ({
     <Card
       color={status}
       className={`${status} ShipCard ${applyDamage && acted ? 'acted' : ''}  ${
-        curr_HT === 0 || curr_SS === 0 ? 'knockedOut' : ''
+        currHT === 0 || currSS === 0 ? 'knockedOut' : ''
       } ${destroyed ? 'destroyed' : ''}`}
     >
-      {!destroyed && (
-        <Button.Group floated="right">
-          {targets.length > 0 && curr_HT > 0 && curr_SS > 0 && (
-            <AttackModal applyDamage={applyDamage} ship={ship} targets={targets} turn={turn} />
-          )}
-          <RepairModal
-            crits={crits}
-            currHT={curr_HT}
-            currSS={curr_SS}
-            HT={HT}
-            repair={repairPoints || -1}
-            repairCost={targets.length === 0}
-            repairDamage={(ht, ss, crits, cost) => repairDamage(ship, ht, ss, crits, cost)}
-            SS={SS}
-          />
-          <DefenseModal
-            {...{ defAft, defFore, defPort, defStarboard }}
-            updateDefense={(aft, fore, port, starboard) =>
-              updateDefense(ship, aft, fore, port, starboard)
-            }
-          />
-        </Button.Group>
-      )}
+      <Permissions allowed={['admin']}>
+        {!destroyed && (
+          <Button.Group>
+            {targets.length > 0 && currHT > 0 && currSS > 0 && (
+              <AttackModal applyDamage={applyDamage} ship={ship} targets={targets} turn={turn} />
+            )}
+            <RepairModal
+              crits={crits}
+              currHT={currHT}
+              currSS={currSS}
+              HT={HT}
+              repair={repairPoints || -1}
+              repairCost={targets.length === 0}
+              repairDamage={(ht, ss, crits, cost) => repairDamage(ship, ht, ss, crits, cost)}
+              SS={SS}
+            />
+            <DefenseModal
+              {...{
+                defAft,
+                defAftMod,
+                defFore,
+                defForeMod,
+                defPort,
+                defPortMod,
+                defStarboard,
+                defStarboardMod,
+              }}
+              updateDefense={(aft, fore, port, starboard) =>
+                updateDefense(ship, aft, fore, port, starboard)
+              }
+            />
+          </Button.Group>
+        )}
+      </Permissions>
+
       <div className="ShipImage" style={{ backgroundImage: `url(/img/${image})` }} />
       {/* <Image src={`/img/${image}`} height="200" /> */}
       <Card.Description className="CritTracker">
@@ -86,12 +103,12 @@ const ShipCard = ({
         <Card.Description>
           <p>
             <b>
-              Hull Trauma: {curr_HT}/{HT}
+              Hull Trauma: {currHT}/{HT}
             </b>
           </p>
           <p>
             <b>
-              System Strain: {curr_SS}/{SS}
+              System Strain: {currSS}/{SS}
             </b>
           </p>
           <p>{captain ? <b>{captain}</b> : <b>Crew: {shipsComplement}</b>}</p>
@@ -115,7 +132,7 @@ ShipCard.defaultProps = {
 };
 ShipCard.propTypes = {
   Class: PropType.string.isRequired,
-  curr_HT: PropType.number.isRequired,
+  currHT: PropType.number.isRequired,
   HT: PropType.number.isRequired,
   hullType: PropType.string.isRequired,
   Name: PropType.string.isRequired,

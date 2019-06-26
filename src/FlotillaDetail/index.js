@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import FlotillaDetail from './FlotillaDetail';
-import { setHull, spendRepair } from '../actions';
+import { setFleetShip, setHull, spendRepair } from '../actions';
 
 const mapStateToProps = state => {
   return {
     flotilla: state.flotilla.ships,
+    id: state.resources.id,
     morale: state.resources.morale,
     ordnance: state.resources.ordnance,
     provisions: state.resources.provisions,
@@ -14,14 +15,14 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    repairDamage: (target, hull, strain, crits, cost) => {
+    repairDamage: (target, hull, strain, crits, id, morale, ordnance, provisions, repair) => {
       const targetUpdate = Object.assign({}, target, {
-        curr_HT:
-          target.curr_HT + parseInt(hull) > target.HT ? target.HT : target.curr_HT + parseInt(hull),
-        curr_SS:
-          target.curr_SS + parseInt(strain) > target.SS
+        currHT:
+          target.currHT + parseInt(hull) > target.HT ? target.HT : target.currHT + parseInt(hull),
+        currSS:
+          target.currSS + parseInt(strain) > target.SS
             ? target.SS
-            : target.curr_SS + parseInt(strain),
+            : target.currSS + parseInt(strain),
       });
       crits.forEach((crit, i) => {
         if (crit) {
@@ -31,17 +32,17 @@ const mapDispatchToProps = dispatch => {
       targetUpdate.crits = targetUpdate.crits.filter(item => {
         return item != null;
       });
-      dispatch(setHull(target.id, targetUpdate));
-      dispatch(spendRepair(cost));
+      dispatch(setFleetShip(target._id, targetUpdate));
+      dispatch(spendRepair(id, { morale, ordnance, provisions, repair }));
     },
-    updateDefense: (target, defAft, defFore, defPort, defStarboard, enemy = false) => {
+    updateDefense: (target, defAftMod, defForeMod, defPortMod, defStarboardMod) => {
       const targetUpdate = Object.assign({}, target, {
-        defAft,
-        defFore,
-        defPort,
-        defStarboard,
+        defAftMod,
+        defForeMod,
+        defPortMod,
+        defStarboardMod,
       });
-      dispatch(setHull(target.id, targetUpdate));
+      dispatch(setFleetShip(target._id, targetUpdate));
     },
   };
 };

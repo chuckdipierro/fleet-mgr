@@ -186,12 +186,13 @@ const RollResults = ({
       ability += prof;
     }
   }
+  console.log(target[targetZone], target[`${targetZone}Mod`], setBacks);
   const rolls = SWD.roll({
     ability,
     challenge: challengeDice,
     difficulty,
     proficiency,
-    setback: target[targetZone] + setBacks,
+    setback: target[targetZone] + target[`${targetZone}Mod`] + setBacks,
     boost: (aim ? 1 : 0) + boosts,
   });
   state.selectedWeapons.forEach(weapon => {

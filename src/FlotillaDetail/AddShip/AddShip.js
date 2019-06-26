@@ -18,15 +18,18 @@ const AddShip = ({ addShip, shiplist, weaponList }) => {
     };
   });
   const submitNewShip = () => {
-    const shipObj = Object.assign({}, currShip, {
-      curr_HT: currShip.HT,
-      curr_SS: currShip.SS,
-      crits: [],
-      captain,
-      id: Math.floor(Math.random() * 100000000),
-      Name: shipName,
-      Weapons: mapWeapons(currShip.Weapons, weaponList),
-    });
+    const shipObj = Object.assign(
+      {},
+      {
+        currHT: currShip.HT,
+        currSS: currShip.SS,
+        crits: [],
+        captain,
+        id: currShip._id,
+        Name: shipName,
+        // Weapons: mapWeapons(currShip.Weapons, weaponList),
+      }
+    );
     addShip(shipObj);
     setOpen(false);
   };

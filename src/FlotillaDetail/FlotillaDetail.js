@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import PropType from 'prop-types';
+import Permissions from 'react-redux-permissions';
 import AddShipConnector from './AddShip';
 import ShipCard from '../Components/ShipCard';
 
 import './FlotillaDetail.scss';
-import { Label, Select } from 'semantic-ui-react';
+import { Label, Select, Button } from 'semantic-ui-react';
+import { getList } from '../actions';
 
 const FlotillaDetail = ({
   flotilla,
+  id,
   morale,
   ordnance,
   provisions,
@@ -21,10 +24,10 @@ const FlotillaDetail = ({
     let newSort = [...ships];
     newSort = newSort.sort(function(a, b) {
       if (value === 'damage') {
-        if (a.curr_HT / a.HT > b.curr_HT / b.HT) {
+        if (a.currHT / a.HT > b.currHT / b.HT) {
           return 1;
         }
-        if (a.curr_HT / a.HT < b.curr_HT / b.HT) {
+        if (a.currHT / a.HT < b.currHT / b.HT) {
           return -1;
         }
       } else {
@@ -46,9 +49,9 @@ const FlotillaDetail = ({
 
   const ShipList = sortedFlotilla.map((ship, i) => {
     let status = 'green';
-    if (ship.curr_HT < ship.HT) {
+    if (ship.currHT < ship.HT) {
       status = 'yellow';
-    } else if (ship.curr_HT <= ship.HT / 2) {
+    } else if (ship.currHT <= ship.HT / 2) {
       status = 'red';
     } else if (ship.HT <= 0) {
       status = 'grey';
@@ -59,7 +62,19 @@ const FlotillaDetail = ({
         {...ship}
         status={status}
         ship={ship}
-        repairDamage={repairDamage}
+        repairDamage={(ship, ht, ss, crits, cost) => {
+          repairDamage(
+            ship,
+            ht,
+            ss,
+            crits,
+            id,
+            morale,
+            ordnance,
+            provisions,
+            cost > 0 ? repair - cost : repair
+          );
+        }}
         repairPoints={repair}
         updateDefense={updateDefense}
       />
@@ -80,7 +95,10 @@ const FlotillaDetail = ({
         <Label color="teal">
           Morale<Label.Detail>{morale}</Label.Detail>
         </Label>
-        <AddShipConnector />
+
+        <Permissions allowed={['admin']}>
+          <AddShipConnector />
+        </Permissions>
         <Select
           placeholder="Sort by..."
           search

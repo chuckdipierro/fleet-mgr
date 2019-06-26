@@ -120,7 +120,6 @@ const RepairModal = ({ crits, currHT, currSS, HT, repairCost, repairDamage, repa
           disabled={state.overCost && repairCost}
           onClick={() => {
             updateState({ open: false });
-            console.log(state.cost, state.cost > 0);
             repairDamage(
               state.ht,
               state.ss,

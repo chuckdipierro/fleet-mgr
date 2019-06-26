@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
+import Permissions from 'react-redux-permissions';
 import PropType from 'prop-types';
 import Tray from './Tray';
 import AddModal from './AddModal';
 
 import './Encounter.scss';
-import { Button } from 'semantic-ui-react';
 
 const Encounter = ({
   addEnemyShip,
@@ -12,6 +14,7 @@ const Encounter = ({
   applyDamage,
   clearEncounter,
   clearRound,
+  encounterID,
   enemy,
   fetchComplete,
   flotilla,
@@ -22,19 +25,29 @@ const Encounter = ({
   updateDefense,
   weaponList,
 }) => {
+  const [redirect, setRedirect] = useState(false);
   if (!fetchComplete) return <div>Loading</div>;
+  if (redirect) return <Redirect to="/" />;
   return (
     <div className="Encounter">
       <div className="turnMgr">
         <span className="turnCnt">Round: {turn}</span>
-        <Button.Group>
-          <Button primary onClick={() => clearRound()}>
-            End Round
-          </Button>
-          <Button primary onClick={() => clearEncounter()}>
-            End Encounter
-          </Button>
-        </Button.Group>
+        <Permissions allowed={['admin']}>
+          <Button.Group>
+            <Button primary onClick={() => clearRound(encounterID, turn)}>
+              End Round
+            </Button>
+            <Button
+              primary
+              onClick={() => {
+                clearEncounter(encounterID);
+                setRedirect(true);
+              }}
+            >
+              End Encounter
+            </Button>
+          </Button.Group>
+        </Permissions>
       </div>
       <Tray
         applyDamage={(id, target, damage, strain, crit, fired, ship) =>
@@ -48,22 +61,41 @@ const Encounter = ({
           updateDefense(target, aft, fore, port, starboard, false)
         }
       />
-      <div className="btn-tray">
-        <AddModal
-          addShip={ship => addFriendlyShip(ship)}
-          btnTxt="^ Select Friendly"
-          hdrTxt="Add Ally Ship"
-          shipList={flotilla}
-        />
-        <AddModal
-          addShip={ship => addEnemyShip(ship)}
-          btnTxt="Select Opposition v"
-          hdrTxt="Add Enemy Ship"
-          shipList={shipList}
-          title
-          weaponList={weaponList}
-        />
-      </div>
+
+      <Permissions allowed={['admin']}>
+        <div className="btn-tray">
+          <AddModal
+            addShip={ship =>
+              addFriendlyShip(
+                ship,
+                encounterID,
+                rebels.map(rebel => {
+                  return rebel._id;
+                })
+              )
+            }
+            btnTxt="^ Select Friendly"
+            hdrTxt="Add Ally Ship"
+            shipList={flotilla}
+          />
+          <AddModal
+            addShip={ship =>
+              addEnemyShip(
+                ship,
+                encounterID,
+                enemy.map(en => {
+                  return en._id;
+                })
+              )
+            }
+            btnTxt="Select Opposition v"
+            hdrTxt="Add Enemy Ship"
+            shipList={shipList}
+            title
+            weaponList={weaponList}
+          />
+        </div>
+      </Permissions>
       <Tray
         applyDamage={(id, target, damage, strain, crit, fired, ship) =>
           applyDamage(id, target, damage, strain, crit, fired, turn, ship, false)

@@ -72,6 +72,8 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
       ) {
         weapon.selected = false;
         weapon.Index = i;
+        console.log('Ship: ', ship);
+        weapon.cooldown = !Object.keys(ship.weaponsFired).length < 1 && ship.weaponsFired[i] > turn;
         // if (weapon.stats.Qualities.indexOf('Slow-Firing') > -1) {
         //   const slowFiring = parseInt(weapon.stats.Qualities.split('Slow-Firing')[1].split(',')[0]);
         //   if (turn < weapon.fired + slowFiring) {
@@ -89,12 +91,12 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
   const zones = ['forward', 'port', 'starboard', 'aft', 'dorsal', 'ventral', 'hull'];
   const shipOptions = targets
     // .filter(ship => {
-    //   return ship.curr_HT > 0 && ship.curr_SS > 0;
+    //   return ship.currHT > 0 && ship.currSS > 0;
     // })
     .map((ship, i) => {
       return {
         key: i,
-        disabled: ship.curr_HT === 0 || ship.curr_SS === 0,
+        disabled: ship.currHT === 0 || ship.currSS === 0,
         text: `${ship.Name} - ${ship.Class} Class ${ship.hullType}`,
         value: i,
       };
@@ -109,12 +111,13 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
       );
       break;
     case 1:
+      console.log('Target: ', state.target);
       attackStep = (
         <DefenseMap
-          fore={state.target.defFore}
-          aft={state.target.defAft}
-          port={state.target.defPort}
-          starboard={state.target.defStarboard}
+          fore={state.target.defFore + state.target.defForeMod}
+          aft={state.target.defAft + state.target.defAftMod}
+          port={state.target.defPort + state.target.defPortMod}
+          starboard={state.target.defStarboard + state.target.defStarboardMod}
           selectZone={zone =>
             updateState({ targetZone: zone, step: (state.step += 1), weaponType: '' })
           }
@@ -138,7 +141,6 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
             facing={state.facing}
             handleSelection={i => handleSelection(i)}
             selectedCount={state.selectedCount}
-            turn={turn}
             validWeapons={state.validWeapons}
             weaponType={state.weaponType}
           />

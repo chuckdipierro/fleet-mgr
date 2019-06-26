@@ -15,7 +15,7 @@ const Tray = ({ applyDamage, repairDamage, ships, targets, turn, updateDefense }
         {...ship}
         repairDamage={repairDamage}
         ship={ship}
-        status={ship.curr_HT > ship.HT / 2 ? 'green' : 'red'}
+        status={ship.currHT > ship.HT / 2 ? 'green' : 'red'}
         targets={targets}
         turn={turn}
         updateDefense={updateDefense}
