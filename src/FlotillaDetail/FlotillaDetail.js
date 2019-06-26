@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropType from 'prop-types';
+import Permissions from 'react-redux-permissions';
 import AddShipConnector from './AddShip';
 import ShipCard from '../Components/ShipCard';
 
@@ -94,7 +95,10 @@ const FlotillaDetail = ({
         <Label color="teal">
           Morale<Label.Detail>{morale}</Label.Detail>
         </Label>
-        <AddShipConnector />
+
+        <Permissions allowed={['admin']}>
+          <AddShipConnector />
+        </Permissions>
         <Select
           placeholder="Sort by..."
           search

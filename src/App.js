@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
+import Permissions from 'react-redux-permissions';
 import FlotillaDetailConnector from './FlotillaDetail';
 import EncounterConnector from './Encounter';
 import './App.css';
@@ -11,9 +12,11 @@ const App = () => {
     <Router>
       <div className="App">
         <Menu>
-          <Menu.Item>
-            <Link to="/shipForm">Create Ship</Link>
-          </Menu.Item>
+          <Permissions allowed={['admin']}>
+            <Menu.Item>
+              <Link to="/shipForm">Create Ship</Link>
+            </Menu.Item>
+          </Permissions>
           <Menu.Item>
             <Link to="/encounter">Encounter View</Link>
           </Menu.Item>

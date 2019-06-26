@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, compose, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import { add } from 'react-redux-permissions';
 import fleetManager from './reducers';
 import {
   getEncounter,
@@ -29,6 +30,7 @@ store.dispatch(getResources());
 store.dispatch(setEncounterSocket());
 store.dispatch(setShipForm(shipForm));
 store.dispatch(setWeaponList(weapons));
+store.dispatch(add(process.env.NODE_ENV === 'development' ? 'admin' : 'guest'));
 
 ReactDOM.render(
   <Provider store={store}>
