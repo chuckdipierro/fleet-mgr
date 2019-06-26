@@ -22,7 +22,6 @@ const mapStateToProps = state => {
   //     return ship.id === rebel.id;
   //   });
   // });
-
   return {
     enemy: state.encounter.enemy,
     fetchComplete: state.app.fetchComplete,
@@ -44,10 +43,25 @@ const mapDispatchToProps = dispatch => {
       dispatch(addFriendlyShip(ship, id, list));
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
+      console.log(
+        target.curr_HT,
+        ' - ',
+        damage,
+        ' = ',
+        target.curr_HT - damage,
+        'SS - Damage: ',
+        target.curr_SS - strain
+      );
       const critHit = crit > 0;
       const targetUpdate = Object.assign({}, target, {
-        currHT: target.currHT - damage >= 0 ? target.currHT - damage : 0,
-        currSS: target.currSS - strain >= 0 ? target.currSS - strain : 0,
+        curr_HT:
+          target.curr_HT - (damage < 0 ? 0 : damage) >= 0
+            ? target.curr_HT - (damage < 0 ? 0 : damage)
+            : 0,
+        curr_SS:
+          target.curr_SS - (strain < 0 ? 0 : strain) >= 0
+            ? target.curr_SS - (strain < 0 ? 0 : strain)
+            : 0,
       });
       if (critHit) {
         const chance = new Chance();
@@ -56,6 +70,7 @@ const mapDispatchToProps = dispatch => {
         if (critRoll > 145) {
           targetUpdate.destroyed = true;
         }
+        console.log('Crit hit roll applied!');
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
       if (targetUpdate.currHT === 0 || targetUpdate.currSS === 0) {
@@ -64,6 +79,7 @@ const mapDispatchToProps = dispatch => {
         if (critRoll > 145) {
           targetUpdate.destroyed = true;
         }
+        console.log('HT || SS hits 0 applied!');
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
       if (Object.keys(shipFiring.weaponsFired).length < 1) {

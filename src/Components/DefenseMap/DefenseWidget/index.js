@@ -6,7 +6,7 @@ import './DefenseWidget.scss';
 const DefenseWidget = ({ center, lowerShield, raiseShield, val }) => {
   return (
     <div className="DefenseWidget text">
-      {center > 0 && (
+      {center !== undefined && (
         <Button
           circular
           color="green"
@@ -17,7 +17,7 @@ const DefenseWidget = ({ center, lowerShield, raiseShield, val }) => {
         />
       )}
       <span>{val}</span>
-      {center !== undefined && val > 0 && (
+      {center !== undefined && (
         <Button
           circular
           color="red"
