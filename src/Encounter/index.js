@@ -7,13 +7,16 @@ import {
   addEnemyShip,
   clearEncounter,
   clearRound,
+  createEncounter,
+  getEncounter,
+  setActiveEncounter,
   setEnemyShip,
   setFleetShip,
   setShipActed,
   updateEncounter,
   updateEnemy,
 } from '../actions';
-
+let SELECTED_ENCOUNTER = '';
 const mapStateToProps = state => {
   // localStorage.setItem('fleet_encounter', JSON.stringify(state.encounter));
   // const rebelShips = state.encounter.rebels.map(rebel => {
@@ -22,12 +25,16 @@ const mapStateToProps = state => {
   //     return ship.id === rebel.id;
   //   });
   // });
+  if (state.encounter.selectedEncounter.length > 0)
+    SELECTED_ENCOUNTER = state.encounter.selectedEncounter;
   return {
+    encounterList: state.encounter.encounterList,
     enemy: state.encounter.enemy,
     fetchComplete: state.app.fetchComplete,
     flotilla: state.flotilla.ships,
     encounterID: state.encounter.id,
     rebels: state.flotilla.ships.length === 0 ? [] : state.encounter.rebels,
+    selectedEncounter: state.encounter.selectedEncounter,
     shipList: state.shiplist.shiplist,
     turn: state.encounter.turn,
     weaponList: state.weapons.list,
@@ -44,23 +51,24 @@ const mapDispatchToProps = dispatch => {
     },
     applyDamage: (shipID, target, damage, strain, crit, fired, turn, shipFiring, enemy = false) => {
       console.log(
-        target.curr_HT,
+        target,
+        target.currHT,
         ' - ',
         damage,
         ' = ',
-        target.curr_HT - damage,
+        target.currHT - damage,
         'SS - Damage: ',
-        target.curr_SS - strain
+        target.currSS - strain
       );
       const critHit = crit > 0;
       const targetUpdate = Object.assign({}, target, {
-        curr_HT:
-          target.curr_HT - (damage < 0 ? 0 : damage) >= 0
-            ? target.curr_HT - (damage < 0 ? 0 : damage)
+        currHT:
+          target.currHT - (damage < 0 ? 0 : damage) >= 0
+            ? target.currHT - (damage < 0 ? 0 : damage)
             : 0,
-        curr_SS:
-          target.curr_SS - (strain < 0 ? 0 : strain) >= 0
-            ? target.curr_SS - (strain < 0 ? 0 : strain)
+        currSS:
+          target.currSS - (strain < 0 ? 0 : strain) >= 0
+            ? target.currSS - (strain < 0 ? 0 : strain)
             : 0,
       });
       if (critHit) {
@@ -70,7 +78,6 @@ const mapDispatchToProps = dispatch => {
         if (critRoll > 145) {
           targetUpdate.destroyed = true;
         }
-        console.log('Crit hit roll applied!');
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
       if (targetUpdate.currHT === 0 || targetUpdate.currSS === 0) {
@@ -79,10 +86,12 @@ const mapDispatchToProps = dispatch => {
         if (critRoll > 145) {
           targetUpdate.destroyed = true;
         }
-        console.log('HT || SS hits 0 applied!');
         targetUpdate.crits.push(vehicleCritTable(critRoll));
       }
-      if (Object.keys(shipFiring.weaponsFired).length < 1) {
+      if (
+        shipFiring.weaponsFired === undefined ||
+        Object.keys(shipFiring.weaponsFired).length < 1
+      ) {
         shipFiring.Weapons.forEach((wpn, index) => {
           shipFiring.weaponsFired[index] = 0;
         });
@@ -108,15 +117,15 @@ const mapDispatchToProps = dispatch => {
       // });
       if (damage > 0 || strain > 0) {
         if (enemy) {
-          dispatch(setEnemyShip(target._id, targetUpdate));
+          dispatch(setEnemyShip(target._id, targetUpdate, SELECTED_ENCOUNTER));
         } else {
-          dispatch(setFleetShip(target._id, targetUpdate));
+          dispatch(setFleetShip(target._id, targetUpdate, SELECTED_ENCOUNTER));
         }
       }
       if (enemy) {
-        dispatch(setFleetShip(shipFiring._id, shipFiring));
+        dispatch(setFleetShip(shipFiring._id, shipFiring, SELECTED_ENCOUNTER));
       } else {
-        dispatch(setEnemyShip(shipFiring._id, shipFiring));
+        dispatch(setEnemyShip(shipFiring._id, shipFiring, SELECTED_ENCOUNTER));
       }
       // dispatch(setShipActed(enemy, shipID, shipFiring));
     },
@@ -127,14 +136,23 @@ const mapDispatchToProps = dispatch => {
       dispatch(updateEncounter(id, { turn: turn + 1 }));
       dispatch(clearRound(id));
     },
+    createEncounter: title => {
+      dispatch(createEncounter(title));
+    },
+    setEncounter: id => {
+      dispatch(setActiveEncounter(id));
+      dispatch(getEncounter(id));
+    },
     repairDamage: (target, hull, strain, crits, enemy = false) => {
       const targetUpdate = Object.assign({}, target, {
         currHT:
-          target.currHT + parseInt(hull) > target.HT ? target.HT : target.currHT + parseInt(hull),
+          target.currHT + parseInt(hull, 0) > target.HT
+            ? target.HT
+            : target.currHT + parseInt(hull, 0),
         currSS:
-          target.currSS + parseInt(strain) > target.SS
+          target.currSS + parseInt(strain, 0) > target.SS
             ? target.SS
-            : target.currSS + parseInt(strain),
+            : target.currSS + parseInt(strain, 0),
       });
       crits.forEach((crit, i) => {
         if (crit) {
@@ -145,9 +163,9 @@ const mapDispatchToProps = dispatch => {
         return item != null;
       });
       if (enemy) {
-        dispatch(setEnemyShip(target._id, targetUpdate));
+        dispatch(setEnemyShip(target._id, targetUpdate, SELECTED_ENCOUNTER));
       } else {
-        dispatch(setFleetShip(target._id, targetUpdate));
+        dispatch(setFleetShip(target._id, targetUpdate, SELECTED_ENCOUNTER));
       }
     },
     updateDefense: (target, defAftMod, defForeMod, defPortMod, defStarboardMod, enemy = false) => {
@@ -158,9 +176,9 @@ const mapDispatchToProps = dispatch => {
         defStarboardMod,
       });
       if (enemy) {
-        dispatch(setEnemyShip(target._id, targetUpdate));
+        dispatch(setEnemyShip(target._id, targetUpdate, SELECTED_ENCOUNTER));
       } else {
-        dispatch(setFleetShip(target._id, targetUpdate));
+        dispatch(setFleetShip(target._id, targetUpdate, SELECTED_ENCOUNTER));
       }
     },
   };

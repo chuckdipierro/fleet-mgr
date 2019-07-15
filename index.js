@@ -5,22 +5,26 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const socketIo = require('socket.io');
+//Use dotenv to read .env vars into Node
+require('dotenv').config();
 //Import the mongoose module
 const mongoose = require('mongoose');
-const ship_controller = require('./controllers/shipController');
-const encounter_controller = require('./controllers/encounterController');
-const enemyShip_controller = require('./controllers/enemyShipController');
-const fleetShip_controller = require('./controllers/fleetShipController');
-const resources_controller = require('./controllers/resourcesController');
+const ship_controller = require('./node/controllers/shipController');
+const encounter_controller = require('./node/controllers/encounterController');
+const enemyShip_controller = require('./node/controllers/enemyShipController');
+const fleetShip_controller = require('./node/controllers/fleetShipController');
+const resources_controller = require('./node/controllers/resourcesController');
 const app = express();
 var expressWs = require('express-ws')(app);
 
 app.use(express.json()); // for parsing application/json
 
 //Set up default mongoose connection
-const mongoDB =
-  'mongodb+srv://ws-admin:hjSQ7smyXoZxb6G4@swrpg-fleet-mgr-avyrs.mongodb.net/fleet-mgr?retryWrites=true&w=majority';
+const mongoDB = process.env.MONGO_DB;
+
 mongoose.connect(mongoDB, { useNewUrlParser: true });
+
+mongoose.set('useFindAndModify', false);
 
 //Get the default connection
 const db = mongoose.connection;
@@ -29,7 +33,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // db.collection('ship-list').rename('ships');
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '/build')));
 app.ws('/websocket', function(ws, req) {});
 var aWss = expressWs.getWss('/websocket');
 exports.alertSocket = deets => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropType from 'prop-types';
-import { Form, List, Checkbox } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 import './WeaponSelect.scss';
 
@@ -71,8 +71,8 @@ const WeaponSelect = ({ cancelWeapon, saveWeapon, weapons }) => {
           primary
           onClick={() =>
             saveWeapon({
-              count: parseInt(state.count),
-              linked: parseInt(state.linked),
+              count: parseInt(state.count, 0),
+              linked: parseInt(state.linked, 0),
               mount: state.mount,
               position: state.position,
               type: options[state.weaponSelected].text,
@@ -88,9 +88,8 @@ const WeaponSelect = ({ cancelWeapon, saveWeapon, weapons }) => {
   );
 };
 WeaponSelect.propTypes = {
-  selected: PropType.func,
-  selectedCount: PropType.number,
+  cancelWeapon: PropType.func.isRequired,
+  saveWeapon: PropType.func.isRequired,
   weapons: PropType.array.isRequired,
-  weaponType: PropType.string,
 };
 export default WeaponSelect;

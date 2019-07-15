@@ -7,9 +7,11 @@ import { add } from 'react-redux-permissions';
 import fleetManager from './reducers';
 import {
   getEncounter,
+  getEncounterList,
   getFlotilla,
   getResources,
   getShiplist,
+  setActiveEncounter,
   setEncounterSocket,
   setShipForm,
   setWeaponList,
@@ -22,8 +24,13 @@ import * as serviceWorker from './serviceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(fleetManager, composeEnhancers(applyMiddleware(ReduxThunk)));
+var activeEncounter = localStorage.getItem('activeEncounter');
 
-store.dispatch(getEncounter());
+if (activeEncounter) {
+  store.dispatch(setActiveEncounter(activeEncounter));
+  store.dispatch(getEncounter(activeEncounter));
+}
+store.dispatch(getEncounterList());
 store.dispatch(getFlotilla());
 store.dispatch(getShiplist());
 store.dispatch(getResources());

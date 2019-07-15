@@ -63,19 +63,19 @@ const ShipForm = ({ shipForm, onAddClick, weapons }) => {
     }
   };
 
-  const validate = () => {
-    const currErrors = state.errorText;
-    shipForm.forEach(field => {
-      if (field.required && state[field.data].length < 3) {
-        currErrors[field.data] = 'This field is required.';
-      } else {
-        currErrors[field.data] = '';
-      }
-    });
-    updateState({
-      errorText: currErrors,
-    });
-  };
+  // const validate = () => {
+  //   const currErrors = state.errorText;
+  //   shipForm.forEach(field => {
+  //     if (field.required && state[field.data].length < 3) {
+  //       currErrors[field.data] = 'This field is required.';
+  //     } else {
+  //       currErrors[field.data] = '';
+  //     }
+  //   });
+  //   updateState({
+  //     errorText: currErrors,
+  //   });
+  // };
 
   if (state.redirectToMain) {
     return <Redirect to="/" />;
@@ -142,5 +142,9 @@ const ShipForm = ({ shipForm, onAddClick, weapons }) => {
     </div>
   );
 };
-ShipForm.propTypes = {};
+ShipForm.propTypes = {
+  onAddClick: PropType.func.isRequired,
+  shipForm: PropType.array.isRequired,
+  weapons: PropType.array.isRequired,
+};
 export default ShipForm;

@@ -74,7 +74,8 @@ exports.enemyShip_update_post = (req, res) => {
   });
   EnemyShip.findByIdAndUpdate(req.params.id, enemyShip, {}, function(err, enemyShip) {
     if (err) {
-      return next(err);
+      console.log('Error: ', err);
+      // return res.send('Error', err);
     }
     res.send('Complete');
     // Successful - redirect to book detail page.

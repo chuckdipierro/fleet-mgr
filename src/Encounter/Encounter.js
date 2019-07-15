@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
+import { Button, Input, List } from 'semantic-ui-react';
 import Permissions from 'react-redux-permissions';
 import PropType from 'prop-types';
 import Tray from './Tray';
@@ -14,20 +14,65 @@ const Encounter = ({
   applyDamage,
   clearEncounter,
   clearRound,
+  createEncounter,
   encounterID,
+  encounterList,
   enemy,
   fetchComplete,
   flotilla,
   rebels,
   repairDamage,
+  selectedEncounter,
+  setEncounter,
   shipList,
   turn,
   updateDefense,
   weaponList,
 }) => {
   const [redirect, setRedirect] = useState(false);
+  const [encounterTitle, setEncounterTitle] = useState('');
   if (!fetchComplete) return <div>Loading</div>;
   if (redirect) return <Redirect to="/" />;
+  console.log('Selected: ', selectedEncounter, ' Length: ', selectedEncounter.length);
+  if (selectedEncounter.length === 0)
+    return (
+      <div className="EncounterList">
+        <h2>Encounter List:</h2>
+        <List divided relaxed>
+          {encounterList.map((encounter, i) => {
+            return (
+              <List.Item
+                as="a"
+                className="Encounter"
+                content={encounter.title}
+                icon="arrow right"
+                key={i}
+                onClick={() => {
+                  setEncounter(encounter._id);
+                }}
+              />
+            );
+          })}
+        </List>
+        <div className="create">
+          <Input
+            onChange={e => setEncounterTitle(e.target.value)}
+            placeholder=""
+            type="text"
+            value={encounterTitle}
+          />
+          <Button
+            disabled={encounterTitle.length < 2}
+            primary
+            onClick={() => {
+              createEncounter(encounterTitle);
+            }}
+          >
+            Create Encounter
+          </Button>
+        </div>
+      </div>
+    );
   return (
     <div className="Encounter">
       <div className="turnMgr">

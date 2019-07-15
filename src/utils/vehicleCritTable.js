@@ -127,5 +127,6 @@ const vehicleCritTable = int => {
       desc:
         'The ship or vehicle is completely destroyed, consumed in a large and dramatic fireball. Nothing survives.',
     };
+  return null;
 };
 export default vehicleCritTable;

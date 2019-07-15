@@ -8,9 +8,12 @@ export const clearEncounter = id => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({}),
       };
+      console.log('Clear Encounter called');
       const updatedEncounter = await fetch(`/api/encounter/${id}/clear`, options);
       const encounterDetail = await updatedEncounter.json();
-      // dispatch(getEncounter());
+
+      localStorage.removeItem('activeEncounter');
+      dispatch({ type: 'CLEAR_SELECTED_ENCOUNTER' });
     } catch (err) {
       dispatch(getEncounter());
     }
@@ -28,14 +31,44 @@ export const clearRound = id => {
       const encounterDetail = await updatedEncounter.json();
       // dispatch(getEncounter());
     } catch (err) {
-      dispatch(getEncounter());
+      dispatch(getEncounter(id));
     }
   };
 };
-export const getEncounter = () => {
+
+export const createEncounter = title => {
+  return async dispatch => {
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title }),
+    };
+    const createResponse = await fetch(`/api/encounter/`, options);
+    const encounter = await createResponse.json();
+    console.log('encounter: ', encounter);
+  };
+  // }
+  // encounter.enemies = encounter.enemies.map(ship => {
+  //   let correctedShip = ship;
+  //   console.log('Enemy ship:', ship.weaponsFired);
+  //   delete correctedShip.ship._id;
+  //   correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+  //   delete correctedShip.ship;
+  //   return correctedShip;
+  // });
+
+  // encounter.rebels = encounter.rebels.map(ship => {
+  //   let correctedShip = ship;
+  //   delete correctedShip.ship._id;
+  //   correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+  //   delete correctedShip.ship;
+  //   return correctedShip;
+  // });
+};
+export const getEncounter = id => {
   return async dispatch => {
     try {
-      const response = await fetch('/api/encounter');
+      const response = await fetch(`/api/encounter/${id}`);
       const encounter = await response.json();
       if (encounter.length === 0) {
         const options = {
@@ -78,6 +111,48 @@ export const getEncounter = () => {
         enemy: [],
         rebels: [],
         turn: 0,
+      });
+    }
+  };
+};
+export const getEncounterList = () => {
+  return async dispatch => {
+    try {
+      const response = await fetch('/api/encounter');
+      const encounters = await response.json();
+      // if (encounter.length === 0) {
+      //   const options = {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify({}),
+      //   };
+      //   const createResponse = await fetch(`/api/encounter/`, options);
+      //   encounter = await createResponse.json();
+      // }
+      // encounter.enemies = encounter.enemies.map(ship => {
+      //   let correctedShip = ship;
+      //   console.log('Enemy ship:', ship.weaponsFired);
+      //   delete correctedShip.ship._id;
+      //   correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+      //   delete correctedShip.ship;
+      //   return correctedShip;
+      // });
+
+      // encounter.rebels = encounter.rebels.map(ship => {
+      //   let correctedShip = ship;
+      //   delete correctedShip.ship._id;
+      //   correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
+      //   delete correctedShip.ship;
+      //   return correctedShip;
+      // });
+      dispatch({
+        type: 'SET_ENCOUNTER_LIST',
+        encounters,
+      });
+    } catch (err) {
+      dispatch({
+        type: 'SET_ENCOUNTER_LIST',
+        encounters: [],
       });
     }
   };
@@ -154,7 +229,7 @@ export const getResources = () => {
     }
   };
 };
-export const setEnemyShip = (id, target) => {
+export const setEnemyShip = (id, target, encounterID) => {
   return async dispatch => {
     try {
       const options = {
@@ -163,13 +238,13 @@ export const setEnemyShip = (id, target) => {
         body: JSON.stringify(target),
       };
       await fetch(`/api/updateEnemyShip/${id}`, options);
-      dispatch(getEncounter());
+      dispatch(getEncounter(encounterID));
     } catch (err) {
-      dispatch(getEncounter());
+      dispatch(getEncounter(encounterID));
     }
   };
 };
-export const setFleetShip = (id, target) => {
+export const setFleetShip = (id, target, encounterID) => {
   return async dispatch => {
     try {
       const options = {
@@ -178,7 +253,7 @@ export const setFleetShip = (id, target) => {
         body: JSON.stringify(target),
       };
       await fetch(`/api/updateFleetShip/${id}`, options);
-      dispatch(getEncounter());
+      dispatch(getEncounter(encounterID));
       dispatch(getFlotilla());
     } catch (err) {
       dispatch(getFlotilla());
@@ -208,9 +283,9 @@ export const addEnemyShip = (ship, encounterID, shipList) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(ship),
       };
-      let addedShip = await fetch('/api/addEnemyShip', options);
+      const addedShip = await fetch('/api/addEnemyShip', options);
       const newShipID = await addedShip.json();
-
+      console.log('AddedEnemyShip: ', newShipID, encounterID);
       dispatch(updateEncounter(encounterID, { enemies: [...shipList, newShipID] }));
     } catch {}
   };
@@ -268,16 +343,28 @@ export const getShiplist = () => {
     }
   };
 };
+export const setActiveEncounter = id => {
+  localStorage.setItem('activeEncounter', id);
+  return {
+    type: 'SET_SELECTED_ENCOUNTER',
+    encounterId: id,
+  };
+};
 export const setEncounterSocket = () => {
   return async dispatch => {
-    let ws = new WebSocket('ws://localhost:5000/websocket');
+    const ws = new WebSocket('ws://localhost:5000/websocket');
 
     ws.onopen = function() {
       console.log('app connected to websocket!');
     };
     ws.onmessage = function(message) {
-      let encounter = JSON.parse(message.data);
-      if (!message.data.deleted) {
+      console.log('message: ', message.data, message.data.enemies);
+      if (
+        !message.data.deleted &&
+        JSON.parse(message.data).enemies &&
+        JSON.parse(message.data).rebels
+      ) {
+        const encounter = JSON.parse(message.data);
         encounter.enemies = encounter.enemies.map(ship => {
           let correctedShip = ship;
           delete correctedShip.ship._id;
@@ -292,6 +379,7 @@ export const setEncounterSocket = () => {
           delete correctedShip.ship;
           return correctedShip;
         });
+        console.log('Succeeded in WS_message');
         dispatch({
           type: 'SET_ENCOUNTER',
           encounter: {
@@ -302,6 +390,9 @@ export const setEncounterSocket = () => {
           },
         });
       } else {
+        localStorage.removeItem('activeEncounter');
+
+        console.log('Delete in WS_message');
         dispatch({
           type: 'SET_ENCOUNTER',
           encounter: {
@@ -362,9 +453,9 @@ export const updateEncounter = (id, update) => {
       };
       const updatedEncounter = await fetch(`/api/encounter/${id}`, options);
       const encounterDetail = await updatedEncounter.json();
-      dispatch(getEncounter());
+      dispatch(getEncounter(id));
     } catch (err) {
-      dispatch(getEncounter());
+      dispatch(getEncounter(id));
     }
   };
 };

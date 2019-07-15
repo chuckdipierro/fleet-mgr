@@ -8,7 +8,7 @@ exports.fleetShip_list = (req, res) => {
         .populate('ship')
         .exec(function(err, list_ships) {
           if (err) {
-            return next(err);
+            return console.log(err);
           }
           //Successful, so render
           // list_ships.forEach(ship => {
@@ -93,7 +93,7 @@ exports.fleetShip_update_post = (req, res) => {
   });
   FleetShip.findByIdAndUpdate(req.params.id, fleetShip, {}, function(err, fleetShip) {
     if (err) {
-      return next(err);
+      console.log('Error: ', err);
     }
     res.send('Complete');
     // Successful - redirect to book detail page.

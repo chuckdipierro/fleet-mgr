@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FlotillaDetail from './FlotillaDetail';
-import { setFleetShip, setHull, spendRepair } from '../actions';
+import { setFleetShip, spendRepair } from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -18,11 +18,13 @@ const mapDispatchToProps = dispatch => {
     repairDamage: (target, hull, strain, crits, id, morale, ordnance, provisions, repair) => {
       const targetUpdate = Object.assign({}, target, {
         currHT:
-          target.currHT + parseInt(hull) > target.HT ? target.HT : target.currHT + parseInt(hull),
+          target.currHT + parseInt(hull, 0) > target.HT
+            ? target.HT
+            : target.currHT + parseInt(hull, 0),
         currSS:
-          target.currSS + parseInt(strain) > target.SS
+          target.currSS + parseInt(strain, 0) > target.SS
             ? target.SS
-            : target.currSS + parseInt(strain),
+            : target.currSS + parseInt(strain, 0),
       });
       crits.forEach((crit, i) => {
         if (crit) {

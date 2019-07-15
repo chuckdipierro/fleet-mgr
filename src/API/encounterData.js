@@ -1,4 +1,4 @@
-var encounter = {
+const encounter = {
   rebels: [
     { id: 80820624, acted: false },
     { id: 85643018, acted: false },
@@ -1400,7 +1400,7 @@ var encounter = {
   turn: 4,
 };
 
-var praetor = {
+const praetor = {
   hullType: 'Star Battlecruiser',
   Class: 'Praetor II',
   Silhouette: 9,
@@ -1628,7 +1628,7 @@ var praetor = {
   Name: 'Praetor',
   acted: true,
 };
-var ascension = {
+const ascension = {
   hullType: 'Heavy Cruiser',
   Class: 'Kantoban',
   Silhouette: 6,
@@ -1794,7 +1794,7 @@ var ascension = {
   Name: 'Ascension',
   acted: true,
 };
-var tarsas = {
+const tarsas = {
   hullType: 'Carrier',
   Class: 'Ton-Falk',
   Silhouette: 7,

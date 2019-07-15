@@ -17,12 +17,12 @@ const DefenseModal = ({
   updateDefense,
 }) => {
   const [state, setState] = useState({
-    aft: defAftMod ? defAftMod : 0,
+    aft: defAftMod || 0,
     avail: 0,
-    fore: defForeMod ? defForeMod : 0,
+    fore: defForeMod || 0,
     open: false,
-    port: defPortMod ? defPortMod : 0,
-    starboard: defStarboardMod ? defStarboardMod : 0,
+    port: defPortMod || 0,
+    starboard: defStarboardMod || 0,
   });
   const updateState = newState => {
     setState(
