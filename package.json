@@ -41,7 +41,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "netlify-lambda build express",
+    "build-local": "react-scripts build",
     "lint": "eslint src/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
