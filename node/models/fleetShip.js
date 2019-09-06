@@ -14,7 +14,7 @@ const FleetShipSchema = new Schema({
   defStarboardMod: { type: Number, required: true, min: -5, max: 5 },
   Name: { type: String, required: true },
   ship: { type: Schema.Types.ObjectId, ref: 'Ship' },
-  weaponsFired: {},
+  weaponsFired: [],
 });
 
 //Export model

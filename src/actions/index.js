@@ -13,9 +13,12 @@ export const clearEncounter = id => {
       const encounterDetail = await updatedEncounter.json();
 
       localStorage.removeItem('activeEncounter');
+      console.log('');
       dispatch({ type: 'CLEAR_SELECTED_ENCOUNTER' });
+      dispatch(getEncounterList());
     } catch (err) {
-      dispatch(getEncounter());
+      localStorage.removeItem('activeEncounter');
+      dispatch(getEncounterList());
     }
   };
 };
@@ -45,6 +48,7 @@ export const createEncounter = title => {
     };
     const createResponse = await fetch(`/api/encounter/`, options);
     const encounter = await createResponse.json();
+    dispatch(getEncounterList());
     console.log('encounter: ', encounter);
   };
   // }
