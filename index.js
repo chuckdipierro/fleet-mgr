@@ -5,6 +5,8 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const socketIo = require('socket.io');
+const compression = require('compression');
+const helmet = require('helmet');
 //Use dotenv to read .env vars into Node
 require('dotenv').config();
 //Import the mongoose module
@@ -18,6 +20,8 @@ const app = express();
 var expressWs = require('express-ws')(app);
 
 app.use(express.json()); // for parsing application/json
+app.use(compression());
+app.use(helmet());
 
 //Set up default mongoose connection
 const mongoDB = process.env.MONGO_DB;
