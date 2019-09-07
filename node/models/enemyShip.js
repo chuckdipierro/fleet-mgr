@@ -13,7 +13,7 @@ const EnemyShipSchema = new Schema({
   defStarboardMod: { type: Number, required: true, min: -5, max: 5 },
   Name: { type: String, required: false },
   ship: { type: Schema.Types.ObjectId, ref: 'Ship' },
-  weaponsFired: {},
+  weaponsFired: [],
 });
 
 // Virtual for book's URL

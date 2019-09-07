@@ -5,8 +5,10 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "chance": "^1.0.18",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "express-ws": "^4.0.0",
+    "helmet": "^3.21.0",
     "mongoose": "^5.5.13",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
@@ -40,9 +42,8 @@
     "serverless-http": "^2.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "netlify-lambda build express",
-    "build-local": "react-scripts build",
+    "start": "react-scripts build && node index.js",
+    "build": "react-scripts build",
     "lint": "eslint src/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

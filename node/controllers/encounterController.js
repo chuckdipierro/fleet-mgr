@@ -52,7 +52,7 @@ exports.encounter_clear = async (req, res) => {
       }
       let filled_encounter = encounter_results[0];
       filled_encounter.rebels.forEach(rebel => {
-        FleetShip.updateOne({ _id: rebel }, { acted: false, weaponsFired: {} }, function(
+        FleetShip.updateOne({ _id: rebel }, { acted: false, weaponsFired: [] }, function(
           err,
           affected,
           resp
