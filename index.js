@@ -2,6 +2,8 @@
 // import path from 'path';
 const express = require('express');
 // const router = express.Router();
+
+const serverless = require('serverless-http');
 const http = require('http');
 const path = require('path');
 const socketIo = require('socket.io');
@@ -67,5 +69,6 @@ app.get('*', (req, res) => {
 
 const port = process.env.PORT || 5000;
 app.listen(port);
-
+module.exports = app;
+module.exports.handler = serverless(app);
 console.log('App is listening on port ' + port);
