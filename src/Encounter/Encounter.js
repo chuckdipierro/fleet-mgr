@@ -33,7 +33,7 @@ const Encounter = ({
   const [encounterTitle, setEncounterTitle] = useState('');
   if (!fetchComplete) return <div>Loading</div>;
   if (redirect) return <Redirect to="/" />;
-  console.log('Selected: ', selectedEncounter, ' Length: ', selectedEncounter.length);
+  console.log('selectedEncounter: ', selectedEncounter);
   if (selectedEncounter.length === 0)
     return (
       <div className="EncounterList">
@@ -54,23 +54,25 @@ const Encounter = ({
             );
           })}
         </List>
-        <div className="create">
-          <Input
-            onChange={e => setEncounterTitle(e.target.value)}
-            placeholder=""
-            type="text"
-            value={encounterTitle}
-          />
-          <Button
-            disabled={encounterTitle.length < 2}
-            primary
-            onClick={() => {
-              createEncounter(encounterTitle);
-            }}
-          >
-            Create Encounter
-          </Button>
-        </div>
+        <Permissions allowed={['admin']}>
+          <div className="create">
+            <Input
+              onChange={e => setEncounterTitle(e.target.value)}
+              placeholder=""
+              type="text"
+              value={encounterTitle}
+            />
+            <Button
+              disabled={encounterTitle.length < 2}
+              primary
+              onClick={() => {
+                createEncounter(encounterTitle);
+              }}
+            >
+              Create Encounter
+            </Button>
+          </div>
+        </Permissions>
       </div>
     );
   return (

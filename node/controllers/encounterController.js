@@ -17,7 +17,7 @@ exports.encounter_get = async (req, res) => {
 
   let result = await fullEncounter;
   Socket.alertSocket(result);
-  res.send(true);
+  res.send(result);
 };
 
 exports.encounter_get_all = (req, res) => {
