@@ -26,5 +26,5 @@ artifacts:
     - index.html
     - index.js
     - package.json
-    - node/*
+    - expressApp/*
     - build/*

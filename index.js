@@ -13,11 +13,11 @@ const helmet = require('helmet');
 require('dotenv').config();
 //Import the mongoose module
 const mongoose = require('mongoose');
-const ship_controller = require('./node/controllers/shipController');
-const encounter_controller = require('./node/controllers/encounterController');
-const enemyShip_controller = require('./node/controllers/enemyShipController');
-const fleetShip_controller = require('./node/controllers/fleetShipController');
-const resources_controller = require('./node/controllers/resourcesController');
+const ship_controller = require('./expressApp/controllers/shipController');
+const encounter_controller = require('./expressApp/controllers/encounterController');
+const enemyShip_controller = require('./expressApp/controllers/enemyShipController');
+const fleetShip_controller = require('./expressApp/controllers/fleetShipController');
+const resources_controller = require('./expressApp/controllers/resourcesController');
 const app = express();
 var expressWs = require('express-ws')(app);
 
