@@ -37,7 +37,7 @@ store.dispatch(getResources());
 store.dispatch(setEncounterSocket());
 store.dispatch(setShipForm(shipForm));
 store.dispatch(setWeaponList(weapons));
-store.dispatch(add(process.env.NODE_ENV === 'development' ? 'admin' : 'guest'));
+store.dispatch(add('guest'));
 
 ReactDOM.render(
   <Provider store={store}>

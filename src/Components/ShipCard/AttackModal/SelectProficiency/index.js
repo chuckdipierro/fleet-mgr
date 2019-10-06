@@ -3,12 +3,14 @@ import PropType from 'prop-types';
 
 import './SelectProficiency.scss';
 import { Button, Checkbox } from 'semantic-ui-react';
+import IncrementWidget from '../../../IncrementWidget';
 
 const SelectProficiency = ({ confirmSelections }) => {
   const [state, setState] = useState({
     agility: 0,
     aim: false,
     boost: 0,
+    diffMod: 0,
     challenge: 0,
     crew: 0,
     prof: 0,
@@ -84,6 +86,15 @@ const SelectProficiency = ({ confirmSelections }) => {
       <div>
         <h4>Add Setbacks:</h4>
         <Button.Group>{setbackBtns}</Button.Group>
+      </div>
+      <div>
+        <h4>Modify Difficulty:</h4>
+        <IncrementWidget
+          adjust={true}
+          lower={() => updateState({ diffMod: state.diffMod - 1 })}
+          raise={() => updateState({ diffMod: state.diffMod + 1 })}
+          val={state.diffMod}
+        />
       </div>
       <div>
         <h4>Upgrade Difficulty:</h4>

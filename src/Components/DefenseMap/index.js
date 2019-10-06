@@ -2,7 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 
 import './DefenseMap.scss';
-import DefenseWidget from './DefenseWidget';
+import IncrementWidget from '../IncrementWidget';
 
 const DefenseMap = ({
   aft,
@@ -17,18 +17,18 @@ const DefenseMap = ({
   return (
     <div className="DefenseMap">
       <button className="fore" onClick={() => selectZone('defFore')}>
-        <DefenseWidget
-          center={center}
-          lowerShield={() => lowerShield('fore')}
-          raiseShield={() => raiseShield('fore')}
+        <IncrementWidget
+          adjust={center !== undefined}
+          lower={() => lowerShield('fore')}
+          raise={() => raiseShield('fore')}
           val={fore}
         />
       </button>
       <button className="aft" onClick={() => selectZone('defAft')}>
-        <DefenseWidget
-          center={center}
-          lowerShield={() => lowerShield('aft')}
-          raiseShield={() => raiseShield('aft')}
+        <IncrementWidget
+          adjust={center !== undefined}
+          lower={() => lowerShield('aft')}
+          raise={() => raiseShield('aft')}
           val={aft}
         />
       </button>
@@ -39,18 +39,18 @@ const DefenseMap = ({
         </div>
       )}
       <button className="port" onClick={() => selectZone('defPort')}>
-        <DefenseWidget
-          center={center}
-          lowerShield={() => lowerShield('port')}
-          raiseShield={() => raiseShield('port')}
+        <IncrementWidget
+          adjust={center !== undefined}
+          lower={() => lowerShield('port')}
+          raise={() => raiseShield('port')}
           val={port}
         />
       </button>
       <button className="starboard" onClick={() => selectZone('defStarboard')}>
-        <DefenseWidget
-          center={center}
-          lowerShield={() => lowerShield('starboard')}
-          raiseShield={() => raiseShield('starboard')}
+        <IncrementWidget
+          adjust={center !== undefined}
+          lower={() => lowerShield('starboard')}
+          raise={() => raiseShield('starboard')}
           val={starboard}
         />
       </button>

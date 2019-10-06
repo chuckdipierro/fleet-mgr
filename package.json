@@ -48,7 +48,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start-mockapi": "json-server --watch src/API/backend.json --port 3001",
-    "start-express": "nodemon node/index.js && react-scripts start"
+    "start-express": "nodemon node/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"

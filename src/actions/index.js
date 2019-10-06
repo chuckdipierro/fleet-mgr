@@ -85,7 +85,6 @@ export const getEncounter = id => {
       }
       encounter.enemies = encounter.enemies.map(ship => {
         let correctedShip = ship;
-        console.log('Enemy ship:', ship.weaponsFired);
         delete correctedShip.ship._id;
         correctedShip = Object.assign({}, correctedShip, { ...correctedShip.ship });
         delete correctedShip.ship;

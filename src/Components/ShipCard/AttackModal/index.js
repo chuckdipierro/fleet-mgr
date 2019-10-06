@@ -17,6 +17,7 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
     boost: 0,
     challenge: 0,
     crew: 0,
+    diffMod: 0,
     facing: '',
     open: false,
     prof: 0,
@@ -155,16 +156,7 @@ const AttackModal = ({ applyDamage, ship, targets, turn }) => {
       attackStep = (
         <SelectProficiency
           confirmSelections={selections => {
-            updateState({
-              agility: selections.agility,
-              aim: selections.aim,
-              boost: selections.boost,
-              crew: selections.crew,
-              challenge: selections.challenge,
-              prof: selections.prof,
-              setback: selections.setback,
-              step: (state.step += 1),
-            });
+            updateState({ ...selections, step: (state.step += 1) });
           }}
         />
       );
