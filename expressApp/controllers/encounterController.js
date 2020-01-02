@@ -11,7 +11,7 @@ exports.encounter_get = async (req, res) => {
       .populate({ path: 'rebels', populate: { path: 'ship' } })
       .exec(function(err, data) {
         if (err) resolve({ deleted: true });
-        resolve(data[0]);
+        resolve(data ? data[0] : {});
       });
   });
 
