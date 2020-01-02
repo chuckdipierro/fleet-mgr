@@ -25,7 +25,6 @@ import * as serviceWorker from './serviceWorker';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(fleetManager, composeEnhancers(applyMiddleware(ReduxThunk)));
 var activeEncounter = localStorage.getItem('activeEncounter');
-
 if (activeEncounter) {
   store.dispatch(setActiveEncounter(activeEncounter));
   store.dispatch(getEncounter(activeEncounter));
@@ -37,7 +36,9 @@ store.dispatch(getResources());
 store.dispatch(setEncounterSocket());
 store.dispatch(setShipForm(shipForm));
 store.dispatch(setWeaponList(weapons));
-store.dispatch(add(process.env.NODE_ENV === 'development' ? 'admin' : 'guest'));
+store.dispatch(
+  add(window.location.search.search(process.env.ADMIN_PASSWORD) > -1 ? 'admin' : 'guest')
+);
 
 ReactDOM.render(
   <Provider store={store}>

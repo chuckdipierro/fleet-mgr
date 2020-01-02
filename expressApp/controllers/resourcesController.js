@@ -42,7 +42,7 @@ exports.resources_update = (req, res) => {
   });
   Resources.findByIdAndUpdate(req.params.id, resources, {}, function(err, resources) {
     if (err) {
-      return next(err);
+      return err;
     }
     res.send(resources);
   });

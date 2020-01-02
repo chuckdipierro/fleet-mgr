@@ -9,3 +9,10 @@
   text-align: center;
   padding: 8px;
 }
+.envFlag {
+  background: #deddff;
+  right: 0px;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+}

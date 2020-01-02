@@ -14,6 +14,7 @@ const RollResults = ({
   applyDamage,
   challenge,
   crew,
+  diffMod,
   prof,
   setback,
   ship,
@@ -119,13 +120,6 @@ const RollResults = ({
       ion = true;
     }
     const armorSoak = target.Armor - breach > 0 ? target.Armor - breach : 0;
-    console.log(
-      'Numbers in modal: ',
-      parseInt(state.selectedWeapons[0].stats.Dam),
-      state.results.success,
-      armorSoak,
-      state.linked
-    );
     linkedDamage =
       (parseInt(state.selectedWeapons[0].stats.Dam) +
         (state.results.success ? state.results.success : 0) -
@@ -165,6 +159,8 @@ const RollResults = ({
   } else if (silDif > 3) {
     difficulty = 5;
   }
+  difficulty = difficulty + diffMod;
+  if (difficulty < 1) difficulty = 1;
   if (difficulty > challenge) {
     const origDiff = difficulty;
     difficulty = origDiff - challenge;
@@ -186,7 +182,6 @@ const RollResults = ({
       ability += prof;
     }
   }
-  console.log(target[targetZone], target[`${targetZone}Mod`], setBacks);
   const rolls = SWD.roll({
     ability,
     challenge: challengeDice,

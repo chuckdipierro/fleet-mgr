@@ -11,13 +11,13 @@ exports.encounter_get = async (req, res) => {
       .populate({ path: 'rebels', populate: { path: 'ship' } })
       .exec(function(err, data) {
         if (err) resolve({ deleted: true });
-        resolve(data[0]);
+        resolve(data ? data[0] : {});
       });
   });
 
   let result = await fullEncounter;
   Socket.alertSocket(result);
-  res.send(true);
+  res.send(result);
 };
 
 exports.encounter_get_all = (req, res) => {

@@ -30,6 +30,7 @@ const App = () => {
           <Route exact path="/shipForm" render={() => <ShipFormConnector />} />
           <Route render={() => <Redirect to="/" />} />
         </Switch>
+        {/* <div className="envFlag">{process.env.NODE_ENV}</div> */}
       </div>
     </Router>
   );
